@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Ingestion Service API
-  description: Ingestion and Retrieval APIs for Ingestion Service 
+  description: Ingestion and Retrieval APIs for Ingestion Service
   version: 0.1.9
 paths:
   /ingest:
@@ -9,87 +9,87 @@ paths:
       operationId: ingest
       summary: Creates and ingests embeddings for a document
       parameters:
-        - $ref: '#/components/parameters/OpenAiApiKey'
+        - $ref: "#/components/parameters/OpenAiApiKey"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IngestionPayload'
+              $ref: "#/components/schemas/IngestionPayload"
       responses:
-        '200':    # status code
+        "200": # status code
           description: uniqie id for the created ingestion object
           content:
             application/json:
               schema:
                 type: array
-                items: 
-                  $ref: '#/components/schemas/Ingestion'
+                items:
+                  $ref: "#/components/schemas/Ingestion"
   /embeddings/{documentId}:
     get:
       operationId: getIngestedDocument
       summary: Returns a list of ingestion items for given documentId
       parameters:
-        - $ref: '#/components/parameters/documentId'
+        - $ref: "#/components/parameters/documentId"
       responses:
-        '200':    # status code
+        "200": # status code
           description: ingestion objects
           content:
             application/json:
               schema:
                 type: array
-                items: 
-                  $ref: '#/components/schemas/Ingestion'
+                items:
+                  $ref: "#/components/schemas/Ingestion"
     put:
       operationId: updateIngestedDocument
       summary: Updates embeddings for a given documentId
       parameters:
-        - $ref: '#/components/parameters/documentId'
-        - $ref: '#/components/parameters/OpenAiApiKey'
+        - $ref: "#/components/parameters/documentId"
+        - $ref: "#/components/parameters/OpenAiApiKey"
       requestBody:
         required: true
         content:
-           application/json:
+          application/json:
             schema:
-              $ref: '#/components/schemas/EmbeddingsPayload'
+              $ref: "#/components/schemas/EmbeddingsPayload"
       responses:
-        '200':    # status code
+        "200": # status code
           description: The updated ingestion object
           content:
             application/json:
               schema:
                 type: array
-                items: 
-                  $ref: '#/components/schemas/Ingestion'
+                items:
+                  $ref: "#/components/schemas/Ingestion"
     delete:
       operationId: deleteIngestedDocument
       summary: Deletes embeddings for a given documentId
       parameters:
-        - $ref: '#/components/parameters/documentId'
+        - $ref: "#/components/parameters/documentId"
       responses:
-        '200':    # status code
+        "200": # status code
           description: The deleted ingestion
           content:
             application/json:
               schema:
                 type: array
-                items: 
-                  $ref: '#/components/schemas/Ingestion'
+                items:
+                  $ref: "#/components/schemas/Ingestion"
   /guards/{guardName}/embeddings:
     get:
       operationId: getIngestedDocumentByGuardId
       summary: Returns a list of ingestion items for a guard
       parameters:
-        - $ref: '#/components/parameters/GuardName'
+        - $ref: "#/components/parameters/GuardName"
       responses:
-        '200':    # status code
+        "200": # status code
           description: ingestion objects
           content:
             application/json:
               schema:
                 type: array
-                items: 
-                  $ref: '#/components/schemas/Ingestion'
+                items:
+                  $ref: "#/components/schemas/Ingestion"
   /embeddings/{guardName}/projections:
     get:
       operationId: getProjection
@@ -97,42 +97,42 @@ paths:
         - projections
       summary: Returns the T-SNE projection for the given Guard id
       parameters:
-        - $ref: '#/components/parameters/GuardName'
-        - $ref: '#/components/parameters/ValidatorId'
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
       responses:
-        '200':    # status code
+        "200": # status code
           description: the projections
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Projection'
+                  $ref: "#/components/schemas/Projection"
     put:
       operationId: updateProjection
       tags:
         - projections
       summary: Creates of updates projection for a given Guard id
       parameters:
-        - $ref: '#/components/parameters/GuardName'
-        - $ref: '#/components/parameters/ValidatorId'
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
       responses:
-        '200':    # status code
+        "200": # status code
           description: The updated projections
           content:
             application/json:
-              schema: 
+              schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Projection'
-components: 
+                  $ref: "#/components/schemas/Projection"
+components:
   parameters:
     OpenAiApiKey:
       name: x-openai-api-key
       in: header
       description: A valid OpenAI API Key for calling LLM's on your behalf
       required: false
-      schema: 
+      schema:
         type: string
     documentId:
       name: documentId
@@ -153,7 +153,7 @@ components:
       in: query
       description: Id for a specific validator.  Used for querying metrics and projections
       required: false
-      schema: 
+      schema:
         type: string
     uuid:
       name: uuid
@@ -162,48 +162,48 @@ components:
       required: true
       schema:
         type: string
-  schemas: 
-    Ingestion: 
-      type: object 
-      properties: 
-        uuid: 
+  schemas:
+    Ingestion:
+      type: object
+      properties:
+        uuid:
           type: string
-        gaurdId: 
+        gaurdId:
           type: string
         embeddings:
-          type: array       
+          type: array
           items:
             type: array
-            items: 
-              type: number 
-        metadata: 
+            items:
+              type: number
+        metadata:
           type: object
         ingestionStatus:
           type: string
-        validatorId: 
+        validatorId:
           type: string
-    IngestionPayload: 
+    IngestionPayload:
       type: object
-      properties: 
-        articles: 
-          type: array 
-          items: 
+      properties:
+        articles:
+          type: array
+          items:
             type: string
-        gaurdId: 
+        gaurdId:
           type: string
-        metadata: 
+        metadata:
           type: object
-        validatorId: 
+        validatorId:
           type: string
-    EmbeddingsPayload: 
-      allOf: 
-        - $ref: '#/components/schemas/IngestionPayload'
+    EmbeddingsPayload:
+      allOf:
+        - $ref: "#/components/schemas/IngestionPayload"
         - type: object
           properties:
-            uuid: 
+            uuid:
               type: string
     Projection:
-      type: object 
+      type: object
       properties:
         id:
           type: string
@@ -221,5 +221,3 @@ components:
           type: array
           items:
             type: number
-
-        
