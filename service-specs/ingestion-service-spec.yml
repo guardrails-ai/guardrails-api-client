@@ -9,72 +9,72 @@ paths:
       operationId: ingest
       summary: Creates and ingests embeddings for a document
       parameters:
-        - $ref: "#/components/parameters/OpenAiApiKey"
+        - $ref: '#/components/parameters/OpenAiApiKey'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/IngestionPayload"
+              $ref: '#/components/schemas/IngestionPayload'
       responses:
-        "200": # status code
+        '200':    # status code
           description: uniqie id for the created ingestion object
           content:
             application/json:
               schema:
                 type: array
-                items:
-                  $ref: "#/components/schemas/Ingestion"
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
   /embeddings/{documentId}:
     get:
       operationId: getIngestedDocument
       summary: Returns a list of ingestion items for given documentId
       parameters:
-        - $ref: "#/components/parameters/documentId"
+        - $ref: '#/components/parameters/documentId'
       responses:
-        "200": # status code
+        '200':    # status code
           description: ingestion objects
           content:
             application/json:
               schema:
                 type: array
-                items:
-                  $ref: "#/components/schemas/Ingestion"
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
     put:
       operationId: updateIngestedDocument
       summary: Updates embeddings for a given documentId
       parameters:
-        - $ref: "#/components/parameters/documentId"
-        - $ref: "#/components/parameters/OpenAiApiKey"
+        - $ref: '#/components/parameters/documentId'
+        - $ref: '#/components/parameters/OpenAiApiKey'
       requestBody:
         required: true
         content:
-          application/json:
+           application/json:
             schema:
-              $ref: "#/components/schemas/EmbeddingsPayload"
+              $ref: '#/components/schemas/IngestionPayload'
       responses:
-        "200": # status code
+        '200':    # status code
           description: The updated ingestion object
           content:
             application/json:
               schema:
                 type: array
-                items:
-                  $ref: "#/components/schemas/Ingestion"
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
     delete:
       operationId: deleteIngestedDocument
       summary: Deletes embeddings for a given documentId
       parameters:
-        - $ref: "#/components/parameters/documentId"
+        - $ref: '#/components/parameters/documentId'
       responses:
-        "200": # status code
+        '200':    # status code
           description: The deleted ingestion
           content:
             application/json:
               schema:
                 type: array
-                items:
-                  $ref: "#/components/schemas/Ingestion"
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
   /guards/{guardName}/embeddings:
     get:
       operationId: getIngestedDocumentByGuardId
@@ -163,45 +163,51 @@ components:
       schema:
         type: string
   schemas:
-    Ingestion:
-      type: object
-      properties:
-        uuid:
+    Ingestion: 
+      type: object 
+      properties: 
+        id: 
           type: string
-        gaurdId:
+        gaurdId: 
           type: string
         embeddings:
-          type: array
+          type: array       
           items:
             type: array
-            items:
+            items: 
               type: number
-        metadata:
+        documentId: 
+          type: string  
+        metadata: 
           type: object
-        ingestionStatus:
+        validatorId: 
           type: string
-        validatorId:
+        pageId: 
           type: string
-    IngestionPayload:
+        chunkId: 
+          type: string
+    IngestionPayload: 
+      type: object
+      properties: 
+        articles: 
+          $ref: '#/components/schemas/Document'
+        guardId: 
+          type: string
+        validatorId: 
+          type: string
+        chunkId: 
+          type: string
+    Document:
       type: object
       properties:
-        articles:
-          type: array
-          items:
-            type: string
-        gaurdId:
+        id: 
           type: string
-        metadata:
+        pages:
           type: object
-        validatorId:
-          type: string
-    EmbeddingsPayload:
-      allOf:
-        - $ref: "#/components/schemas/IngestionPayload"
-        - type: object
-          properties:
-            uuid:
-              type: string
+          additionalProperties:
+            type: string 
+        metadata: 
+          type: object
     Projection:
       type: object
       properties:
