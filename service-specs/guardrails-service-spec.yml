@@ -259,7 +259,10 @@ components:
       properties:
         name:
           type: string
-          description: A unique name for this guard configuration.
+          description: A unique name for this guard.
+        description:
+          type: string
+          description: A description of this guard.
         railspec:
           $ref: "#/components/schemas/RailSpec"
         numReasks:
