@@ -348,8 +348,30 @@ components:
           type: string
         onFail:
           type: string
+        onFails:
+          type: array
+          items:
+            $ref: "#/components/schemas/OnFail"
         model:
           type: string
+    OnFail:
+      type: object
+      properties:
+        validatorTag:
+          type: string
+        method:
+          $ref: "#/components/schemas/OnFailOptions"
+    OnFailOptions:
+      type: string
+      enum: [
+        "exception",
+        "filter",
+        "fix",
+        "fix_reask",
+        "noop",
+        "reask",
+        "refrain"
+      ]
     ValidationOutput:
       type: object
       properties:
