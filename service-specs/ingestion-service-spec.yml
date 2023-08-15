@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: Ingestion Service API
+  description: Ingestion and Retrieval APIs for Ingestion Service
+  version: 0.1.9
+paths:
+  /ingest:
+    post:
+      operationId: ingest
+      summary: Creates and ingests embeddings for a document
+      parameters:
+        - $ref: '#/components/parameters/OpenAiApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestionPayload'
+      responses:
+        '200':    # status code
+          description: uniqie id for the created ingestion object
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
+  /embeddings/{documentId}:
+    get:
+      operationId: getIngestedDocument
+      summary: Returns a list of ingestion items for given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+      responses:
+        '200':    # status code
+          description: ingestion objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
+    put:
+      operationId: updateIngestedDocument
+      summary: Updates embeddings for a given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+        - $ref: '#/components/parameters/OpenAiApiKey'
+      requestBody:
+        required: true
+        content:
+           application/json:
+            schema:
+              $ref: '#/components/schemas/IngestionPayload'
+      responses:
+        '200':    # status code
+          description: The updated ingestion object
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
+    delete:
+      operationId: deleteIngestedDocument
+      summary: Deletes embeddings for a given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+      responses:
+        '200':    # status code
+          description: The deleted ingestion
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Ingestion'
+  /guards/{guardName}/embeddings:
+    get:
+      operationId: getIngestedDocumentByGuardId
+      summary: Returns a list of ingestion items for a guard
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+      responses:
+        "200": # status code
+          description: ingestion objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Ingestion"
+  /embeddings/{guardName}/projections:
+    get:
+      operationId: getProjection
+      tags:
+        - projections
+      summary: Returns the T-SNE projection for the given Guard id
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
+      responses:
+        "200": # status code
+          description: the projections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Projection"
+    put:
+      operationId: updateProjection
+      tags:
+        - projections
+      summary: Creates of updates projection for a given Guard id
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
+      responses:
+        "200": # status code
+          description: The updated projections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Projection"
+components:
+  parameters:
+    OpenAiApiKey:
+      name: x-openai-api-key
+      in: header
+      description: A valid OpenAI API Key for calling LLM's on your behalf
+      required: false
+      schema:
+        type: string
+    documentId:
+      name: documentId
+      in: path
+      description: unqiue document id
+      required: true
+      schema:
+        type: string
+    GuardName:
+      name: guardName
+      in: path
+      description: Guard name
+      required: true
+      schema:
+        type: string
+    ValidatorId:
+      name: validatorId
+      in: query
+      description: Id for a specific validator.  Used for querying metrics and projections
+      required: false
+      schema:
+        type: string
+    uuid:
+      name: uuid
+      in: path
+      description: unqiue id for embeddings
+      required: true
+      schema:
+        type: string
+  schemas:
+    Ingestion: 
+      type: object 
+      properties: 
+        id: 
+          type: string
+        guardId: 
+          type: string
+        embeddings:
+          type: array       
+          items:
+            type: array
+            items: 
+              type: number
+        documentId: 
+          type: string  
+        metadata: 
+          type: object
+        validatorId: 
+          type: string
+        pageId: 
+          type: string
+        chunkId: 
+          type: string
+    IngestionPayload: 
+      type: object
+      properties: 
+        articles: 
+          $ref: '#/components/schemas/Document'
+        guardId: 
+          type: string
+        validatorId: 
+          type: string
+        chunkId: 
+          type: string
+    Document:
+      type: object
+      properties:
+        id: 
+          type: string
+        pages:
+          type: object
+          additionalProperties:
+            type: string 
+        metadata: 
+          type: object
+    Projection:
+      type: object
+      properties:
+        id:
+          type: string
+        guardId:
+          type: string
+        validatorId:
+          type: string
+        documentId:
+          type: string
+        pageId:
+          type: string
+        chunkId:
+          type: string
+        projection:
+          type: array
+          items:
+            type: number
