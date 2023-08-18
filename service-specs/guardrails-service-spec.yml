@@ -298,6 +298,10 @@ components:
           default: "0.1"
           enum:
             - "0.1"
+      required:
+        - outputSchema
+        - prompt
+        - version
     Schema:
       type: object
       properties:
@@ -305,6 +309,8 @@ components:
           type: object
           additionalProperties:
             $ref: "#/components/schemas/DataType"
+        required:
+          - schema
     DataType:
       type: object
       properties:
@@ -321,6 +327,8 @@ components:
             type: string
         element:
           $ref: "#/components/schemas/SchemaElement"
+      required:
+        - element
     Script:
       type: object
       properties:
@@ -354,6 +362,9 @@ components:
             $ref: "#/components/schemas/OnFail"
         model:
           type: string
+      required:
+        - name
+        - type
     OnFail:
       type: object
       properties:
@@ -361,6 +372,9 @@ components:
           type: string
         method:
           $ref: "#/components/schemas/OnFailOptions"
+      required:
+        - validatorTag
+        - method
     OnFailOptions:
       type: string
       enum: [
