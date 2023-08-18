@@ -309,8 +309,8 @@ components:
           type: object
           additionalProperties:
             $ref: "#/components/schemas/DataType"
-        required:
-          - schema
+      required:
+        - schema
     DataType:
       type: object
       properties:
