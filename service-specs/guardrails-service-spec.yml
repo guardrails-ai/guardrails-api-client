@@ -233,9 +233,11 @@ components:
           description: Used to describe the origin of an error if that original error has meaning to the client.  This field should add specificity to 'message'.
         fields:
           type: object
-          description: Used to identify specific fields in a JSON body that caused the error.  Typically only used for 4xx type responses.  The key should be the json path to the invalid property and the value should be an error message specific to that property.
+          description: Used to identify specific fields in a JSON body that caused the error.  Typically only used for 4xx type responses.  The key should be the json path to the invalid property and the value should be a list of error messages specific to that property.
           additionalProperties:
-            type: string
+            type: array
+            items:
+              type: string
         context:
           type: string
           description: Used to identify what part of the request caused the error for non-JSON payloads.
