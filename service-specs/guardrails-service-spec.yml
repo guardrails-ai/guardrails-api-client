@@ -293,8 +293,6 @@ components:
           type: string
         prompt:
           type: string
-        script:
-          $ref: "#/components/schemas/Script"
         version:
           type: string
           default: "0.1"
@@ -331,16 +329,6 @@ components:
           $ref: "#/components/schemas/SchemaElement"
       required:
         - element
-    Script:
-      type: object
-      properties:
-        text:
-          type: string
-        language:
-          type: string
-        variables:
-          type: object
-          additionalProperties: {}
     SchemaElement:
       type: object
       properties:
