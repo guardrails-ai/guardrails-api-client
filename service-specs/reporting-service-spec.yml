@@ -1,0 +1,75 @@
+openapi: "3.0.0"
+info:
+  title: GuardRails Reporting API
+  version: "0.0.0"
+  description: GuardRails Reporting API
+paths:
+  /health-check:
+    get:
+      tags:
+        - Service Health
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns the status of the server
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthCheck"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: authorization
+      description: JWT token
+  schemas:
+    HttpError:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+        cause:
+          type: string
+          description: Used to describe the origin of an error if that original error has meaning to the client.  This field should add specificity to 'message'.
+        fields:
+          type: object
+          description: Used to identify specific fields in a JSON body that caused the error.  Typically only used for 4xx type responses.  The key should be the json path to the invalid property and the value should be a list of error messages specific to that property.
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        context:
+          type: string
+          description: Used to identify what part of the request caused the error for non-JSON payloads.
+      required:
+        - status
+        - message
+    HealthCheck:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+      required:
+        - status
+        - message
