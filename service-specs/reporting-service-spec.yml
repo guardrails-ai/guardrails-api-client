@@ -26,6 +26,11 @@ paths:
                 $ref: "#/components/schemas/HttpError"
   /metrics/guards:
     get:
+      operationId: getMetricsForGuards
+      summary: Returns an array of GuardMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.
+      parameters:
+        - $ref: "#/components/parameters/StartTime"
+        - $ref: "#/components/parameters/EndTime"
       tags:
         - Metrics
       security:
@@ -141,3 +146,19 @@ components:
         "pass",
         "fail"
       ]
+    StartTime:
+      name: startTime
+      in: query
+      description: Used to specify to start of a time range
+      required: false
+      schema:
+        type: string
+        format: date-time
+    EndTime:
+      name: endTime
+      in: query
+      description: Used to specify to end of a time range
+      required: false
+      schema:
+        type: string
+        format: date-time
