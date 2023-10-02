@@ -31,6 +31,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/StartTime"
         - $ref: "#/components/parameters/EndTime"
+        - $ref: "#/components/parameters/PageNumber"
       tags:
         - Metrics
       security:
@@ -163,3 +164,10 @@ components:
       schema:
         type: string
         format: date-time
+    PageNumber:
+      name: page
+      in: query
+      description: Used to specify the page number for paginated endpoints
+      required: false
+      schema:
+        type: integer
