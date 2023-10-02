@@ -146,6 +146,7 @@ components:
         "pass",
         "fail"
       ]
+  parameters:
     StartTime:
       name: startTime
       in: query
