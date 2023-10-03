@@ -116,7 +116,7 @@ components:
           description: The start time of the span the metrics were captured within (ISO 8601 format; See https://www.rfc-editor.org/rfc/rfc3339#section-5.6)
         runDuration:
           type: number
-          description: The total span duration of the guard run
+          description: The total span duration of the guard run in seconds
         status:
           $ref: "#/components/schemas/GuardStatus"
         reasks:
