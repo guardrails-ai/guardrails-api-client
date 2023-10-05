@@ -218,6 +218,8 @@ components:
           format: date-time
         durationInMillis:
           type: number
+        input:
+          type: string
         output:
           type: string
         status:
@@ -230,6 +232,7 @@ components:
         - startTime
         - endTime
         - durationInMillis
+        - input
         - output
         - status
   parameters:
