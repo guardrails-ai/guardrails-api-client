@@ -190,8 +190,6 @@ components:
           items:
             $ref: '#/components/schemas/GuardRunStep'
       required:
-        - prompt
-        - instructions
         - steps
     GuardRunStep:
       type: object
