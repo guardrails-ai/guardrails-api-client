@@ -237,7 +237,7 @@ components:
     StartTime:
       name: startTime
       in: query
-      description: Used to specify to start of a time range
+      description: Used to specify the start of a time range
       required: false
       schema:
         type: string
@@ -245,7 +245,7 @@ components:
     EndTime:
       name: endTime
       in: query
-      description: Used to specify to end of a time range
+      description: Used to specify the end of a time range
       required: false
       schema:
         type: string
@@ -253,10 +253,11 @@ components:
     PageNumber:
       name: page
       in: query
-      description: Used to specify the page number for paginated endpoints
+      description: Used to specify the page number for paginated endpoints.  Pages are zero-indexed.
       required: false
       schema:
         type: integer
+        default: 0
     GuardName:
       name: guardName
       in: path
