@@ -107,6 +107,34 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HttpError"
+  /validators/{validatorName}/runs/{requestId}/instances/{validatorInstanceId}/metrics:
+    get:
+      operationId: getValidatorRunMetrics
+      summary: Returns an arary of ValidatorRunMetrics for a given request.
+      parameters:
+        - $ref: "#/components/parameters/ValidatorInstanceId"
+        - $ref: "#/components/parameters/ValidatorName"
+        - $ref: "#/components/parameters/RequestId"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guard request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidatorRunMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
 components:
   securitySchemes:
     bearerAuth:
@@ -234,6 +262,8 @@ components:
     ValidatorMetrics:
       type: object
       properties:
+        instanceId:
+          type: string
         name:
           type: string
         requestId:
@@ -258,6 +288,7 @@ components:
           type: number
           description: The number of tokens consumed if the validator calls an LLM. Only applies to validators that call LLMs.
       required:
+        - instanceId
         - name
         - requestId
         - guardName
@@ -267,6 +298,40 @@ components:
         - input
         - output
         - status
+    ValidatorRunMetrics:
+      allOf:
+        - $ref: '#/components/schemas/ValidatorMetrics'
+        - $ref: '#/components/schemas/ValidatorRunMetricDetails'
+    ValidatorRunMetricDetails:
+      type: object
+      properties:
+        stepNumber:
+          type: integer
+        resultType:
+          type: string
+        failAction:
+          $ref: '#/components/schemas/OnFailOptions'
+        parameters:
+          type: object
+          properties: {}
+          additionalProperties:
+            type: string
+      required:
+        - stepNumber
+        - resultType
+        - failAction
+        - parameters
+    OnFailOptions:
+      type: string
+      enum: [
+        "exception",
+        "filter",
+        "fix",
+        "fix_reask",
+        "noop",
+        "reask",
+        "refrain"
+      ]
   parameters:
     StartTime:
       name: startTime
@@ -303,6 +368,20 @@ components:
       name: requestId
       in: path
       description: Request id aka trace id for a validate-{guard-name} span
+      required: true
+      schema:
+        type: string
+    ValidatorName:
+      name: validatorName
+      in: path
+      description: the validator's registered name
+      required: true
+      schema:
+        type: string
+    ValidatorInstanceId:
+      name: validatorInstanceId
+      in: path
+      description: the instanceId from ValidatorMetrics
       required: true
       schema:
         type: string
