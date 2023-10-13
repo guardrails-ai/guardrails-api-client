@@ -82,7 +82,7 @@ paths:
   /validators/metrics:
     get:
       operationId: getValidatorMetrics
-      summary: Returns an array of ValidatorMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10.
+      summary: Returns an array of ValidatorMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10, but this page size applied to guard steps not validator metrics. Have to think this one out a little more.
       parameters:
         - $ref: "#/components/parameters/StartTime"
         - $ref: "#/components/parameters/EndTime"
@@ -112,9 +112,9 @@ paths:
       operationId: getValidatorRunMetrics
       summary: Returns an arary of ValidatorRunMetrics for a given request.
       parameters:
-        - $ref: "#/components/parameters/ValidatorInstanceId"
         - $ref: "#/components/parameters/ValidatorName"
         - $ref: "#/components/parameters/RequestId"
+        - $ref: "#/components/parameters/ValidatorInstanceId"
       tags:
         - Metrics
       security:
