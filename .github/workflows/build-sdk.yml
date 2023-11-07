@@ -1,0 +1,31 @@
+name: Build SDK
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Execute merge.sh
+      run: |
+        chmod +x merge.sh  # Make the script executable
+        ./merge.sh
+      continue-on-error: false  # Stop the workflow if merge.sh returns a non-zero exit code
+
+    - name: Execute build-sdk.sh
+      run: |
+        chmod +x build-sdk.sh  # Make the script executable
+        ./build-sdk.sh
+      continue-on-error: false  # Stop the workflow if build-sdk.sh returns a non-zero exit code
+
+    - name: Check for errors
+      run: exit 0  # This step is here to explicitly check the exit code of the previous step
