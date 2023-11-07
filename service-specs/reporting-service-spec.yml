@@ -24,9 +24,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HttpError"
-  /metrics/guards:
+  /guards/metrics:
     get:
-      operationId: getMetricsForGuards
+      operationId: getGuardMetrics
       summary: Returns an array of GuardMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10.
       parameters:
         - $ref: "#/components/parameters/StartTime"
@@ -45,7 +45,90 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/GuardMetric"
+                  $ref: "#/components/schemas/GuardMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}/runs/{requestId}/metrics:
+    get:
+      operationId: getGuardRunMetrics
+      summary: Returns an instance of GuardRunMetrics for a given request.
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/RequestId"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guard request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GuardRunMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /validators/metrics:
+    get:
+      operationId: getValidatorMetrics
+      summary: Returns an array of ValidatorMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10, but this page size applied to guard steps not validator metrics. Have to think this one out a little more.
+      parameters:
+        - $ref: "#/components/parameters/StartTime"
+        - $ref: "#/components/parameters/EndTime"
+        - $ref: "#/components/parameters/PageNumber"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidatorMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /validators/{validatorName}/runs/{requestId}/instances/{validatorInstanceId}/metrics:
+    get:
+      operationId: getValidatorRunMetrics
+      summary: Returns an arary of ValidatorRunMetrics for a given request.
+      parameters:
+        - $ref: "#/components/parameters/ValidatorName"
+        - $ref: "#/components/parameters/RequestId"
+        - $ref: "#/components/parameters/ValidatorInstanceId"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guard request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidatorRunMetrics"
         default:
           description: Unexpected error
           content:
@@ -101,7 +184,7 @@ components:
       required:
         - status
         - message
-    GuardMetric:
+    GuardMetrics:
       type: object
       properties:
         requestId:
@@ -118,7 +201,7 @@ components:
           type: number
           description: The total span duration of the guard run in seconds
         status:
-          $ref: "#/components/schemas/GuardStatus"
+          $ref: "#/components/schemas/Status"
         reasks:
           type: number
           description: The number of times the LLM was reasked
@@ -141,17 +224,119 @@ components:
         - tokens
         - rawLlmOuput
         - validatedOutput
-    GuardStatus:
+    Status:
       type: string
       enum: [
         "pass",
         "fail"
       ]
+    GuardRunMetrics:
+      allOf:
+        - $ref: '#/components/schemas/GuardMetrics'
+        - $ref: '#/components/schemas/GuardRunMetricDetails'
+    GuardRunMetricDetails:
+      type: object
+      properties:
+        prompt:
+          type: string
+        instructions:
+          type: string
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/GuardRunStep'
+      required:
+        - steps
+    GuardRunStep:
+      type: object
+      properties:
+        stepNumber:
+          type: number
+        validatorMetrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidatorMetrics'
+      required:
+        - stepNumber
+        - validatorMetrics
+    ValidatorMetrics:
+      type: object
+      properties:
+        instanceId:
+          type: string
+        name:
+          type: string
+        requestId:
+          type: string
+        guardName:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        durationInMillis:
+          type: number
+        input:
+          type: string
+        output:
+          type: string
+        status:
+          $ref: "#/components/schemas/Status"
+        tokens:
+          type: number
+          description: The number of tokens consumed if the validator calls an LLM. Only applies to validators that call LLMs.
+      required:
+        - instanceId
+        - name
+        - requestId
+        - guardName
+        - startTime
+        - endTime
+        - durationInMillis
+        - input
+        - output
+        - status
+    ValidatorRunMetrics:
+      allOf:
+        - $ref: '#/components/schemas/ValidatorMetrics'
+        - $ref: '#/components/schemas/ValidatorRunMetricDetails'
+    ValidatorRunMetricDetails:
+      type: object
+      properties:
+        stepNumber:
+          type: integer
+        resultType:
+          type: string
+        failAction:
+          $ref: '#/components/schemas/OnFailOptions'
+        parameters:
+          type: object
+          properties: {}
+          additionalProperties:
+            type: string
+      required:
+        - stepNumber
+        - resultType
+        - failAction
+        - parameters
+    OnFailOptions:
+      type: string
+      enum: [
+        "exception",
+        "filter",
+        "fix",
+        "fix_reask",
+        "noop",
+        "reask",
+        "refrain"
+      ]
   parameters:
     StartTime:
       name: startTime
       in: query
-      description: Used to specify to start of a time range
+      description: Used to specify the start of a time range
       required: false
       schema:
         type: string
@@ -159,7 +344,7 @@ components:
     EndTime:
       name: endTime
       in: query
-      description: Used to specify to end of a time range
+      description: Used to specify the end of a time range
       required: false
       schema:
         type: string
@@ -167,7 +352,36 @@ components:
     PageNumber:
       name: page
       in: query
-      description: Used to specify the page number for paginated endpoints
+      description: Used to specify the page number for paginated endpoints.  Pages are zero-indexed.
       required: false
       schema:
         type: integer
+        default: 0
+    GuardName:
+      name: guardName
+      in: path
+      description: Guard name
+      required: true
+      schema:
+        type: string
+    RequestId:
+      name: requestId
+      in: path
+      description: Request id aka trace id for a validate-{guard-name} span
+      required: true
+      schema:
+        type: string
+    ValidatorName:
+      name: validatorName
+      in: path
+      description: the validator's registered name
+      required: true
+      schema:
+        type: string
+    ValidatorInstanceId:
+      name: validatorInstanceId
+      in: path
+      description: the instanceId from ValidatorMetrics
+      required: true
+      schema:
+        type: string
