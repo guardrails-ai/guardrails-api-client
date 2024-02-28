@@ -58,10 +58,6 @@ jobs:
         # Default: 'Commit from GitHub Actions (name of the workflow)'
         message: 'update generated sdk'
 
-        # If this input is set, the action will push the commit to a new branch with this name.
-        # Default: ''
-        new_branch: custom-new-branch
-
         # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
         # - ignore -> errors will be logged but the step won't fail
         # - exitImmediately -> the action will stop right away, and the step will fail
