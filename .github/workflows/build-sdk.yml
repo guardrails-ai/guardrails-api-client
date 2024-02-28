@@ -40,6 +40,7 @@ jobs:
 
         echo "actor: ${{ github.actor }}"
         echo "login: ${{ github.event.pull_request.user.login }}"
+        echo "email: ${{ github.event.pull_request.user.email }}"
       continue-on-error: false
 
     - name: Commit SDK updates
