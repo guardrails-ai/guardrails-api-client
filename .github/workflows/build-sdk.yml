@@ -38,8 +38,8 @@ jobs:
         cp .gitignore .gitignore.local
         cp .gitignore.pub .gitignore
 
-        echo author_name ${{ github.event.sender.name }}
-        echo  author_email ${{ github.event.sender.email }}
+        echo author_name ${{ github.event.pull_request.user.name }}
+        echo  author_email ${{ github.event.pull_request.user.email }}
       continue-on-error: false
 
     - name: Commit SDK updates
@@ -51,11 +51,11 @@ jobs:
 
         # The name of the user that will be displayed as the author of the commit.
         # Default: depends on the default_author input
-        author_name: ${{ github.event.sender.name }}
+        author_name: ${{ github.event.pull_request.user.name }}
 
         # The email of the user that will be displayed as the author of the commit.
         # Default: depends on the default_author input
-        author_email: ${{ github.event.sender.email }}
+        author_email: ${{ github.event.pull_request.user.email }}
 
         # The message for the commit.
         # Default: 'Commit from GitHub Actions (name of the workflow)'
