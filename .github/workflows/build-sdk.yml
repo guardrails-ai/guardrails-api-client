@@ -38,8 +38,7 @@ jobs:
         cp .gitignore .gitignore.local
         cp .gitignore.pub .gitignore
 
-        echo author_name ${{ github.event.pull_request.user.name }}
-        echo  author_email ${{ github.event.pull_request.user.email }}
+        echo "user $(git config user.name)"
       continue-on-error: false
 
     - name: Commit SDK updates
