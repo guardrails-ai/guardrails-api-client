@@ -37,6 +37,9 @@ jobs:
       run: |
         cp .gitignore .gitignore.local
         cp .gitignore.pub .gitignore
+
+        echo author_name ${{ github.event.sender.name }}
+        echo  author_email ${{ github.event.sender.email }}
       continue-on-error: false
 
     - name: Commit SDK updates
