@@ -38,7 +38,8 @@ jobs:
         cp .gitignore .gitignore.local
         cp .gitignore.pub .gitignore
 
-        echo "${{ github.event.pull_request.user }}"
+        echo "actor: ${{ github.actor }}"
+        echo "login: ${{ github.event.pull_request.user.login }}"
       continue-on-error: false
 
     - name: Commit SDK updates
@@ -50,7 +51,7 @@ jobs:
 
         # The name of the user that will be displayed as the author of the commit.
         # Default: depends on the default_author input
-        author_name: ${{ github.event.pull_request.user.name }}
+        author_name: ${{ github.event.pull_request.user.login }}
 
         # The email of the user that will be displayed as the author of the commit.
         # Default: depends on the default_author input
