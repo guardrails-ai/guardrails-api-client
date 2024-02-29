@@ -15,10 +15,8 @@ from .guard_run_step import GuardRunStep
 from .health_check import HealthCheck
 from .history import History
 from .history_event import HistoryEvent
-from .history_event_parsed_output import HistoryEventParsedOutput
 from .history_event_prompt import HistoryEventPrompt
 from .history_event_reasks_item import HistoryEventReasksItem
-from .history_event_validated_output import HistoryEventValidatedOutput
 from .http_error import HttpError
 from .http_error_fields import HttpErrorFields
 from .ingestion import Ingestion
@@ -59,10 +57,8 @@ __all__ = (
     "HealthCheck",
     "History",
     "HistoryEvent",
-    "HistoryEventParsedOutput",
     "HistoryEventPrompt",
     "HistoryEventReasksItem",
-    "HistoryEventValidatedOutput",
     "HttpError",
     "HttpErrorFields",
     "Ingestion",
