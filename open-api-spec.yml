@@ -1,0 +1,981 @@
+openapi: "3.0.0"
+info:
+  title: GuardRails API
+  version: "0.0.0"
+  description: GuardRails CRUD API
+paths:
+  /health-check:
+    get:
+      tags:
+        - Service Health
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns the status of the server
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthCheck"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /guards:
+    get:
+      operationId: getGuards
+      tags:
+        - guard
+      summary: Fetches the configuration for all Guards the user has access to.
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: A list of Guards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Guard"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+    post:
+      operationId: createGuard
+      tags:
+        - guard
+      summary: Creates a Guard
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Guard"
+      responses:
+        "200":
+          description: the new Guard
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Guard"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}:
+    get:
+      operationId: getGuard
+      tags:
+        - guard
+      summary: Fetches a specific Guard
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/AsOf"
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: the fetched Guard
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Guard"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+    put:
+      operationId: updateGuard
+      tags:
+        - guard
+      summary: Updates a Guard
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Guard"
+      responses:
+        "200":
+          description: the updated Guard
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Guard"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+    delete:
+      operationId: deleteGuard
+      tags:
+        - guard
+      summary: Deletes a Guard
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: the deleted Guard
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Guard"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}/validate:
+    post:
+      operationId: validate
+      tags:
+        - guard
+        - validate
+      summary: Runs the validations specified in a Guard
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/OpenAiApiKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ValidatePayload"
+      responses:
+        "200":
+          description: The output of the validation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationOutput"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /ingest:
+    post:
+      operationId: ingest
+      summary: Creates and ingests embeddings for a document
+      parameters:
+        - $ref: '#/components/parameters/OpenAiApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestionPayload'
+      responses:
+        '200': # status code
+          description: uniqie id for the created ingestion object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingestion'
+  /embeddings/{documentId}:
+    get:
+      operationId: getIngestedDocument
+      summary: Returns a list of ingestion items for given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+      responses:
+        '200': # status code
+          description: ingestion objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingestion'
+    put:
+      operationId: updateIngestedDocument
+      summary: Updates embeddings for a given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+        - $ref: '#/components/parameters/OpenAiApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestionPayload'
+      responses:
+        '200': # status code
+          description: The updated ingestion object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingestion'
+    delete:
+      operationId: deleteIngestedDocument
+      summary: Deletes embeddings for a given documentId
+      parameters:
+        - $ref: '#/components/parameters/documentId'
+      responses:
+        '200': # status code
+          description: The deleted ingestion
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingestion'
+  /guards/{guardName}/embeddings:
+    get:
+      operationId: getIngestedDocumentByGuardId
+      summary: Returns a list of ingestion items for a guard
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+      responses:
+        "200": # status code
+          description: ingestion objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Ingestion"
+  /embeddings/{guardName}/projections:
+    get:
+      operationId: getProjection
+      tags:
+        - projections
+      summary: Returns the T-SNE projection for the given Guard id
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
+      responses:
+        "200": # status code
+          description: the projections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Projection"
+    put:
+      operationId: updateProjection
+      tags:
+        - projections
+      summary: Creates of updates projection for a given Guard id
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/ValidatorId"
+      responses:
+        "200": # status code
+          description: The updated projections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Projection"
+  /guards/metrics:
+    get:
+      operationId: getGuardMetrics
+      summary: Returns an array of GuardMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10.
+      parameters:
+        - $ref: "#/components/parameters/StartTime"
+        - $ref: "#/components/parameters/EndTime"
+        - $ref: "#/components/parameters/PageNumber"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GuardMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}/runs/{requestId}/metrics:
+    get:
+      operationId: getGuardRunMetrics
+      summary: Returns an instance of GuardRunMetrics for a given request.
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/RequestId"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guard request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GuardRunMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /validators/metrics:
+    get:
+      operationId: getValidatorMetrics
+      summary: Returns an array of ValidatorMetrics for a given time range.  If startTime or endTime are ommitted, a five minute duration is used by default.  Default page size is 10, but this page size applied to guard steps not validator metrics. Have to think this one out a little more.
+      parameters:
+        - $ref: "#/components/parameters/StartTime"
+        - $ref: "#/components/parameters/EndTime"
+        - $ref: "#/components/parameters/PageNumber"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidatorMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+  /validators/{validatorName}/runs/{requestId}/instances/{validatorInstanceId}/metrics:
+    get:
+      operationId: getValidatorRunMetrics
+      summary: Returns an arary of ValidatorRunMetrics for a given request.
+      parameters:
+        - $ref: "#/components/parameters/ValidatorName"
+        - $ref: "#/components/parameters/RequestId"
+        - $ref: "#/components/parameters/ValidatorInstanceId"
+      tags:
+        - Metrics
+      security:
+        - apiKeyAuth: []
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Returns metrics for Guard request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidatorRunMetrics"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: authorization
+      description: JWT token
+  parameters:
+    GuardName:
+      name: guardName
+      in: path
+      description: Guard name
+      required: true
+      schema:
+        type: string
+    AsOf:
+      name: asOf
+      in: query
+      description: Used to query for data as it existed at this date and time
+      required: false
+      schema:
+        type: string
+        format: date-time
+    OpenAiApiKey:
+      name: x-openai-api-key
+      in: header
+      description: A valid OpenAI API Key for calling LLM's on your behalf
+      required: false
+      schema:
+        type: string
+        format: password
+    documentId:
+      name: documentId
+      in: path
+      description: unqiue document id
+      required: true
+      schema:
+        type: string
+    ValidatorId:
+      name: validatorId
+      in: query
+      description: Id for a specific validator.  Used for querying metrics and projections
+      required: false
+      schema:
+        type: string
+    uuid:
+      name: uuid
+      in: path
+      description: unqiue id for embeddings
+      required: true
+      schema:
+        type: string
+    StartTime:
+      name: startTime
+      in: query
+      description: Used to specify the start of a time range
+      required: false
+      schema:
+        type: string
+        format: date-time
+    EndTime:
+      name: endTime
+      in: query
+      description: Used to specify the end of a time range
+      required: false
+      schema:
+        type: string
+        format: date-time
+    PageNumber:
+      name: page
+      in: query
+      description: Used to specify the page number for paginated endpoints.  Pages are zero-indexed.
+      required: false
+      schema:
+        type: integer
+        default: 0
+    RequestId:
+      name: requestId
+      in: path
+      description: Request id aka trace id for a validate-{guard-name} span
+      required: true
+      schema:
+        type: string
+    ValidatorName:
+      name: validatorName
+      in: path
+      description: the validator's registered name
+      required: true
+      schema:
+        type: string
+    ValidatorInstanceId:
+      name: validatorInstanceId
+      in: path
+      description: the instanceId from ValidatorMetrics
+      required: true
+      schema:
+        type: string
+  schemas:
+    HttpError:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+        cause:
+          type: string
+          description: Used to describe the origin of an error if that original error has meaning to the client.  This field should add specificity to 'message'.
+        fields:
+          type: object
+          description: Used to identify specific fields in a JSON body that caused the error.  Typically only used for 4xx type responses.  The key should be the json path to the invalid property and the value should be a list of error messages specific to that property.
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        context:
+          type: string
+          description: Used to identify what part of the request caused the error for non-JSON payloads.
+      required:
+        - status
+        - message
+    HealthCheck:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+      required:
+        - status
+        - message
+    Guard:
+      type: object
+      properties:
+        name:
+          type: string
+          description: A unique name for this guard.
+        description:
+          type: string
+          description: A description of this guard.
+        railspec:
+          $ref: "#/components/schemas/RailSpec"
+        numReasks:
+          type: integer
+          description: The number of re-asks to perform during validation when a validation fails.
+        # The below might belong in the /validate endpoint payload
+        guardConfig:
+          type: object
+          description: Addtional guard configuration attributes.
+          additionalProperties: {}
+        llmEndpoint:
+          type: string
+          description: The endpoint for the targetted LLM.
+      required:
+        - name
+        - railspec
+    RailSpec:
+      type: object
+      description: A JSONified version of the user provided railspec.
+      properties:
+        inputSchema:
+          $ref: "#/components/schemas/Schema"
+        outputSchema:
+          $ref: "#/components/schemas/Schema"
+        instructions:
+          type: string
+        prompt:
+          type: string
+        version:
+          type: string
+          default: "0.1"
+          enum:
+            - "0.1"
+      required:
+        - outputSchema
+        - prompt
+        - version
+    Schema:
+      type: object
+      properties:
+        schema:
+          oneOf:
+            - $ref: "#/components/schemas/JsonSchema"
+            - $ref: "#/components/schemas/DataType"
+      required:
+        - schema
+    JsonSchema:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/DataType"
+    DataType:
+      type: object
+      properties:
+        children:
+          type: object
+          additionalProperties: {}
+        formatters:
+          type: array
+          items:
+            type: string
+        plugins:
+          type: array
+          items:
+            type: string
+        element:
+          $ref: "#/components/schemas/SchemaElement"
+      required:
+        - element
+    SchemaElement:
+      type: object
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        strict:
+          type: boolean
+        dateFormat:
+          type: string
+        timeFormat:
+          type: string
+        onFail:
+          type: string
+        onFails:
+          type: array
+          items:
+            $ref: "#/components/schemas/OnFail"
+        model:
+          type: string
+      required:
+        - name
+        - type
+    OnFail:
+      type: object
+      properties:
+        validatorTag:
+          type: string
+        method:
+          $ref: "#/components/schemas/OnFailOptions"
+      required:
+        - validatorTag
+        - method
+    OnFailOptions:
+      type: string
+      enum: ["exception", "filter", "fix", "fix_reask", "noop", "reask", "refrain"]
+    ValidationOutput:
+      type: object
+      properties:
+        result:
+          type: boolean
+          description: Whether the validation passed or failed
+        validatedOutput:
+          type: string
+        sessionHistory:
+          type: array
+          items:
+            $ref: "#/components/schemas/History"
+        rawLlmResponse:
+          type: string
+      additionalProperties: {}
+      required:
+        - result
+    History:
+      type: object
+      properties:
+        history:
+          type: array
+          items:
+            $ref: "#/components/schemas/HistoryEvent"
+    HistoryEvent:
+      type: object
+      properties:
+        instructions:
+          type: string
+        output:
+          type: string
+        parsedOutput:
+          oneOf:
+            - $ref: "#/components/schemas/AnyObject"
+            - type: string
+        prompt:
+          type: object
+          properties:
+            source:
+              type: string
+        reasks:
+          type: array
+          items:
+            type: object
+            properties: {}
+            additionalProperties: {}
+        validatedOutput:
+          oneOf:
+            - $ref: "#/components/schemas/AnyObject"
+            - type: string
+      additionalProperties: {}
+    Reask:
+      type: object
+      properties:
+        incorrect_value:
+          $ref: "#/components/schemas/Any"
+        error_message:
+          type: string
+        fix_value:
+          $ref: "#/components/schemas/Any"
+        path:
+          type: array
+          items:
+            $ref: "#/components/schemas/Any"
+    Any:
+      oneOf:
+        - $ref: "#/components/schemas/AnyArray"
+        - $ref: "#/components/schemas/AnyObject"
+        - $ref: "#/components/schemas/AnyPrimitive"
+    AnyPrimitive:
+      oneOf:
+        - type: boolean
+        - type: integer
+        - type: number
+        - type: string
+    AnyObject:
+      type: object
+      properties: {}
+      additionalProperties: {}
+    # Cannot generate clients for recursive references
+    AnyArray:
+      type: array
+      items:
+        oneOf:
+          - $ref: "#/components/schemas/AnyObject"
+          - $ref: "#/components/schemas/AnyPrimitive"
+          - type: array
+            items:
+              oneOf:
+                - $ref: "#/components/schemas/AnyObject"
+                - $ref: "#/components/schemas/AnyPrimitive"
+    ValidatePayload:
+      type: object
+      properties:
+        llmOutput:
+          type: string
+          description: The LLM output as a string or the input prompts for the LLM
+          example: stubbed llm output
+        numReasks:
+          type: integer
+          description: An override for the number of re-asks to perform
+        promptParams:
+          type: object
+          description: additional params for llm prompts
+          properties: {}
+          additionalProperties: {}
+        llmApi:
+          type: string
+          enum: ["openai.Completion.create", "openai.ChatCompletion.create", "openai.Completion.acreate", "openai.ChatCompletion.acreate"]
+      additionalProperties: {}
+    Ingestion:
+      type: object
+      properties:
+        id:
+          type: string
+        guardId:
+          type: string
+        embeddings:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+        documentId:
+          type: string
+        metadata:
+          type: object
+        validatorId:
+          type: string
+        pageId:
+          type: string
+        chunkId:
+          type: string
+    IngestionPayload:
+      type: object
+      properties:
+        articles:
+          $ref: '#/components/schemas/Document'
+        guardId:
+          type: string
+        validatorId:
+          type: string
+        chunkId:
+          type: string
+    Document:
+      type: object
+      properties:
+        id:
+          type: string
+        pages:
+          type: object
+          additionalProperties:
+            type: string
+        metadata:
+          type: object
+    Projection:
+      type: object
+      properties:
+        id:
+          type: string
+        guardId:
+          type: string
+        validatorId:
+          type: string
+        documentId:
+          type: string
+        pageId:
+          type: string
+        chunkId:
+          type: string
+        projection:
+          type: array
+          items:
+            type: number
+    GuardMetrics:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: The id of the request this metric entry is for (i.e. the specific call to /guards/{guardName}/validate)
+        guardName:
+          type: string
+          description: The name of the Guard
+        timestamp:
+          type: string
+          format: date-time
+          description: The start time of the span the metrics were captured within (ISO 8601 format; See https://www.rfc-editor.org/rfc/rfc3339#section-5.6)
+        runDuration:
+          type: number
+          description: The total span duration of the guard run in seconds
+        status:
+          $ref: "#/components/schemas/Status"
+        reasks:
+          type: number
+          description: The number of times the LLM was reasked
+        tokens:
+          type: number
+          description: The number of tokens used
+        rawLlmOuput:
+          type: string
+          description: The unaltered output from the LLM
+        validatedOutput:
+          type: string
+          description: The potentially altered output from validation
+      required:
+        - requestId
+        - guardName
+        - timestamp
+        - runDuration
+        - status
+        - reasks
+        - tokens
+        - rawLlmOuput
+        - validatedOutput
+    Status:
+      type: string
+      enum: ["pass", "fail"]
+    GuardRunMetrics:
+      allOf:
+        - $ref: '#/components/schemas/GuardMetrics'
+        - $ref: '#/components/schemas/GuardRunMetricDetails'
+    GuardRunMetricDetails:
+      type: object
+      properties:
+        prompt:
+          type: string
+        instructions:
+          type: string
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/GuardRunStep'
+      required:
+        - steps
+    GuardRunStep:
+      type: object
+      properties:
+        stepNumber:
+          type: number
+        validatorMetrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidatorMetrics'
+      required:
+        - stepNumber
+        - validatorMetrics
+    ValidatorMetrics:
+      type: object
+      properties:
+        instanceId:
+          type: string
+        name:
+          type: string
+        requestId:
+          type: string
+        guardName:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        durationInMillis:
+          type: number
+        input:
+          type: string
+        output:
+          type: string
+        status:
+          $ref: "#/components/schemas/Status"
+        tokens:
+          type: number
+          description: The number of tokens consumed if the validator calls an LLM. Only applies to validators that call LLMs.
+      required:
+        - instanceId
+        - name
+        - requestId
+        - guardName
+        - startTime
+        - endTime
+        - durationInMillis
+        - input
+        - output
+        - status
+    ValidatorRunMetrics:
+      allOf:
+        - $ref: '#/components/schemas/ValidatorMetrics'
+        - $ref: '#/components/schemas/ValidatorRunMetricDetails'
+    ValidatorRunMetricDetails:
+      type: object
+      properties:
+        stepNumber:
+          type: integer
+        resultType:
+          type: string
+        failAction:
+          $ref: '#/components/schemas/OnFailOptions'
+        parameters:
+          type: object
+          properties: {}
+          additionalProperties:
+            type: string
+      required:
+        - stepNumber
+        - resultType
+        - failAction
+        - parameters

@@ -1,6 +1,12 @@
 name: Build SDK
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -8,24 +14,55 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/checkout@v4
       with:
-        node-version: 14
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        ref: ${{ github.event.pull_request.head.ref }}
 
-    - name: Execute merge.sh
+    - name: Merge the OpenAPI Specs
       run: |
         chmod +x merge.sh  # Make the script executable
         ./merge.sh
       continue-on-error: false  # Stop the workflow if merge.sh returns a non-zero exit code
 
-    - name: Execute build-sdk.sh
+    - name: Build SDK from OpenApi Spec
       run: |
         chmod +x build-sdk.sh  # Make the script executable
         ./build-sdk.sh
       continue-on-error: false  # Stop the workflow if build-sdk.sh returns a non-zero exit code
 
-    - name: Check for errors
-      run: exit 0  # This step is here to explicitly check the exit code of the previous step
+    - name: Swith to publish .gitignore
+      run: |
+        cp .gitignore .gitignore.local
+        cp .gitignore.pub .gitignore
+      continue-on-error: false
+
+    - name: Commit SDK updates
+      uses: EndBug/add-and-commit@v9
+      with:
+        # The arguments for the `git add` command (see the paragraph below for more info)
+        # Default: '.'
+        add: 'open-api-spec.yml guard-rails-api-client'
+
+        # The name of the user that will be displayed as the author of the commit.
+        # Default: depends on the default_author input
+        author_name: ${{ github.event.pull_request.user.login }}
+
+        # The email of the user that will be displayed as the author of the commit.
+        # Default: depends on the default_author input
+        author_email: ${{ github.event.pull_request.user.email }}
+
+        # The message for the commit.
+        # Default: 'Commit from GitHub Actions (name of the workflow)'
+        message: 'update generated sdk'
+
+        # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
+        # - ignore -> errors will be logged but the step won't fail
+        # - exitImmediately -> the action will stop right away, and the step will fail
+        # - exitAtEnd -> the action will go on, every pathspec error will be logged at the end, the step will fail.
+        # Default: ignore
+        pathspec_error_handling: exitAtEnd
+
+        # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+        # Default: true
+        push: true
