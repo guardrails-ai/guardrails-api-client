@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,10 +6,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.history_event_parsed_output import HistoryEventParsedOutput
+    from ..models.any_object import AnyObject
     from ..models.history_event_prompt import HistoryEventPrompt
     from ..models.history_event_reasks_item import HistoryEventReasksItem
-    from ..models.history_event_validated_output import HistoryEventValidatedOutput
 
 
 T = TypeVar("T", bound="HistoryEvent")
@@ -21,28 +20,34 @@ class HistoryEvent:
     Attributes:
         instructions (Union[Unset, str]):
         output (Union[Unset, str]):
-        parsed_output (Union[Unset, HistoryEventParsedOutput]):
+        parsed_output (Union['AnyObject', Unset, str]):
         prompt (Union[Unset, HistoryEventPrompt]):
         reasks (Union[Unset, List['HistoryEventReasksItem']]):
-        validated_output (Union[Unset, HistoryEventValidatedOutput]):
+        validated_output (Union['AnyObject', Unset, str]):
     """
 
     instructions: Union[Unset, str] = UNSET
     output: Union[Unset, str] = UNSET
-    parsed_output: Union[Unset, "HistoryEventParsedOutput"] = UNSET
+    parsed_output: Union["AnyObject", Unset, str] = UNSET
     prompt: Union[Unset, "HistoryEventPrompt"] = UNSET
     reasks: Union[Unset, List["HistoryEventReasksItem"]] = UNSET
-    validated_output: Union[Unset, "HistoryEventValidatedOutput"] = UNSET
+    validated_output: Union["AnyObject", Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.any_object import AnyObject
+
         instructions = self.instructions
 
         output = self.output
 
-        parsed_output: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.parsed_output, Unset):
+        parsed_output: Union[Dict[str, Any], Unset, str]
+        if isinstance(self.parsed_output, Unset):
+            parsed_output = UNSET
+        elif isinstance(self.parsed_output, AnyObject):
             parsed_output = self.parsed_output.to_dict()
+        else:
+            parsed_output = self.parsed_output
 
         prompt: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.prompt, Unset):
@@ -55,9 +60,13 @@ class HistoryEvent:
                 reasks_item = reasks_item_data.to_dict()
                 reasks.append(reasks_item)
 
-        validated_output: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.validated_output, Unset):
+        validated_output: Union[Dict[str, Any], Unset, str]
+        if isinstance(self.validated_output, Unset):
+            validated_output = UNSET
+        elif isinstance(self.validated_output, AnyObject):
             validated_output = self.validated_output.to_dict()
+        else:
+            validated_output = self.validated_output
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -79,22 +88,29 @@ class HistoryEvent:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.history_event_parsed_output import HistoryEventParsedOutput
+        from ..models.any_object import AnyObject
         from ..models.history_event_prompt import HistoryEventPrompt
         from ..models.history_event_reasks_item import HistoryEventReasksItem
-        from ..models.history_event_validated_output import HistoryEventValidatedOutput
 
         d = src_dict.copy()
         instructions = d.pop("instructions", UNSET)
 
         output = d.pop("output", UNSET)
 
-        _parsed_output = d.pop("parsedOutput", UNSET)
-        parsed_output: Union[Unset, HistoryEventParsedOutput]
-        if isinstance(_parsed_output, Unset):
-            parsed_output = UNSET
-        else:
-            parsed_output = HistoryEventParsedOutput.from_dict(_parsed_output)
+        def _parse_parsed_output(data: object) -> Union["AnyObject", Unset, str]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                parsed_output_type_0 = AnyObject.from_dict(data)
+
+                return parsed_output_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["AnyObject", Unset, str], data)
+
+        parsed_output = _parse_parsed_output(d.pop("parsedOutput", UNSET))
 
         _prompt = d.pop("prompt", UNSET)
         prompt: Union[Unset, HistoryEventPrompt]
@@ -110,12 +126,20 @@ class HistoryEvent:
 
             reasks.append(reasks_item)
 
-        _validated_output = d.pop("validatedOutput", UNSET)
-        validated_output: Union[Unset, HistoryEventValidatedOutput]
-        if isinstance(_validated_output, Unset):
-            validated_output = UNSET
-        else:
-            validated_output = HistoryEventValidatedOutput.from_dict(_validated_output)
+        def _parse_validated_output(data: object) -> Union["AnyObject", Unset, str]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                validated_output_type_0 = AnyObject.from_dict(data)
+
+                return validated_output_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["AnyObject", Unset, str], data)
+
+        validated_output = _parse_validated_output(d.pop("validatedOutput", UNSET))
 
         history_event = cls(
             instructions=instructions,

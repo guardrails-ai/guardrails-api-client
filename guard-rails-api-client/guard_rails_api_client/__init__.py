@@ -1,4 +1,5 @@
-""" A client library for accessing GuardRails API """
+"""A client library for accessing GuardRails API"""
+
 from .client import AuthenticatedClient, Client
 
 __all__ = (
