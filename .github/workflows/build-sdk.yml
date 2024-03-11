@@ -42,7 +42,7 @@ jobs:
       with:
         # The arguments for the `git add` command (see the paragraph below for more info)
         # Default: '.'
-        add: 'open-api-spec.yml guard-rails-api-client'
+        add: 'open-api-spec.yml guardrails-api-client'
 
         # The name of the user that will be displayed as the author of the commit.
         # Default: depends on the default_author input
