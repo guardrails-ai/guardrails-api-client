@@ -1,6 +1,6 @@
 openapi: '3.0.0'
 info:
-  title: GuardRails Telemetry
+  title: Guardrails Telemetry
   version: '1.0'
   description: Hello!
 paths:
