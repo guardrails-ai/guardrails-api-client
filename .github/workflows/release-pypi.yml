@@ -1,0 +1,21 @@
+name: Release PyPi Version
+
+on:
+  workflow_dispatch: # This event allows manual triggering
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.x
+      - name: Upload to PyPI
+        env:
+          PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: cd guardrails-api-client; python setup.py sdist upload
