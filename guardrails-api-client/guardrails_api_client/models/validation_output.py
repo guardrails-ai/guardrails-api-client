@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,6 +6,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.any_object import AnyObject
     from ..models.history import History
 
 
@@ -17,21 +18,29 @@ class ValidationOutput:
     """
     Attributes:
         result (bool): Whether the validation passed or failed
-        validated_output (Union[Unset, str]):
+        validated_output (Union['AnyObject', Unset, str]):
         session_history (Union[Unset, List['History']]):
         raw_llm_response (Union[Unset, str]):
     """
 
     result: bool
-    validated_output: Union[Unset, str] = UNSET
+    validated_output: Union["AnyObject", Unset, str] = UNSET
     session_history: Union[Unset, List["History"]] = UNSET
     raw_llm_response: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.any_object import AnyObject
+
         result = self.result
 
-        validated_output = self.validated_output
+        validated_output: Union[Dict[str, Any], Unset, str]
+        if isinstance(self.validated_output, Unset):
+            validated_output = UNSET
+        elif isinstance(self.validated_output, AnyObject):
+            validated_output = self.validated_output.to_dict()
+        else:
+            validated_output = self.validated_output
 
         session_history: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.session_history, Unset):
@@ -60,12 +69,26 @@ class ValidationOutput:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.any_object import AnyObject
         from ..models.history import History
 
         d = src_dict.copy()
         result = d.pop("result")
 
-        validated_output = d.pop("validatedOutput", UNSET)
+        def _parse_validated_output(data: object) -> Union["AnyObject", Unset, str]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                validated_output_type_0 = AnyObject.from_dict(data)
+
+                return validated_output_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["AnyObject", Unset, str], data)
+
+        validated_output = _parse_validated_output(d.pop("validatedOutput", UNSET))
 
         session_history = []
         _session_history = d.pop("sessionHistory", UNSET)

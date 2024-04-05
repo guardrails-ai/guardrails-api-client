@@ -358,7 +358,6 @@ components:
         model:
           type: string
       required:
-        - name
         - type
     OnFail:
       type: object
@@ -388,7 +387,9 @@ components:
           type: boolean
           description: Whether the validation passed or failed
         validatedOutput:
-          type: string
+          oneOf:
+            - $ref: "#/components/schemas/AnyObject"
+            - type: string
         sessionHistory:
           type: array
           items:
