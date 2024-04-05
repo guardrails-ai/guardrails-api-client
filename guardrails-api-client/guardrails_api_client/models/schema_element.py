@@ -17,7 +17,7 @@ class SchemaElement:
     """
     Attributes:
         type (str):
-        name (str):
+        name (Union[Unset, str]):
         description (Union[Unset, str]):
         strict (Union[Unset, bool]):
         date_format (Union[Unset, str]):
@@ -28,7 +28,7 @@ class SchemaElement:
     """
 
     type: str
-    name: str
+    name: Union[Unset, str] = UNSET
     description: Union[Unset, str] = UNSET
     strict: Union[Unset, bool] = UNSET
     date_format: Union[Unset, str] = UNSET
@@ -67,9 +67,10 @@ class SchemaElement:
         field_dict.update(
             {
                 "type": type,
-                "name": name,
             }
         )
+        if name is not UNSET:
+            field_dict["name"] = name
         if description is not UNSET:
             field_dict["description"] = description
         if strict is not UNSET:
@@ -94,7 +95,7 @@ class SchemaElement:
         d = src_dict.copy()
         type = d.pop("type")
 
-        name = d.pop("name")
+        name = d.pop("name", UNSET)
 
         description = d.pop("description", UNSET)
 
