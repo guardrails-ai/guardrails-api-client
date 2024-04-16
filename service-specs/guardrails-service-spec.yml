@@ -473,6 +473,25 @@ components:
               oneOf:
                 - $ref: "#/components/schemas/AnyObject"
                 - $ref: "#/components/schemas/AnyPrimitive"
+    LlmApi:
+      type: string
+      oneOf:
+        - title: OPENAI_V0_COMPLETION_CREATE
+          const: openai.Completion.create
+        - title: OPENAI_V1_COMPLETION_CREATE
+          const: openai.completions.create
+        - title: OPENAI_V0_CHAT_COMPLETION_CREATE
+          const: openai.ChatCompletion.create
+        - title: OPENAI_V1_CHAT_COMPLETION_CREATE
+          const: openai.chat.completions.create
+        - title: OPENAI_V0_COMPLETION_ASYNC_CREATE
+          const: openai.Completion.acreate
+        - title: OPENAI_V0_CHAT_COMPLETION_ASYNC_CREATE
+          const: openai.ChatCompletion.acreate
+        - title: LITELLM_COMPLETION
+          const: litellm.completion
+        - title: LITELLM_ASYNC_COMPLETION
+          const: litellm.acompletion
     ValidatePayload:
       type: object
       properties:
@@ -489,16 +508,5 @@ components:
           properties: {}
           additionalProperties: {}
         llmApi:
-          type: string
-          enum:
-            [
-              "openai.Completion.create",
-              "openai.completions.create",
-              "openai.ChatCompletion.create",
-              "openai.chat.completions.create",
-              "openai.Completion.acreate",
-              "openai.ChatCompletion.acreate",
-              "litellm.completion",
-              "litellm.acompletion"
-            ]
+          $ref: "#/components/schemas/LlmApi"
       additionalProperties: {}
