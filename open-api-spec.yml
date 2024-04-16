@@ -763,33 +763,6 @@ components:
               oneOf:
                 - $ref: "#/components/schemas/AnyObject"
                 - $ref: "#/components/schemas/AnyPrimitive"
-    LlmApi:
-      type: string
-      oneOf:
-        - title: OPENAI_V0_COMPLETION_CREATE
-          const: openai.Completion.create
-          description: OpenAI V0 Completion Create
-        - title: OPENAI_V1_COMPLETIONS_CREATE
-          const: openai.completions.create
-          description: OpenAI V1 Completions Create
-        - title: OPENAI_V0_CHAT_COMPLETION_CREATE
-          const: openai.ChatCompletion.create
-          description: OpenAI V0 Chat Completion Create
-        - title: OPENAI_V1_CHAT_COMPLETION_CREATE
-          const: openai.chat.completions.create
-          description: OpenAI V1 Chat Completions Create
-        - title: OPENAI_V0_COMPLETION_ASYNC_CREATE
-          const: openai.Completion.acreate
-          description: OpenAI V0 Completion Async Create
-        - title: OPENAI_V0_CHAT_COMPLETION_ASYNC_CREATE
-          const: openai.ChatCompletion.acreate
-          description: OpenAI V0 Chat Completion Async Create
-        - title: LITELLM_COMPLETION
-          const: litellm.completion
-          description: LiteLLM Completion
-        - title: LITELLM_ASYNC_COMPLETION
-          const: litellm.acompletion
-          description: LiteLLM Async Completion
     ValidatePayload:
       type: object
       properties:
@@ -806,7 +779,8 @@ components:
           properties: {}
           additionalProperties: {}
         llmApi:
-          $ref: "#/components/schemas/LlmApi"
+          type: string
+          enum: ["openai.Completion.create", "openai.completions.create", "openai.ChatCompletion.create", "openai.chat.completions.create", "openai.Completion.acreate", "openai.ChatCompletion.acreate", "litellm.completion", "litellm.acompletion"]
       additionalProperties: {}
     Ingestion:
       type: object

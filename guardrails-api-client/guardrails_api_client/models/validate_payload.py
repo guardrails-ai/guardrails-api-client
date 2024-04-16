@@ -1,8 +1,9 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Literal, Type, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.validate_payload_llm_api import ValidatePayloadLlmApi
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -20,26 +21,13 @@ class ValidatePayload:
             output.
         num_reasks (Union[Unset, int]): An override for the number of re-asks to perform
         prompt_params (Union[Unset, ValidatePayloadPromptParams]): additional params for llm prompts
-        llm_api (Union[Literal['litellm.acompletion'], Literal['litellm.completion'],
-            Literal['openai.ChatCompletion.acreate'], Literal['openai.ChatCompletion.create'],
-            Literal['openai.Completion.acreate'], Literal['openai.Completion.create'],
-            Literal['openai.chat.completions.create'], Literal['openai.completions.create'], Unset]):
+        llm_api (Union[Unset, ValidatePayloadLlmApi]):
     """
 
     llm_output: Union[Unset, str] = UNSET
     num_reasks: Union[Unset, int] = UNSET
     prompt_params: Union[Unset, "ValidatePayloadPromptParams"] = UNSET
-    llm_api: Union[
-        Literal["litellm.acompletion"],
-        Literal["litellm.completion"],
-        Literal["openai.ChatCompletion.acreate"],
-        Literal["openai.ChatCompletion.create"],
-        Literal["openai.Completion.acreate"],
-        Literal["openai.Completion.create"],
-        Literal["openai.chat.completions.create"],
-        Literal["openai.completions.create"],
-        Unset,
-    ] = UNSET
+    llm_api: Union[Unset, ValidatePayloadLlmApi] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -51,21 +39,9 @@ class ValidatePayload:
         if not isinstance(self.prompt_params, Unset):
             prompt_params = self.prompt_params.to_dict()
 
-        llm_api: Union[
-            Literal["litellm.acompletion"],
-            Literal["litellm.completion"],
-            Literal["openai.ChatCompletion.acreate"],
-            Literal["openai.ChatCompletion.create"],
-            Literal["openai.Completion.acreate"],
-            Literal["openai.Completion.create"],
-            Literal["openai.chat.completions.create"],
-            Literal["openai.completions.create"],
-            Unset,
-        ]
-        if isinstance(self.llm_api, Unset):
-            llm_api = UNSET
-        else:
-            llm_api = self.llm_api
+        llm_api: Union[Unset, str] = UNSET
+        if not isinstance(self.llm_api, Unset):
+            llm_api = self.llm_api.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -97,37 +73,12 @@ class ValidatePayload:
         else:
             prompt_params = ValidatePayloadPromptParams.from_dict(_prompt_params)
 
-        def _parse_llm_api(
-            data: object,
-        ) -> Union[
-            Literal["litellm.acompletion"],
-            Literal["litellm.completion"],
-            Literal["openai.ChatCompletion.acreate"],
-            Literal["openai.ChatCompletion.create"],
-            Literal["openai.Completion.acreate"],
-            Literal["openai.Completion.create"],
-            Literal["openai.chat.completions.create"],
-            Literal["openai.completions.create"],
-            Unset,
-        ]:
-            if isinstance(data, Unset):
-                return data
-            return cast(
-                Union[
-                    Literal["litellm.acompletion"],
-                    Literal["litellm.completion"],
-                    Literal["openai.ChatCompletion.acreate"],
-                    Literal["openai.ChatCompletion.create"],
-                    Literal["openai.Completion.acreate"],
-                    Literal["openai.Completion.create"],
-                    Literal["openai.chat.completions.create"],
-                    Literal["openai.completions.create"],
-                    Unset,
-                ],
-                data,
-            )
-
-        llm_api = _parse_llm_api(d.pop("llmApi", UNSET))
+        _llm_api = d.pop("llmApi", UNSET)
+        llm_api: Union[Unset, ValidatePayloadLlmApi]
+        if isinstance(_llm_api, Unset):
+            llm_api = UNSET
+        else:
+            llm_api = ValidatePayloadLlmApi(_llm_api)
 
         validate_payload = cls(
             llm_output=llm_output,
