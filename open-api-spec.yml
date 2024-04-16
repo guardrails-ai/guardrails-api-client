@@ -599,7 +599,6 @@ components:
             - "0.1"
       required:
         - outputSchema
-        - prompt
         - version
     Schema:
       type: object

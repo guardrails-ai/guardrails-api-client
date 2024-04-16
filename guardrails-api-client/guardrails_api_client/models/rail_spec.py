@@ -19,23 +19,21 @@ class RailSpec:
 
     Attributes:
         output_schema (Schema):
-        prompt (str):
         version (RailSpecVersion):  Default: RailSpecVersion.VALUE_0.
         input_schema (Union[Unset, Schema]):
         instructions (Union[Unset, str]):
+        prompt (Union[Unset, str]):
     """
 
     output_schema: "Schema"
-    prompt: str
     version: RailSpecVersion = RailSpecVersion.VALUE_0
     input_schema: Union[Unset, "Schema"] = UNSET
     instructions: Union[Unset, str] = UNSET
+    prompt: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         output_schema = self.output_schema.to_dict()
-
-        prompt = self.prompt
 
         version = self.version.value
 
@@ -45,12 +43,13 @@ class RailSpec:
 
         instructions = self.instructions
 
+        prompt = self.prompt
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "outputSchema": output_schema,
-                "prompt": prompt,
                 "version": version,
             }
         )
@@ -58,6 +57,8 @@ class RailSpec:
             field_dict["inputSchema"] = input_schema
         if instructions is not UNSET:
             field_dict["instructions"] = instructions
+        if prompt is not UNSET:
+            field_dict["prompt"] = prompt
 
         return field_dict
 
@@ -67,8 +68,6 @@ class RailSpec:
 
         d = src_dict.copy()
         output_schema = Schema.from_dict(d.pop("outputSchema"))
-
-        prompt = d.pop("prompt")
 
         version = RailSpecVersion(d.pop("version"))
 
@@ -81,12 +80,14 @@ class RailSpec:
 
         instructions = d.pop("instructions", UNSET)
 
+        prompt = d.pop("prompt", UNSET)
+
         rail_spec = cls(
             output_schema=output_schema,
-            prompt=prompt,
             version=version,
             input_schema=input_schema,
             instructions=instructions,
+            prompt=prompt,
         )
 
         rail_spec.additional_properties = d
