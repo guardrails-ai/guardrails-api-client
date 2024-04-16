@@ -780,7 +780,7 @@ components:
           additionalProperties: {}
         llmApi:
           type: string
-          enum: ["openai.Completion.create", "openai.ChatCompletion.create", "openai.Completion.acreate", "openai.ChatCompletion.acreate"]
+          enum: ["openai.Completion.create", "openai.completions.create", "openai.ChatCompletion.create", "openai.chat.completions.create", "openai.Completion.acreate", "openai.ChatCompletion.acreate", "litellm.completion", "litellm.acompletion"]
       additionalProperties: {}
     Ingestion:
       type: object
