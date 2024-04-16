@@ -33,7 +33,6 @@ from .schema import Schema
 from .schema_element import SchemaElement
 from .status import Status
 from .validate_payload import ValidatePayload
-from .validate_payload_llm_api import ValidatePayloadLlmApi
 from .validate_payload_prompt_params import ValidatePayloadPromptParams
 from .validation_output import ValidationOutput
 from .validator_metrics import ValidatorMetrics
@@ -75,7 +74,6 @@ __all__ = (
     "SchemaElement",
     "Status",
     "ValidatePayload",
-    "ValidatePayloadLlmApi",
     "ValidatePayloadPromptParams",
     "ValidationOutput",
     "ValidatorMetrics",
