@@ -1,3 +1,7 @@
 open-api-spec.yml
 guardrails-api-client
 .venv
+node_modules
+resources
+LICENSE
+package*.json
