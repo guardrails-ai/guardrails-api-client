@@ -9,8 +9,8 @@ paths:
       tags:
         - Service Health
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       responses:
         "200":
           description: Returns the status of the server
@@ -31,8 +31,8 @@ paths:
         - guard
       summary: Fetches the configuration for all Guards the user has access to.
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       responses:
         "200":
           description: A list of Guards.
@@ -54,8 +54,8 @@ paths:
         - guard
       summary: Creates a Guard
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       requestBody:
         required: true
         content:
@@ -85,8 +85,8 @@ paths:
         - $ref: "#/components/parameters/GuardName"
         - $ref: "#/components/parameters/AsOf"
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       responses:
         "200":
           description: the fetched Guard
@@ -108,8 +108,8 @@ paths:
       parameters:
         - $ref: "#/components/parameters/GuardName"
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       requestBody:
         required: true
         content:
@@ -137,8 +137,8 @@ paths:
       parameters:
         - $ref: "#/components/parameters/GuardName"
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       responses:
         "200":
           description: the deleted Guard
@@ -160,8 +160,8 @@ paths:
         - validate
       summary: Runs the validations specified in a Guard
       security:
-        - apiKeyAuth: []
-        - bearerAuth: []
+        - ApiKeyAuth: []
+        - BearerAuth: []
       parameters:
         - $ref: "#/components/parameters/GuardName"
         - $ref: "#/components/parameters/OpenAiApiKey"
@@ -186,15 +186,14 @@ paths:
                 $ref: "#/components/schemas/HttpError"
 components:
   securitySchemes:
-    bearerAuth:
+    BearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-    apiKeyAuth:
+    ApiKeyAuth:
       type: apiKey
       in: header
       name: authorization
-      description: JWT token
   parameters:
     GuardName:
       name: guardName
