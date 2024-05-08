@@ -13,5 +13,4 @@ resources/py/requirements.txt
 resources/py/setup.py
 resources/py/.ruff_cache
 *.tgz
-resources/py
-resources/ts
+resources/**/docs

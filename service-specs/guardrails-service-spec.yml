@@ -156,7 +156,6 @@ paths:
     post:
       operationId: validate
       tags:
-        - guard
         - validate
       summary: Runs the validations specified in a Guard
       security:

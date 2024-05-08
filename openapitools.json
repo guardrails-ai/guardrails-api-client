@@ -11,7 +11,9 @@
         "skipValidateSpec": true,
         "additionalProperties": {
           "supportsES6": true,
-          "withInterfaces": true
+          "withInterfaces": true,
+          "npmName": "@guardrails-ai/api-client",
+          "npmVersion": "0.3.0"
         }
       },
       "py": {

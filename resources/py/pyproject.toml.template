@@ -1,0 +1,30 @@
+[project]
+name = "guardrails-api-client"
+version = "0.3.0"
+description = "Guardrails API Client."
+authors = [
+    {name = "Guardrails AI", email = "contact@guardrailsai.com"}
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+keywords = ["Guardrails", "Guardrails AI", "Guardrails API", "Guardrails API Client"]
+requires-python = ">= 3.8.1"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pyright",
+    "pytest",
+    "pytest-cov",
+    "ruff"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-rP"
+testpaths = [
+    "test"
+]
+
+[tool.pyright]
+include = ["guardrails_api_client"]

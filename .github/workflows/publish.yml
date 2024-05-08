@@ -59,7 +59,7 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
         cd resources/ts
-        npm publish
+        npm publish --access public
         cd ../..
       continue-on-error: false
 
