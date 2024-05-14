@@ -44,6 +44,7 @@ bash ./py-build.sh
  - [HttpError](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/HttpError.md);
  - [Inputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Inputs.md);
  - [Iteration](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Iteration.md);
+ - [LLMResource](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/LLMResource.md);
  - [LLMResponse](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/LLMResponse.md);
  - [MetaData](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/MetaData.md);
  - [ModelSchema](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ModelSchema.md);

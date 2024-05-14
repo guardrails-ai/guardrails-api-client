@@ -73,6 +73,8 @@ async function main () {
     if (!bundledSchema) {
       console.error("Empty schema! ", schemaId);
     }
+
+    writeFileSync(resolve(`./build/${key}.json`), JSON.stringify(bundledSchema, null, 2));
     
     await validateSchema(bundledSchema, schemaId);
     

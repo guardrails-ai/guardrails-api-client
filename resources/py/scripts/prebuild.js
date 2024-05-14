@@ -121,7 +121,25 @@ function hotFixes () {
   fixValidatorLogValidationResult();
 }
 
+function globalReplacements () {
+  const files = [
+    ...fs.readdirSync('./guardrails_api_client/models').map(file => `./models/${file}`),
+  ];
+
+  for (const file of files) {
+    const filePath = path.resolve('./guardrails_api_client', file);
+    let fileContent = fs.readFileSync(filePath).toString();
+
+    fs.writeFileSync(
+      filePath,
+      fileContent
+        .replace(/from guardrails_api_client.models.object import object/g, '')
+    );
+  }
+}
+
 function main () {
+  globalReplacements();
   hotFixes();
   buildReadme();
   updateDependencies();

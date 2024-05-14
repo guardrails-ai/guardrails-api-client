@@ -275,6 +275,10 @@ components:
           properties: {}
           additionalProperties: {}
         llmApi:
+          $ref: "#/$defs/LLMResource"
+      additionalProperties: {}
+      $defs:
+        LLMResource:
           type: string
           enum:
             [
@@ -287,4 +291,3 @@ components:
               "litellm.completion",
               "litellm.acompletion"
             ]
-      additionalProperties: {}
