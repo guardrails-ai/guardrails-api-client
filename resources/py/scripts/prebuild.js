@@ -117,8 +117,54 @@ function fixValidatorLogValidationResult () {
   fs.writeFileSync(validatorLogValidationResultFilePath, validatorLogValidationResult)
 }
 
+function fixModelSchemaDefaults () {
+  // Assign generic type on Set in Schema.ts
+  const modelSchemaFilePath = path.resolve('./guardrails_api_client/models/model_schema.py');
+  const modelSchemaFile = fs.readFileSync(modelSchemaFilePath).toString();
+  const modelSchema = modelSchemaFile
+    .replace(
+      'unique_items: Optional[StrictBool] = Field(default=False, alias="uniqueItems")',
+      'unique_items: Optional[bool] = Field(default=None, alias="uniqueItems")'
+    )
+    .replace(
+      '"uniqueItems": obj.get("uniqueItems") if obj.get("uniqueItems") is not None else False,',
+      '"uniqueItems": obj.get("uniqueItems"),'
+    )
+    .replace(
+      'deprecated: Optional[StrictBool] = False',
+      'deprecated: Optional[bool] = None'
+    )
+    .replace(
+      '"deprecated": obj.get("deprecated") if obj.get("deprecated") is not None else False,',
+      '"deprecated": obj.get("deprecated"),'
+    )
+    .replace(
+      'read_only: Optional[StrictBool] = Field(default=False, alias="readOnly")',
+      'read_only: Optional[bool] = Field(default=None, alias="readOnly")'
+    )
+    .replace(
+      '"readOnly": obj.get("readOnly") if obj.get("readOnly") is not None else False,',
+      '"readOnly": obj.get("readOnly"),'
+    )
+    .replace(
+      'write_only: Optional[StrictBool] = Field(default=False, alias="writeOnly")',
+      'write_only: Optional[bool] = Field(default=None, alias="writeOnly")'
+    )
+    .replace(
+      '"writeOnly": obj.get("writeOnly") if obj.get("writeOnly") is not None else False,',
+      '"writeOnly": obj.get("writeOnly"),'
+    );
+    
+  if (modelSchemaFile === modelSchema) {
+    console.warn("Fixes in fixModelSchemaDefaults may no longer be necessary!")
+  }
+
+  fs.writeFileSync(modelSchemaFilePath, modelSchema)
+}
+
 function hotFixes () {
   fixValidatorLogValidationResult();
+  fixModelSchemaDefaults();
 }
 
 function globalReplacements () {
