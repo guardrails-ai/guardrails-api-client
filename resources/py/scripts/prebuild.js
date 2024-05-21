@@ -104,7 +104,6 @@ setup(
 }
 
 function fixValidatorLogValidationResult () {
-  // Assign generic type on Set in Schema.ts
   const validatorLogValidationResultFilePath = path.resolve('./guardrails_api_client/models/validator_log_validation_result.py');
   const validatorLogValidationResultFile = fs.readFileSync(validatorLogValidationResultFilePath).toString();
   const validatorLogValidationResult = validatorLogValidationResultFile
