@@ -152,7 +152,11 @@ function fixModelSchemaDefaults () {
     .replace(
       '"writeOnly": obj.get("writeOnly") if obj.get("writeOnly") is not None else False,',
       '"writeOnly": obj.get("writeOnly"),'
-    );
+    )
+    .replace(
+      '_obj = cls.model_validate({',
+      '_obj = cls.model_validate({\n\t\t\t**obj,',
+    )
     
   if (modelSchemaFile === modelSchema) {
     console.warn("Fixes in fixModelSchemaDefaults may no longer be necessary!")
