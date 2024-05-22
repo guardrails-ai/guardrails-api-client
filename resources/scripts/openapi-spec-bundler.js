@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
 // We have to break the JSON schemas to get them to work with the generators specific understanding of OpenAPI Specification 3.1
-function breakToFix (schema) {  
+function breakToFix (schema, parentKey) {  
   return Object.entries(schema)
     .reduce((acc, [key, value]) => {
       if (key !== '$id' && key !== "$schema") { // We have to remove $id and $schema
-        if (key === "$defs") { // switch from $defs to definitions
+        if (key === "$defs" && parentKey !== "properties") { // switch from $defs to definitions
           key = "definitions"
         } else if (key == "$ref" && _.isString(value)) {
           value = value.startsWith("#/$defs") ?
@@ -18,9 +18,9 @@ function breakToFix (schema) {
         }
 
         if (_.isPlainObject(value)) {
-          acc[key] = breakToFix(value);
+          acc[key] = breakToFix(value, key);
         } else if (Array.isArray(value) && _.isPlainObject(value.at(0))) {
-          acc[key] = value.map(v => breakToFix(v));
+          acc[key] = value.map(v => breakToFix(v, key));
         } else {
           acc[key] = value;
         }
