@@ -17,7 +17,7 @@ async function main () {
     ).toString()
   );
 
-  const output = await validate("https://json-schema.org/draft/2020-12/schema", schema, "DETAILED");
+  const output = await validate("https://json-schema.org/draft/2020-12/schema", schema, "BASIC");
   if (output.valid) {
     console.info(`JSON Schema: ${filepath} - Ok`)
     process.exit(0);
