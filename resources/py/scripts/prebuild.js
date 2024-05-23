@@ -165,9 +165,27 @@ function fixModelSchemaDefaults () {
   fs.writeFileSync(modelSchemaFilePath, modelSchema)
 }
 
+function fixGuardHistory () {
+  // Assign generic type on Set in Schema.ts
+  const guardFilePath = path.resolve('./guardrails_api_client/models/guard.py');
+  const guardFile = fs.readFileSync(guardFilePath).toString();
+  const guard = guardFile
+    .replace(
+      'history: Optional[GuardHistory] = None',
+      'i_history: Optional[GuardHistory] = Field(default=None, alias="history")'
+    )
+    
+  if (guardFile === guard) {
+    console.warn("Fixes in fixGuardHistory may no longer be necessary!")
+  }
+
+  fs.writeFileSync(guardFilePath, guard)
+}
+
 function hotFixes () {
   fixValidatorLogValidationResult();
   fixModelSchemaDefaults();
+  fixGuardHistory();
 }
 
 function globalReplacements () {

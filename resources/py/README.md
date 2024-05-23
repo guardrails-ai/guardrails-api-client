@@ -39,7 +39,7 @@ bash ./py-build.sh
  - [Guard](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Guard.md);
  - [GuardApi](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardApi.md);
  - [GuardHistory](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardHistory.md);
- - [GuardHistoryAnyOf](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardHistoryAnyOf.md);
+ - [GuardHistoryAnyOfInner](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardHistoryAnyOfInner.md);
  - [HealthCheck](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/HealthCheck.md);
  - [HttpError](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/HttpError.md);
  - [Inputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Inputs.md);
