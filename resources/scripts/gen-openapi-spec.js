@@ -10,17 +10,18 @@ import { buildSchemaDocument } from '@hyperjump/json-schema/experimental';
 import { bundleOpenApiSpec } from './openapi-spec-bundler.js';
 import { bundleJsonSchema } from './json-schema-bundler.js';
 
-async function bundleSchema (schemaId) {
-  addMediaTypePlugin('text/plain', {
-    parse: async (response) => {
-      const contentType = contentTypeParser.parse(response.headers.get('content-type') ?? '');
-      const contextDialectId = contentType.parameters.schema ?? contentType.parameters.profile;
-      
-      const responseBody = JSON.parse(await response.text());
-      return buildSchemaDocument(responseBody, response.url, contextDialectId);
-    }
-  });
+addMediaTypePlugin('text/plain', {
+  parse: async (response) => {
+    const contentType = contentTypeParser.parse(response.headers.get('content-type') ?? '');
+    const contextDialectId = contentType.parameters.schema ?? contentType.parameters.profile;
+    
+    const responseBody = JSON.parse(await response.text());
+    return buildSchemaDocument(responseBody, response.url, contextDialectId);
+  }
+});
 
+async function bundleSchema (schemaId) {
+  console.debug("Bundling ", schemaId)
   // This works for the Typescript generator out of the box
   // return bundle(manifestSchema.$id);
 
@@ -29,6 +30,7 @@ async function bundleSchema (schemaId) {
 }
 
 async function validateSchema (schema, schemaId) {
+  console.debug("Validating ", schemaId)
   const output = await validateJsonSchema('https://json-schema.org/draft/2020-12/schema', schema, 'BASIC');
   if (output.valid) {
     console.info('JSON Schema - Ok');
@@ -66,6 +68,7 @@ async function main () {
   
     schema.$schema = schema.$schema || 'https://json-schema.org/draft/2020-12/schema';
   
+    console.debug("Registering ", schemaId)
     registerSchema(schema, schemaId);
     
     const bundledSchema = await bundleSchema(schemaId);
