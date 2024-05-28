@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "bash build-all.sh",
     "clean": "rm -rf ./build/json-schema.json && rm -rf ./build/openapi-spec.json",
     "copy": "cp ./service-specs/guardrails-service-spec.yml ./open-api-spec.yml",
     "openapi-gen": "npm run clean && npm run copy && node ./resources/scripts/gen-openapi-spec.js;",
