@@ -182,10 +182,32 @@ function fixGuardHistory () {
   fs.writeFileSync(guardFilePath, guard)
 }
 
+function fixCallException () {
+  // Assign generic type on Set in Schema.ts
+  const callFilePath = path.resolve('./guardrails_api_client/models/call.py');
+  const callFile = fs.readFileSync(callFilePath).toString();
+  const call = callFile
+    .replace(
+      'from pydantic import BaseModel, ConfigDict',
+      'from pydantic import BaseModel, ConfigDict, Field'
+    )
+    .replace(
+      'exception: Optional[CallException] = None',
+      'i_exception: Optional[CallException] = Field(default=None, alias="exception")'
+    )
+    
+  if (callFile === call) {
+    console.warn("Fixes in fixCallException may no longer be necessary!")
+  }
+
+  fs.writeFileSync(callFilePath, call)
+}
+
 function hotFixes () {
   fixValidatorLogValidationResult();
   fixModelSchemaDefaults();
   fixGuardHistory();
+  fixCallException();
 }
 
 function globalReplacements () {
