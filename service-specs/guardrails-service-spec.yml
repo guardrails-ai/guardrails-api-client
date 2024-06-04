@@ -256,9 +256,9 @@ components:
         - status
         - message
     ValidationOutcome:
-      $ref: "https://raw.githubusercontent.com/guardrails-ai/interfaces/core-schemas/schemas/core/validation-outcome.json"
+      $ref: "https://raw.githubusercontent.com/guardrails-ai/interfaces/main/schemas/core/validation-outcome.json"
     Guard:
-      $ref: "https://raw.githubusercontent.com/guardrails-ai/interfaces/core-schemas/schemas/core/guard.json"
+      $ref: "https://raw.githubusercontent.com/guardrails-ai/interfaces/main/schemas/core/guard.json"
     ValidatePayload:
       type: object
       properties:
