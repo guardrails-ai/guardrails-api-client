@@ -1,0 +1,39 @@
+name: Pull Request Quality Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12.x
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install Node Dependencies
+      run: |
+        npm ci;
+      continue-on-error: false
+
+    - name: Validate OpenAPI Specification
+      run: |
+        npm run valiate-openapi-spec ./service-specs/guardrails-service-spec.yml
+      continue-on-error: false
+
+    - name: Build Client Libraries
+      run: |
+        npm run build
+      continue-on-error: false
