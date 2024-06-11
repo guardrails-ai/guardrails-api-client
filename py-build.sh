@@ -12,13 +12,13 @@ rm -rf ./resources/py/docs;
 mkdir -p ./resources/py/guardrails_api_client;
 mkdir -p ./resources/py/docs;
 
-# Copy Typescript models to target directory
+# Copy Python models to target directory
 cp -r ./build/py/guardrails_api_client/* ./resources/py/guardrails_api_client;
 cp -r ./build/py/docs/* ./resources/py/docs;
 cp -r ./build/py/.gitignore ./resources/py;
 cp -r ./build/py/requirements.txt ./resources/py;
 
-# Navigate to Typescript directory
+# Navigate to Python directory
 cd ./resources/py;
 
 # Build the Python library
