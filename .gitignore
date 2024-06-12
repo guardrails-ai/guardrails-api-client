@@ -1,3 +1,15 @@
+.venv
+node_modules
+dist
+build
 open-api-spec.yml
 guardrails-api-client
-.venv
+resources/ts/src
+resources/ts/dist
+resources/py/pyproject.toml
+resources/py/guardrails_api_client
+resources/py/.gitignore
+resources/py/requirements.txt
+resources/py/setup.py
+resources/py/.ruff_cache
+*.tgz

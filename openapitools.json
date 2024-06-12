@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.5.0",
+    "generators": {
+      "ts": {
+        "generatorName": "typescript-fetch",
+        "output": "#{cwd}/build/ts",
+        "inputSpec": "./build/openapi-spec.json",
+        "skipValidateSpec": true,
+        "additionalProperties": {
+          "supportsES6": true,
+          "withInterfaces": true,
+          "npmName": "@guardrails-ai/api-client",
+          "npmVersion": "0.3.0"
+        }
+      },
+      "py": {
+        "generatorName": "python",
+        "output": "#{cwd}/build/py",
+        "inputSpec": "./build/openapi-spec.json",
+        "skipValidateSpec": true,
+        "additionalProperties": {
+          "packageName": "guardrails_api_client",
+          "packageVersion": "0.3.0",
+          "projectName": "guardrails-api-client"
+        }
+      }
+    }
+  }
+}

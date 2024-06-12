@@ -1,0 +1,43 @@
+{
+  "name": "@guardrails-ai/api-client",
+  "version": "0.3.0",
+  "description": "Client libaray for interacting with the guardrails-api",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "docs": "rm -rf ./docs; npx typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts",
+    "compile": "tsc && tsc -p tsconfig.esm.json",
+    "prebuild": "node ./scripts/prebuild.js",
+    "build": "npm run prebuild; npm run compile",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "qa": "npx prettier ./src --write --plugin=prettier-plugin-organize-imports"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guardrails-ai/guardrails-api-client.git"
+  },
+  "author": "Guardrails AI <contact@guardrailsai.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/guardrails-ai/guardrails-api-client/issues"
+  },
+  "homepage": "https://github.com/guardrails-ai/guardrails-api-client/resources/ts/README.md",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typedoc": "^0.25.13",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typescript": "^5.4.5"
+  }
+}

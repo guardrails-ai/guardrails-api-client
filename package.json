@@ -1,0 +1,27 @@
+{
+  "name": "guardrails-api-client",
+  "version": "0.0.0",
+  "description": "OpenAPI Specifications and scripts for generating SDKs for the various Guardrails services",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "bash build-all.sh",
+    "clean": "rm -rf ./build/json-schema.json && rm -rf ./build/openapi-spec.json && rm -rf ./open-api-spec.yml",
+    "copy": "cp ./service-specs/guardrails-service-spec.yml ./open-api-spec.yml",
+    "openapi-gen": "npm run clean && npm run copy && node ./resources/scripts/gen-openapi-spec.js;",
+    "py-gen": "rm -rf ./build/py && openapi-generator-cli generate --generator-key py",
+    "ts-gen": "rm -rf ./build/ts && openapi-generator-cli generate --generator-key ts",
+    "valiate-openapi-spec": "node ./resources/scripts/validate-openapi-spec.js",
+    "valiate-json-schema": "node ./resources/scripts/validate-json-schema.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@hyperjump/json-schema": "^1.9.2",
+    "@openapitools/openapi-generator-cli": "^2.13.4",
+    "@types/node": "^20.12.11",
+    "lodash": "^4.17.21",
+    "typescript": "^5.4.5",
+    "yaml": "^2.4.2"
+  }
+}
