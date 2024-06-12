@@ -1,4 +1,4 @@
-name: Publish Guardrails Hub Types
+name: Publish Guardrails API Clients
 
 on:
   workflow_dispatch:
