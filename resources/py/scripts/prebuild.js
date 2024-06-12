@@ -166,7 +166,6 @@ function fixModelSchemaDefaults () {
 }
 
 function fixGuardHistory () {
-  // Assign generic type on Set in Schema.ts
   const guardFilePath = path.resolve('./guardrails_api_client/models/guard.py');
   const guardFile = fs.readFileSync(guardFilePath).toString();
   const guard = guardFile
@@ -203,6 +202,30 @@ function fixCallException () {
   fs.writeFileSync(callFilePath, call)
 }
 
+function fixValidatorReferenceTypes () {
+  const validatorReferenceFilePath = path.resolve('./guardrails_api_client/models/validator_reference.py');
+  const validatorReferenceFile = fs.readFileSync(validatorReferenceFilePath).toString();
+  const validatorReference = validatorReferenceFile
+    .replace(
+      'id: Optional[Any] = Field(description="The unique identifier for this Validator.  Often the hub id; e.g. guardrails/regex_match")',
+      'id: Optional[str] = Field(description="The unique identifier for this Validator.  Often the hub id; e.g. guardrails/regex_match")'
+    )
+    .replace(
+      'on: Optional[Any] = Field(default=None, description="A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as \\"prompt\\" or \\"output\\"")',
+      'on: Optional[str] = Field(default=None, description="A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as \\"prompt\\" or \\"output\\"")'
+    )
+    .replace(
+      'on_fail: Optional[Any] = Field(default=None, alias="onFail")',
+      'on_fail: Optional[str] = Field(default=None, alias="onFail")'
+    )
+    
+  if (validatorReferenceFile === validatorReference) {
+    console.warn("Fixes in fixGuardHistory may no longer be necessary!")
+  }
+
+  fs.writeFileSync(validatorReferenceFilePath, validatorReference)
+}
+
 function exportAll (filePath) {
   const initFilePath = path.resolve(filePath);
   const initFile = fs.readFileSync(initFilePath).toString();
@@ -226,6 +249,7 @@ function exportAll (filePath) {
   }
 }
 
+
 function fixInits () {
   exportAll('./guardrails_api_client/__init__.py');
   exportAll('./guardrails_api_client/models/__init__.py');
@@ -237,6 +261,7 @@ function hotFixes () {
   fixModelSchemaDefaults();
   fixGuardHistory();
   fixCallException();
+  fixValidatorReferenceTypes();
   fixInits();
 }
 
