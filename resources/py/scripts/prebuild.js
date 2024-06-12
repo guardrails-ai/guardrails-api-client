@@ -203,11 +203,41 @@ function fixCallException () {
   fs.writeFileSync(callFilePath, call)
 }
 
+function exportAll (filePath) {
+  const initFilePath = path.resolve(filePath);
+  const initFile = fs.readFileSync(initFilePath).toString();
+
+  if (!initFile.includes('__all__')) {
+    const importMatches = initFile.matchAll(/from (?:\S)+ import (?<exportName>(\S)+)/g);
+  
+    const allExports = [];
+    
+    for (const match of importMatches) {
+      allExports.push(match.groups.exportName);
+    }
+  
+    const init = `${initFile}\n\n__all__ = [\n${allExports.map(e => `\t"${e}"`).join(',\n')}\n]\n`;
+  
+    
+    
+    fs.writeFileSync(initFilePath, init)
+  } else {
+    console.warn(`Fixes in fixInits may no longer be necessary for file ${filePath}!`)
+  }
+}
+
+function fixInits () {
+  exportAll('./guardrails_api_client/__init__.py');
+  exportAll('./guardrails_api_client/models/__init__.py');
+  exportAll('./guardrails_api_client/api/__init__.py');
+}
+
 function hotFixes () {
   fixValidatorLogValidationResult();
   fixModelSchemaDefaults();
   fixGuardHistory();
   fixCallException();
+  fixInits();
 }
 
 function globalReplacements () {
