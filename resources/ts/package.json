@@ -1,6 +1,6 @@
 {
   "name": "@guardrails-ai/api-client",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Client libaray for interacting with the guardrails-api",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
     "dist",
     "package.json",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "openapi-spec.json"
   ],
   "scripts": {
     "docs": "rm -rf ./docs; npx typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts",

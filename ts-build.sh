@@ -19,6 +19,7 @@ cp -r ./build/ts/src/apis ./resources/ts/src;
 cp -r ./build/ts/src/models ./resources/ts/src;
 cp -r ./build/ts/src/index.ts ./resources/ts/src;
 cp -r ./build/ts/src/runtime.ts ./resources/ts/src;
+cp -r ./build/openapi-spec.json ./resources/ts;
 
 # Navigate to Typescript directory
 cd ./resources/ts;

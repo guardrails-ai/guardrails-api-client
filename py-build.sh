@@ -17,6 +17,7 @@ cp -r ./build/py/guardrails_api_client/* ./resources/py/guardrails_api_client;
 cp -r ./build/py/docs/* ./resources/py/docs;
 cp -r ./build/py/.gitignore ./resources/py;
 cp -r ./build/py/requirements.txt ./resources/py;
+cp -r ./build/openapi-spec.json ./resources/py/guardrails_api_client;
 
 # Navigate to Python directory
 cd ./resources/py;

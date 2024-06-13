@@ -13,3 +13,4 @@ resources/py/requirements.txt
 resources/py/setup.py
 resources/py/.ruff_cache
 *.tgz
+resources/ts/openapi-spec.json
