@@ -86,14 +86,13 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="guardrails-api-client",
-    version="0.3.0",
     description="Guardrails API Client",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
     python_requires=">=3.8, <4",
     install_requires=[${requirements}],
-    package_data={"guardrails_api_client": ["py.typed"]},
+    package_data={"guardrails_api_client": ["py.typed", "openapi-spec.json"]},
 )
   `;
 
