@@ -1,6 +1,6 @@
 [project]
 name = "guardrails-api-client"
-version = "0.3.3"
+version = "0.3.4"
 description = "Guardrails API Client."
 authors = [
     {name = "Guardrails AI", email = "contact@guardrailsai.com"}
