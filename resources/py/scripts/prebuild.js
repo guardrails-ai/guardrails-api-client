@@ -172,6 +172,10 @@ function fixGuardHistory () {
       'i_history: Optional[GuardHistory] = Field(default=None, alias="history")'
     )
     .replace(/self.history/g, 'self.i_history')
+    .replace(
+      '"history": GuardHistory.from_dict(obj["history"]) if obj.get("history") is not None else None',
+      '"i_history": GuardHistory.from_dict(obj["history"]) if obj.get("history") is not None else None'
+    )
     
   if (guardFile === guard) {
     console.warn("Fixes in fixGuardHistory may no longer be necessary!")
@@ -191,6 +195,10 @@ function fixCallException () {
     .replace(
       'exception: Optional[CallException] = None',
       'i_exception: Optional[CallException] = Field(default=None, alias="exception")'
+    )
+    .replace(
+      /self.exception/g,
+      'self.i_exception'
     )
     
   if (callFile === call) {
@@ -215,6 +223,10 @@ function fixValidatorReferenceTypes () {
     .replace(
       'on_fail: Optional[Any] = Field(default=None, alias="onFail")',
       'on_fail: Optional[str] = Field(default=None, alias="onFail")'
+    )
+    .replace(
+      '"args": [object.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None,',
+      '**obj,\n"args": [object.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None,'
     )
     
   if (validatorReferenceFile === validatorReference) {
