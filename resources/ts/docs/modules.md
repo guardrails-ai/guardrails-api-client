@@ -40,6 +40,7 @@
 - [FailResult](interfaces/FailResult.md)
 - [FetchParams](interfaces/FetchParams.md)
 - [FormatAnnotation](interfaces/FormatAnnotation.md)
+- [GetGuardHistoryRequest](interfaces/GetGuardHistoryRequest.md)
 - [GetGuardRequest](interfaces/GetGuardRequest.md)
 - [Guard](interfaces/Guard.md)
 - [GuardApiInterface](interfaces/GuardApiInterface.md)
@@ -1032,7 +1033,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:55
+src/models/Call.ts:62
 
 ___
 
@@ -1053,7 +1054,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:59
+src/models/Call.ts:66
 
 ___
 
@@ -1134,7 +1135,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:80
+src/models/Call.ts:88
 
 ___
 
@@ -1764,7 +1765,7 @@ ___
 
 #### Defined in
 
-src/models/Iteration.ts:47
+src/models/Iteration.ts:68
 
 ___
 
@@ -1785,7 +1786,7 @@ ___
 
 #### Defined in
 
-src/models/Iteration.ts:51
+src/models/Iteration.ts:72
 
 ___
 
@@ -1805,7 +1806,7 @@ ___
 
 #### Defined in
 
-src/models/Iteration.ts:65
+src/models/Iteration.ts:89
 
 ___
 
@@ -2720,7 +2721,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:67
+src/models/ValidationOutcome.ts:74
 
 ___
 
@@ -2741,7 +2742,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:71
+src/models/ValidationOutcome.ts:78
 
 ___
 
@@ -2761,7 +2762,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:92
+src/models/ValidationOutcome.ts:100
 
 ___
 
@@ -3338,7 +3339,7 @@ Check if a given object implements the Call interface.
 
 #### Defined in
 
-src/models/Call.ts:51
+src/models/Call.ts:57
 
 ___
 
@@ -3646,7 +3647,7 @@ Check if a given object implements the Iteration interface.
 
 #### Defined in
 
-src/models/Iteration.ts:43
+src/models/Iteration.ts:61
 
 ___
 
@@ -3994,7 +3995,7 @@ Check if a given object implements the ValidationOutcome interface.
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:63
+src/models/ValidationOutcome.ts:69
 
 ___
 

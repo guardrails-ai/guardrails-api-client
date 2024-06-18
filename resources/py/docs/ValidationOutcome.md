@@ -6,6 +6,7 @@ The output from a Guard execution.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**call_id** | **str** | Foreign key to the most recent Call this resulted from. | 
 **raw_llm_output** | **str** | The raw, unchanged string content from the LLM call. | [optional] 
 **validated_output** | [**ValidationOutcomeValidatedOutput**](ValidationOutcomeValidatedOutput.md) |  | [optional] 
 **reask** | [**Reask**](Reask.md) | If validation continuously fails and all allocated reasks are used, this field will contain the final reask that would have been sent to the LLM if additional reasks were available. | [optional] 
