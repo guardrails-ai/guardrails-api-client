@@ -12,6 +12,7 @@ ValidationOutcome
 
 ### Properties
 
+- [callId](ValidationOutcome.md#callid)
 - [error](ValidationOutcome.md#error)
 - [rawLlmOutput](ValidationOutcome.md#rawllmoutput)
 - [reask](ValidationOutcome.md#reask)
@@ -19,6 +20,22 @@ ValidationOutcome
 - [validationPassed](ValidationOutcome.md#validationpassed)
 
 ## Properties
+
+### callId
+
+• **callId**: `string`
+
+Foreign key to the most recent Call this resulted from.
+
+**`Memberof`**
+
+ValidationOutcome
+
+#### Defined in
+
+src/models/ValidationOutcome.ts:33
+
+___
 
 ### error
 
@@ -32,7 +49,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:57
+src/models/ValidationOutcome.ts:63
 
 ___
 
@@ -48,7 +65,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:33
+src/models/ValidationOutcome.ts:39
 
 ___
 
@@ -64,7 +81,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:45
+src/models/ValidationOutcome.ts:51
 
 ___
 
@@ -78,7 +95,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:39
+src/models/ValidationOutcome.ts:45
 
 ___
 
@@ -94,4 +111,4 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:51
+src/models/ValidationOutcome.ts:57

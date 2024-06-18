@@ -5,6 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** | The unique identifier for this Call.  Can be used as an identifier for a specific execution of a Guard. | 
+**index** | **int** | The zero-based index of this iteration within the current Call. | 
+**call_id** | **str** | The unique identifier for the Call that this iteration is a part of. | 
 **inputs** | [**Inputs**](Inputs.md) |  | [optional] 
 **outputs** | [**Outputs**](Outputs.md) |  | [optional] 
 

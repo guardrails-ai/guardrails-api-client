@@ -17,7 +17,7 @@
 
 #### Defined in
 
-src/apis/GuardApi.ts:34
+src/apis/GuardApi.ts:39
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-src/apis/GuardApi.ts:33
+src/apis/GuardApi.ts:38

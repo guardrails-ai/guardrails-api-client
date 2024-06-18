@@ -29,6 +29,8 @@
 - [deleteGuard](GuardApi.md#deleteguard)
 - [deleteGuardRaw](GuardApi.md#deleteguardraw)
 - [getGuard](GuardApi.md#getguard)
+- [getGuardHistory](GuardApi.md#getguardhistory)
+- [getGuardHistoryRaw](GuardApi.md#getguardhistoryraw)
 - [getGuardRaw](GuardApi.md#getguardraw)
 - [getGuards](GuardApi.md#getguards)
 - [getGuardsRaw](GuardApi.md#getguardsraw)
@@ -103,7 +105,7 @@ Creates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:205
+src/apis/GuardApi.ts:232
 
 ___
 
@@ -130,7 +132,7 @@ Creates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:156
+src/apis/GuardApi.ts:183
 
 ___
 
@@ -157,7 +159,7 @@ Deletes a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:268
+src/apis/GuardApi.ts:295
 
 ___
 
@@ -184,7 +186,7 @@ Deletes a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:219
+src/apis/GuardApi.ts:246
 
 ___
 
@@ -211,7 +213,61 @@ Fetches a specific Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:337
+src/apis/GuardApi.ts:364
+
+___
+
+### getGuardHistory
+
+▸ **getGuardHistory**(`requestParameters`, `initOverrides?`): `Promise`\<[`Call`](../interfaces/Call.md)[]\>
+
+Fetches the history for a specific Guard execution by using the id for the most recent Call
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetGuardHistoryRequest`](../interfaces/GetGuardHistoryRequest.md) |
+| `initOverrides?` | `RequestInit` \| [`InitOverrideFunction`](../modules.md#initoverridefunction) |
+
+#### Returns
+
+`Promise`\<[`Call`](../interfaces/Call.md)[]\>
+
+#### Implementation of
+
+[GuardApiInterface](../interfaces/GuardApiInterface.md).[getGuardHistory](../interfaces/GuardApiInterface.md#getguardhistory)
+
+#### Defined in
+
+src/apis/GuardApi.ts:436
+
+___
+
+### getGuardHistoryRaw
+
+▸ **getGuardHistoryRaw**(`requestParameters`, `initOverrides?`): `Promise`\<[`ApiResponse`](../interfaces/ApiResponse.md)\<[`Call`](../interfaces/Call.md)[]\>\>
+
+Fetches the history for a specific Guard execution by using the id for the most recent Call
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetGuardHistoryRequest`](../interfaces/GetGuardHistoryRequest.md) |
+| `initOverrides?` | `RequestInit` \| [`InitOverrideFunction`](../modules.md#initoverridefunction) |
+
+#### Returns
+
+`Promise`\<[`ApiResponse`](../interfaces/ApiResponse.md)\<[`Call`](../interfaces/Call.md)[]\>\>
+
+#### Implementation of
+
+[GuardApiInterface](../interfaces/GuardApiInterface.md).[getGuardHistoryRaw](../interfaces/GuardApiInterface.md#getguardhistoryraw)
+
+#### Defined in
+
+src/apis/GuardApi.ts:375
 
 ___
 
@@ -238,7 +294,7 @@ Fetches a specific Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:282
+src/apis/GuardApi.ts:309
 
 ___
 
@@ -264,7 +320,7 @@ Fetches the configuration for all Guards the user has access to.
 
 #### Defined in
 
-src/apis/GuardApi.ts:386
+src/apis/GuardApi.ts:488
 
 ___
 
@@ -290,7 +346,7 @@ Fetches the configuration for all Guards the user has access to.
 
 #### Defined in
 
-src/apis/GuardApi.ts:348
+src/apis/GuardApi.ts:450
 
 ___
 
@@ -375,7 +431,7 @@ Updates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:455
+src/apis/GuardApi.ts:557
 
 ___
 
@@ -402,7 +458,7 @@ Updates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:396
+src/apis/GuardApi.ts:498
 
 ___
 

@@ -183,6 +183,33 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}/history/{callId}:
+    get:
+      operationId: getGuardHistory
+      tags:
+        - guard
+      summary: Fetches the history for a specific Guard execution by using the id for the most recent Call
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+        - $ref: "#/components/parameters/CallId"
+      security:
+        - ApiKeyAuth: []
+        - BearerAuth: []
+      responses:
+        "200":
+          description: the fetched Guard History
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/call"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
 components:
   securitySchemes:
     BearerAuth:
@@ -198,6 +225,13 @@ components:
       name: guardName
       in: path
       description: Guard name
+      required: true
+      schema:
+        type: string
+    CallId:
+      name: callId
+      in: path
+      description: Call id
       required: true
       schema:
         type: string

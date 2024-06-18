@@ -11,6 +11,7 @@ Call
 ### Properties
 
 - [exception](Call.md#exception)
+- [id](Call.md#id)
 - [inputs](Call.md#inputs)
 - [iterations](Call.md#iterations)
 
@@ -26,7 +27,23 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:45
+src/models/Call.ts:51
+
+___
+
+### id
+
+• **id**: `string`
+
+The unique identifier for this Call.  Can be used as an identifier for a specific execution of a Guard.
+
+**`Memberof`**
+
+Call
+
+#### Defined in
+
+src/models/Call.ts:33
 
 ___
 
@@ -40,7 +57,7 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:39
+src/models/Call.ts:45
 
 ___
 
@@ -54,4 +71,4 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:33
+src/models/Call.ts:39

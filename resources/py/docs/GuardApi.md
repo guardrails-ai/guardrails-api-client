@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_guard**](GuardApi.md#create_guard) | **POST** /guards | Creates a Guard
 [**delete_guard**](GuardApi.md#delete_guard) | **DELETE** /guards/{guardName} | Deletes a Guard
 [**get_guard**](GuardApi.md#get_guard) | **GET** /guards/{guardName} | Fetches a specific Guard
+[**get_guard_history**](GuardApi.md#get_guard_history) | **GET** /guards/{guardName}/history/{callId} | Fetches the history for a specific Guard execution by using the id for the most recent Call
 [**get_guards**](GuardApi.md#get_guards) | **GET** /guards | Fetches the configuration for all Guards the user has access to.
 [**update_guard**](GuardApi.md#update_guard) | **PUT** /guards/{guardName} | Updates a Guard
 
@@ -261,6 +262,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | the fetched Guard |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_guard_history**
+> List[Call] get_guard_history(guard_name, call_id)
+
+Fetches the history for a specific Guard execution by using the id for the most recent Call
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import guardrails_api_client
+from guardrails_api_client.models.call import Call
+from guardrails_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = guardrails_api_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = guardrails_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with guardrails_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = guardrails_api_client.GuardApi(api_client)
+    guard_name = 'guard_name_example' # str | Guard name
+    call_id = 'call_id_example' # str | Call id
+
+    try:
+        # Fetches the history for a specific Guard execution by using the id for the most recent Call
+        api_response = api_instance.get_guard_history(guard_name, call_id)
+        print("The response of GuardApi->get_guard_history:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GuardApi->get_guard_history: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guard_name** | **str**| Guard name | 
+ **call_id** | **str**| Call id | 
+
+### Return type
+
+[**List[Call]**](Call.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the fetched Guard History |  -  |
 **0** | Unexpected error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
