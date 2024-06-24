@@ -180,7 +180,7 @@ function fixModelSchemaDefaults () {
   const modelSchemaFile = fs.readFileSync(modelSchemaFilePath).toString();
   const modelSchema = modelSchemaFile
     .replace(
-      'unique_items: Optional[StrictBool] = Field(default=False, alias="uniqueItems")',
+      'unique_items: Optional[bool] = Field(default=False, alias="uniqueItems")',
       'unique_items: Optional[bool] = Field(default=None, alias="uniqueItems")'
     )
     .replace(
@@ -188,7 +188,7 @@ function fixModelSchemaDefaults () {
       '"uniqueItems": obj.get("uniqueItems"),'
     )
     .replace(
-      'deprecated: Optional[StrictBool] = False',
+      'deprecated: Optional[bool] = False',
       'deprecated: Optional[bool] = None'
     )
     .replace(
@@ -196,7 +196,7 @@ function fixModelSchemaDefaults () {
       '"deprecated": obj.get("deprecated"),'
     )
     .replace(
-      'read_only: Optional[StrictBool] = Field(default=False, alias="readOnly")',
+      'read_only: Optional[bool] = Field(default=False, alias="readOnly")',
       'read_only: Optional[bool] = Field(default=None, alias="readOnly")'
     )
     .replace(
@@ -204,7 +204,7 @@ function fixModelSchemaDefaults () {
       '"readOnly": obj.get("readOnly"),'
     )
     .replace(
-      'write_only: Optional[StrictBool] = Field(default=False, alias="writeOnly")',
+      'write_only: Optional[bool] = Field(default=False, alias="writeOnly")',
       'write_only: Optional[bool] = Field(default=None, alias="writeOnly")'
     )
     .replace(
