@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prompt_token_count** | **int** |  | [optional] 
 **response_token_count** | **int** |  | [optional] 
-**output** | **str** |  | [optional] 
+**output** | **str** |  | 
 **stream_output** | **List[str]** |  | [optional] 
+**async_stream_output** | **List[str]** |  | [optional] 
 
 ## Example
 

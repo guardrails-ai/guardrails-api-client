@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **reasks** | [**List[Reask]**](Reask.md) |  | [optional] 
 **validator_logs** | [**List[ValidatorLog]**](ValidatorLog.md) |  | [optional] 
 **error** | **str** | The error message from any exception which interrupted the Guard execution process. | [optional] 
-**exception** | [**OutputsException**](OutputsException.md) |  | [optional] 
 
 ## Example
 

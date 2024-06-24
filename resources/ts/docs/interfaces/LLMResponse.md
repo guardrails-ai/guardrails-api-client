@@ -12,6 +12,7 @@ LLMResponse
 
 ### Properties
 
+- [asyncStreamOutput](LLMResponse.md#asyncstreamoutput)
 - [output](LLMResponse.md#output)
 - [promptTokenCount](LLMResponse.md#prompttokencount)
 - [responseTokenCount](LLMResponse.md#responsetokencount)
@@ -19,9 +20,23 @@ LLMResponse
 
 ## Properties
 
+### asyncStreamOutput
+
+• `Optional` **asyncStreamOutput**: `string`[]
+
+**`Memberof`**
+
+LLMResponse
+
+#### Defined in
+
+src/models/LLMResponse.ts:50
+
+___
+
 ### output
 
-• `Optional` **output**: `string`
+• **output**: `string`
 
 **`Memberof`**
 

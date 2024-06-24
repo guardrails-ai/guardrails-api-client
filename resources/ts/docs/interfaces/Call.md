@@ -19,7 +19,7 @@ Call
 
 ### exception
 
-• `Optional` **exception**: `string` \| [`CallException`](CallException.md)
+• `Optional` **exception**: `string`
 
 **`Memberof`**
 
@@ -27,7 +27,7 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:51
+src/models/Call.ts:49
 
 ___
 
@@ -43,7 +43,7 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:33
+src/models/Call.ts:31
 
 ___
 
@@ -57,7 +57,7 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:45
+src/models/Call.ts:43
 
 ___
 
@@ -71,4 +71,4 @@ Call
 
 #### Defined in
 
-src/models/Call.ts:39
+src/models/Call.ts:37

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **num_reasks** | **int** | The total number of times the LLM can be called to correct output excluding the initial call. | [optional] 
 **metadata** | **Dict[str, object]** | Additional data to be used by Validators during execution time. | [optional] 
 **full_schema_reask** | **bool** | Whether to perform reasks for the entire schema rather than for individual fields. | [optional] 
+**stream** | **bool** | Whether to use streaming. | [optional] 
 **args** | [**List[object]**](AnyType.md) |  | [optional] 
 **kwargs** | **Dict[str, object]** |  | [optional] 
 

@@ -19,6 +19,7 @@ Inputs
 - [numReasks](Inputs.md#numreasks)
 - [prompt](Inputs.md#prompt)
 - [promptParams](Inputs.md#promptparams)
+- [stream](Inputs.md#stream)
 
 ## Properties
 
@@ -171,3 +172,19 @@ Inputs
 #### Defined in
 
 src/models/Inputs.ts:56
+
+___
+
+### stream
+
+• `Optional` **stream**: `boolean`
+
+Whether to use streaming.
+
+**`Memberof`**
+
+Inputs
+
+#### Defined in
+
+src/models/Inputs.ts:80

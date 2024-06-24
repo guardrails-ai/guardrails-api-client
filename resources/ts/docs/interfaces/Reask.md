@@ -6,6 +6,10 @@
 
 Reask
 
+## Indexable
+
+▪ [key: `string`]: `any` \| `any`
+
 ## Table of contents
 
 ### Properties
@@ -25,7 +29,7 @@ Reask
 
 #### Defined in
 
-src/models/Reask.ts:35
+src/models/Reask.ts:36
 
 ___
 
@@ -39,4 +43,4 @@ Reask
 
 #### Defined in
 
-src/models/Reask.ts:29
+src/models/Reask.ts:30

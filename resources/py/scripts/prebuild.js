@@ -102,6 +102,66 @@ setup(
   )
 }
 
+
+
+function fixValidationResult() {
+  const validationResultsFilePath = path.resolve('./guardrails_api_client/models/validation_result.py');
+  const validationResultsFile = fs.readFileSync(validationResultsFilePath).toString();
+  const validationResults = validationResultsFile
+    .replace(
+      '_obj = cls.model_validate({',
+      '_obj = cls.model_validate({\n\t\t\t"metadata": obj.get("metadata"),'
+    )
+    
+  if (validationResultsFile === validationResults) {
+    console.warn("Fixes in fixValidationResults may no longer be necessary!")
+  }
+
+  fs.writeFileSync(validationResultsFilePath, validationResults)
+}
+
+function fixPassResult() {
+  const passResultFilePath = path.resolve('./guardrails_api_client/models/pass_result.py');
+  const passResultFile = fs.readFileSync(passResultFilePath).toString();
+  const passResult = passResultFile
+    .replace(
+      '_obj = cls.model_validate({',
+      // The python formatter suddenly decided it didn't like tab characters
+      // even though they're fine later on in the string...
+      '\n        if obj.get("outcome") != "pass":\n            raise ValueError("PassResult must have an outcome value of \\"pass\\"!")\n        _obj = cls.model_validate({\n\t\t\t"metadata": obj.get("metadata"),\n\t\t\t"value_override": obj.get("valueOverride"),'
+    )
+    
+  if (passResultFile === passResult) {
+    console.warn("Fixes in fixPassResult may no longer be necessary!")
+  }
+
+  fs.writeFileSync(passResultFilePath, passResult)
+}
+
+function fixFailResult() {
+  const failResultFilePath = path.resolve('./guardrails_api_client/models/fail_result.py');
+  const failResultFile = fs.readFileSync(failResultFilePath).toString();
+  const failResult = failResultFile
+  .replace(
+    '_obj = cls.model_validate({',
+    // The python formatter suddenly decided it didn't like tab characters
+    // even though they're fine later on in the string...
+    '\n        if obj.get("outcome") != "fail":\n            raise ValueError("FailResult must have an outcome value of \\"fail\\"!")\n        _obj = cls.model_validate({\n\t\t\t"error_message": obj.get("errorMessage"),\n\t\t\t"fix_value": obj.get("fixValue"),\n\t\t\t"error_spans": [ErrorSpan.from_dict(es) for es in obj.get("errorSpans", [])],\n\t\t\t"metadata": obj.get("metadata"),'
+  )
+
+  if (failResultFile === failResult) {
+    console.warn("Fixes in fixFailResult may no longer be necessary!")
+  }
+
+  fs.writeFileSync(failResultFilePath, failResult)
+}
+
+function fixValidationResults() {
+  fixValidationResult();
+  fixPassResult();
+  fixFailResult();
+}
+
 function fixValidatorLogValidationResult () {
   const validatorLogValidationResultFilePath = path.resolve('./guardrails_api_client/models/validator_log_validation_result.py');
   const validatorLogValidationResultFile = fs.readFileSync(validatorLogValidationResultFilePath).toString();
@@ -120,7 +180,7 @@ function fixModelSchemaDefaults () {
   const modelSchemaFile = fs.readFileSync(modelSchemaFilePath).toString();
   const modelSchema = modelSchemaFile
     .replace(
-      'unique_items: Optional[StrictBool] = Field(default=False, alias="uniqueItems")',
+      'unique_items: Optional[bool] = Field(default=False, alias="uniqueItems")',
       'unique_items: Optional[bool] = Field(default=None, alias="uniqueItems")'
     )
     .replace(
@@ -128,7 +188,7 @@ function fixModelSchemaDefaults () {
       '"uniqueItems": obj.get("uniqueItems"),'
     )
     .replace(
-      'deprecated: Optional[StrictBool] = False',
+      'deprecated: Optional[bool] = False',
       'deprecated: Optional[bool] = None'
     )
     .replace(
@@ -136,7 +196,7 @@ function fixModelSchemaDefaults () {
       '"deprecated": obj.get("deprecated"),'
     )
     .replace(
-      'read_only: Optional[StrictBool] = Field(default=False, alias="readOnly")',
+      'read_only: Optional[bool] = Field(default=False, alias="readOnly")',
       'read_only: Optional[bool] = Field(default=None, alias="readOnly")'
     )
     .replace(
@@ -144,7 +204,7 @@ function fixModelSchemaDefaults () {
       '"readOnly": obj.get("readOnly"),'
     )
     .replace(
-      'write_only: Optional[StrictBool] = Field(default=False, alias="writeOnly")',
+      'write_only: Optional[bool] = Field(default=False, alias="writeOnly")',
       'write_only: Optional[bool] = Field(default=None, alias="writeOnly")'
     )
     .replace(
@@ -161,27 +221,6 @@ function fixModelSchemaDefaults () {
   }
 
   fs.writeFileSync(modelSchemaFilePath, modelSchema)
-}
-
-function fixGuardHistory () {
-  const guardFilePath = path.resolve('./guardrails_api_client/models/guard.py');
-  const guardFile = fs.readFileSync(guardFilePath).toString();
-  const guard = guardFile
-    .replace(
-      'history: Optional[GuardHistory] = None',
-      'i_history: Optional[GuardHistory] = Field(default=None, alias="history")'
-    )
-    .replace(/self.history/g, 'self.i_history')
-    .replace(
-      '"history": GuardHistory.from_dict(obj["history"]) if obj.get("history") is not None else None',
-      '"i_history": GuardHistory.from_dict(obj["history"]) if obj.get("history") is not None else None'
-    )
-    
-  if (guardFile === guard) {
-    console.warn("Fixes in fixGuardHistory may no longer be necessary!")
-  }
-
-  fs.writeFileSync(guardFilePath, guard)
 }
 
 function fixCallException () {
@@ -225,15 +264,47 @@ function fixValidatorReferenceTypes () {
       'on_fail: Optional[str] = Field(default=None, alias="onFail")'
     )
     .replace(
-      '"args": [object.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None,',
-      '**obj,\n"args": [object.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None,'
+      '"args": obj.get("args"),',
+      '**obj,\n"args": obj.get("args"),'
     )
     
   if (validatorReferenceFile === validatorReference) {
-    console.warn("Fixes in fixGuardHistory may no longer be necessary!")
+    console.warn("Fixes in fixValidatorReferenceTypes may no longer be necessary!")
   }
 
   fs.writeFileSync(validatorReferenceFilePath, validatorReference)
+}
+
+function fixInputs() {
+  const inputsFilePath = path.resolve('./guardrails_api_client/models/inputs.py');
+  const inputsFile = fs.readFileSync(inputsFilePath).toString();
+  const inputs = inputsFile
+  .replace(
+    '_obj = cls.model_validate({',
+    '_obj = cls.model_validate({\n\t\t\t"promptParams": obj.get("promptParams"),\n\t\t\t"metadata": obj.get("metadata"),'
+  )
+
+  if (inputsFile === inputs) {
+    console.warn("Fixes in fixInputs may no longer be necessary!")
+  }
+
+  fs.writeFileSync(inputsFilePath, inputs)
+}
+
+function fixCallInputs() {
+  const callInputsFilePath = path.resolve('./guardrails_api_client/models/call_inputs.py');
+  const callInputsFile = fs.readFileSync(callInputsFilePath).toString();
+  const callInputs = callInputsFile
+  .replace(
+    '_obj = cls.model_validate({',
+    '_obj = cls.model_validate({\n\t\t\t"promptParams": obj.get("promptParams"),\n\t\t\t"metadata": obj.get("metadata"),\n\t\t\t"kwargs": obj.get("kwargs"),'
+  )
+
+  if (callInputsFile === callInputs) {
+    console.warn("Fixes in fixInputs may no longer be necessary!")
+  }
+
+  fs.writeFileSync(callInputsFilePath, callInputs)
 }
 
 function exportAll (filePath) {
@@ -268,10 +339,12 @@ function fixInits () {
 
 function hotFixes () {
   fixValidatorLogValidationResult();
+  fixValidationResults();
   fixModelSchemaDefaults();
-  fixGuardHistory();
   fixCallException();
   fixValidatorReferenceTypes();
+  fixInputs();
+  fixCallInputs();
   fixInits();
 }
 
@@ -288,6 +361,100 @@ function globalReplacements () {
       filePath,
       fileContent
         .replace(/from guardrails_api_client.models.object import object/g, '')
+        .replace(
+          '"args": [object.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None,',
+          '"args": obj.get("args"),'
+        )
+        // TODO: Find a regex for these
+        .replace(
+          '"validatedChunk": object.from_dict(obj["validatedChunk"]) if obj.get("validatedChunk") is not None else None',
+          '"validated_chunk": obj.get("validatedChunk")'
+        )
+        .replace(
+          '"incorrectValue": object.from_dict(obj["incorrectValue"]) if obj.get("incorrectValue") is not None else None,',
+          '"incorrectValue": obj.get("incorrectValue"),'
+        )
+        .replace(
+          '"valueBeforeValidation": object.from_dict(obj["valueBeforeValidation"]) if obj.get("valueBeforeValidation") is not None else None,',
+          '"valueBeforeValidation": obj.get("valueBeforeValidation"),'
+        )
+        .replace(
+          '"valueAfterValidation": object.from_dict(obj["valueAfterValidation"]) if obj.get("valueAfterValidation") is not None else None,',
+          '"valueAfterValidation": obj.get("valueAfterValidation"),'
+        )
+        .replace(
+          '_items.append(_item.to_dict())',
+          '_items.append(_item.to_dict() if hasattr(_item, "to_dict") and callable(_item.to_dict) else _item)'
+        )
+        .replace(
+          "_dict['validatedChunk'] = self.validated_chunk.to_dict()",
+          "_dict['validatedChunk'] = self.validated_chunk"
+        )
+        .replace(
+          "_dict['incorrectValue'] = self.incorrect_value.to_dict()",
+          "_dict['incorrectValue'] = self.incorrect_value"
+        )
+        .replace(
+          "_dict['valueBeforeValidation'] = self.value_before_validation.to_dict()",
+          "_dict['valueBeforeValidation'] = self.value_before_validation"
+        )
+        .replace(
+          "_dict['valueAfterValidation'] = self.valueAfterValidation.to_dict()",
+          "_dict['valueAfterValidation'] = self.valueAfterValidation"
+        )
+        .replace(
+          "_dict['valueAfterValidation'] = self.value_after_validation.to_dict()",
+          "_dict['valueAfterValidation'] = self.value_after_validation"
+        )
+        .replace(
+          'error_message: Optional[Any] = Field(alias="errorMessage")',
+          'error_message: Optional[str] = Field(alias="errorMessage")'
+        )
+        .replace(
+          'outcome: Optional[Any]',
+          'outcome: Optional[str]'
+        )
+        .replace(
+          /\: StrictStr/g,
+          ': str'
+        )
+        .replace(
+          /\[StrictStr]/g,
+          '[str]'
+        )
+        .replace(
+          /\: StrictBool/g,
+          ': bool'
+        )
+        .replace(
+          /\[StrictBool]/g,
+          '[bool]'
+        )
+        .replace(
+          /\: StrictInt/g,
+          ': int'
+        )
+        .replace(
+          /\[StrictInt]/g,
+          '[int]'
+        )
+        .replace(
+          /\: StrictFloat/g,
+          ': float'
+        )
+        .replace(
+          /\[StrictFloat]/g,
+          '[float]'
+        )
+        .replace(
+          'start_time: Optional[datetime] = Field(default=None, alias="startTime")',
+          'start_time: Optional[str] = Field(default=None, alias="startTime")'
+        )
+        .replace(
+          'end_time: Optional[datetime] = Field(default=None, alias="endTime")',
+          'end_time: Optional[str] = Field(default=None, alias="endTime")'
+        )
+        
     );
   }
 }

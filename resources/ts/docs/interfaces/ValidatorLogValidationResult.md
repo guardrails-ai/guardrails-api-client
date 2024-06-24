@@ -11,16 +11,18 @@ ValidatorLogValidationResult
 ### Properties
 
 - [errorMessage](ValidatorLogValidationResult.md#errormessage)
+- [errorSpans](ValidatorLogValidationResult.md#errorspans)
 - [fixValue](ValidatorLogValidationResult.md#fixvalue)
 - [metadata](ValidatorLogValidationResult.md#metadata)
 - [outcome](ValidatorLogValidationResult.md#outcome)
+- [validatedChunk](ValidatorLogValidationResult.md#validatedchunk)
 - [valueOverride](ValidatorLogValidationResult.md#valueoverride)
 
 ## Properties
 
 ### errorMessage
 
-• `Optional` **errorMessage**: `any`
+• **errorMessage**: `any`
 
 **`Memberof`**
 
@@ -28,7 +30,21 @@ ValidatorLogValidationResult
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:44
+src/models/ValidatorLogValidationResult.ts:53
+
+___
+
+### errorSpans
+
+• `Optional` **errorSpans**: [`ErrorSpan`](ErrorSpan.md)[]
+
+**`Memberof`**
+
+ValidatorLogValidationResult
+
+#### Defined in
+
+src/models/ValidatorLogValidationResult.ts:65
 
 ___
 
@@ -42,7 +58,7 @@ ValidatorLogValidationResult
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:50
+src/models/ValidatorLogValidationResult.ts:59
 
 ___
 
@@ -60,13 +76,13 @@ ValidatorLogValidationResult
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:38
+src/models/ValidatorLogValidationResult.ts:41
 
 ___
 
 ### outcome
 
-• `Optional` **outcome**: [`ValidatorLogValidationResultOutcomeEnum`](../modules.md#validatorlogvalidationresultoutcomeenum)
+• **outcome**: [`ValidatorLogValidationResultOutcomeEnum`](../modules.md#validatorlogvalidationresultoutcomeenum)
 
 **`Memberof`**
 
@@ -74,7 +90,21 @@ ValidatorLogValidationResult
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:26
+src/models/ValidatorLogValidationResult.ts:29
+
+___
+
+### validatedChunk
+
+• `Optional` **validatedChunk**: `any`
+
+**`Memberof`**
+
+ValidatorLogValidationResult
+
+#### Defined in
+
+src/models/ValidatorLogValidationResult.ts:47
 
 ___
 
@@ -88,4 +118,4 @@ ValidatorLogValidationResult
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:32
+src/models/ValidatorLogValidationResult.ts:35

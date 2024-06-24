@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**validator_name** | **str** | The class name of the validator. | [optional] 
-**registered_name** | **str** | The registry id of the validator. | [optional] 
+**validator_name** | **str** | The class name of the validator. | 
+**registered_name** | **str** | The registry id of the validator. | 
 **instance_id** | [**ValidatorLogInstanceId**](ValidatorLogInstanceId.md) |  | [optional] 
-**property_path** | **str** | The JSON path to the property which was validated that produced this log. | [optional] 
-**value_before_validation** | [**object**](AnyType.md) |  | [optional] 
+**property_path** | **str** | The JSON path to the property which was validated that produced this log. | 
+**value_before_validation** | [**object**](AnyType.md) |  | 
 **value_after_validation** | [**object**](AnyType.md) |  | [optional] 
 **validation_result** | [**ValidatorLogValidationResult**](ValidatorLogValidationResult.md) |  | [optional] 
 **start_time** | **datetime** |  | [optional] 

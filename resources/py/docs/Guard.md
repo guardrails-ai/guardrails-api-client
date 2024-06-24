@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | A description that concisely states the expected behaviour or purpose of the Guard. | [optional] 
 **validators** | [**List[ValidatorReference]**](ValidatorReference.md) |  | [optional] 
 **output_schema** | [**ModelSchema**](ModelSchema.md) |  | [optional] 
-**history** | [**GuardHistory**](GuardHistory.md) |  | [optional] 
+**history** | [**List[Call]**](Call.md) |  | [optional] 
 
 ## Example
 

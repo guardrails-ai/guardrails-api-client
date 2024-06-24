@@ -11,15 +11,17 @@ FailResult
 ### Properties
 
 - [errorMessage](FailResult.md#errormessage)
+- [errorSpans](FailResult.md#errorspans)
 - [fixValue](FailResult.md#fixvalue)
 - [metadata](FailResult.md#metadata)
 - [outcome](FailResult.md#outcome)
+- [validatedChunk](FailResult.md#validatedchunk)
 
 ## Properties
 
 ### errorMessage
 
-• `Optional` **errorMessage**: `any`
+• **errorMessage**: `any`
 
 **`Memberof`**
 
@@ -27,7 +29,21 @@ FailResult
 
 #### Defined in
 
-src/models/FailResult.ts:32
+src/models/FailResult.ts:35
+
+___
+
+### errorSpans
+
+• `Optional` **errorSpans**: [`ErrorSpan`](ErrorSpan.md)[]
+
+**`Memberof`**
+
+FailResult
+
+#### Defined in
+
+src/models/FailResult.ts:47
 
 ___
 
@@ -41,7 +57,7 @@ FailResult
 
 #### Defined in
 
-src/models/FailResult.ts:38
+src/models/FailResult.ts:41
 
 ___
 
@@ -59,13 +75,13 @@ FailResult
 
 #### Defined in
 
-src/models/FailResult.ts:44
+src/models/FailResult.ts:53
 
 ___
 
 ### outcome
 
-• `Optional` **outcome**: `any`
+• **outcome**: `any`
 
 **`Memberof`**
 
@@ -73,4 +89,18 @@ FailResult
 
 #### Defined in
 
-src/models/FailResult.ts:26
+src/models/FailResult.ts:29
+
+___
+
+### validatedChunk
+
+• `Optional` **validatedChunk**: `any`
+
+**`Memberof`**
+
+FailResult
+
+#### Defined in
+
+src/models/FailResult.ts:59

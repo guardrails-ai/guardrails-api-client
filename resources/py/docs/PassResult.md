@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**outcome** | **object** |  | [optional] 
+**outcome** | **object** |  | 
 **value_override** | [**object**](AnyType.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
+**validated_chunk** | [**object**](AnyType.md) |  | [optional] 
 
 ## Example
 

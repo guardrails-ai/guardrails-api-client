@@ -27,8 +27,6 @@
 - [ArgsAndKwargs](interfaces/ArgsAndKwargs.md)
 - [ArraysInner](interfaces/ArraysInner.md)
 - [Call](interfaces/Call.md)
-- [CallException](interfaces/CallException.md)
-- [CallExceptionAnyOf](interfaces/CallExceptionAnyOf.md)
 - [CallInputs](interfaces/CallInputs.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
 - [Consume](interfaces/Consume.md)
@@ -37,6 +35,7 @@
 - [CreateGuardRequest](interfaces/CreateGuardRequest.md)
 - [DeleteGuardRequest](interfaces/DeleteGuardRequest.md)
 - [ErrorContext](interfaces/ErrorContext.md)
+- [ErrorSpan](interfaces/ErrorSpan.md)
 - [FailResult](interfaces/FailResult.md)
 - [FetchParams](interfaces/FetchParams.md)
 - [FormatAnnotation](interfaces/FormatAnnotation.md)
@@ -44,8 +43,6 @@
 - [GetGuardRequest](interfaces/GetGuardRequest.md)
 - [Guard](interfaces/Guard.md)
 - [GuardApiInterface](interfaces/GuardApiInterface.md)
-- [GuardHistory](interfaces/GuardHistory.md)
-- [GuardHistoryAnyOfInner](interfaces/GuardHistoryAnyOfInner.md)
 - [HealthCheck](interfaces/HealthCheck.md)
 - [HttpError](interfaces/HttpError.md)
 - [Inputs](interfaces/Inputs.md)
@@ -54,7 +51,6 @@
 - [MetaData](interfaces/MetaData.md)
 - [Middleware](interfaces/Middleware.md)
 - [Outputs](interfaces/Outputs.md)
-- [OutputsException](interfaces/OutputsException.md)
 - [OutputsParsedOutput](interfaces/OutputsParsedOutput.md)
 - [OutputsValidationResponse](interfaces/OutputsValidationResponse.md)
 - [PassResult](interfaces/PassResult.md)
@@ -124,12 +120,6 @@
 - [ArraysInnerFromJSON](modules.md#arraysinnerfromjson)
 - [ArraysInnerFromJSONTyped](modules.md#arraysinnerfromjsontyped)
 - [ArraysInnerToJSON](modules.md#arraysinnertojson)
-- [CallExceptionAnyOfFromJSON](modules.md#callexceptionanyoffromjson)
-- [CallExceptionAnyOfFromJSONTyped](modules.md#callexceptionanyoffromjsontyped)
-- [CallExceptionAnyOfToJSON](modules.md#callexceptionanyoftojson)
-- [CallExceptionFromJSON](modules.md#callexceptionfromjson)
-- [CallExceptionFromJSONTyped](modules.md#callexceptionfromjsontyped)
-- [CallExceptionToJSON](modules.md#callexceptiontojson)
 - [CallFromJSON](modules.md#callfromjson)
 - [CallFromJSONTyped](modules.md#callfromjsontyped)
 - [CallInputsFromJSON](modules.md#callinputsfromjson)
@@ -142,6 +132,9 @@
 - [CoreFromJSON](modules.md#corefromjson)
 - [CoreFromJSONTyped](modules.md#corefromjsontyped)
 - [CoreToJSON](modules.md#coretojson)
+- [ErrorSpanFromJSON](modules.md#errorspanfromjson)
+- [ErrorSpanFromJSONTyped](modules.md#errorspanfromjsontyped)
+- [ErrorSpanToJSON](modules.md#errorspantojson)
 - [FailResultFromJSON](modules.md#failresultfromjson)
 - [FailResultFromJSONTyped](modules.md#failresultfromjsontyped)
 - [FailResultToJSON](modules.md#failresulttojson)
@@ -150,12 +143,6 @@
 - [FormatAnnotationToJSON](modules.md#formatannotationtojson)
 - [GuardFromJSON](modules.md#guardfromjson)
 - [GuardFromJSONTyped](modules.md#guardfromjsontyped)
-- [GuardHistoryAnyOfInnerFromJSON](modules.md#guardhistoryanyofinnerfromjson)
-- [GuardHistoryAnyOfInnerFromJSONTyped](modules.md#guardhistoryanyofinnerfromjsontyped)
-- [GuardHistoryAnyOfInnerToJSON](modules.md#guardhistoryanyofinnertojson)
-- [GuardHistoryFromJSON](modules.md#guardhistoryfromjson)
-- [GuardHistoryFromJSONTyped](modules.md#guardhistoryfromjsontyped)
-- [GuardHistoryToJSON](modules.md#guardhistorytojson)
 - [GuardToJSON](modules.md#guardtojson)
 - [HealthCheckFromJSON](modules.md#healthcheckfromjson)
 - [HealthCheckFromJSONTyped](modules.md#healthcheckfromjsontyped)
@@ -178,9 +165,6 @@
 - [MetaDataFromJSON](modules.md#metadatafromjson)
 - [MetaDataFromJSONTyped](modules.md#metadatafromjsontyped)
 - [MetaDataToJSON](modules.md#metadatatojson)
-- [OutputsExceptionFromJSON](modules.md#outputsexceptionfromjson)
-- [OutputsExceptionFromJSONTyped](modules.md#outputsexceptionfromjsontyped)
-- [OutputsExceptionToJSON](modules.md#outputsexceptiontojson)
 - [OutputsFromJSON](modules.md#outputsfromjson)
 - [OutputsFromJSONTyped](modules.md#outputsfromjsontyped)
 - [OutputsParsedOutputFromJSON](modules.md#outputsparsedoutputfromjson)
@@ -244,16 +228,13 @@
 - [instanceOfArgsAndKwargs](modules.md#instanceofargsandkwargs)
 - [instanceOfArraysInner](modules.md#instanceofarraysinner)
 - [instanceOfCall](modules.md#instanceofcall)
-- [instanceOfCallException](modules.md#instanceofcallexception)
-- [instanceOfCallExceptionAnyOf](modules.md#instanceofcallexceptionanyof)
 - [instanceOfCallInputs](modules.md#instanceofcallinputs)
 - [instanceOfContent](modules.md#instanceofcontent)
 - [instanceOfCore](modules.md#instanceofcore)
+- [instanceOfErrorSpan](modules.md#instanceoferrorspan)
 - [instanceOfFailResult](modules.md#instanceoffailresult)
 - [instanceOfFormatAnnotation](modules.md#instanceofformatannotation)
 - [instanceOfGuard](modules.md#instanceofguard)
-- [instanceOfGuardHistory](modules.md#instanceofguardhistory)
-- [instanceOfGuardHistoryAnyOfInner](modules.md#instanceofguardhistoryanyofinner)
 - [instanceOfHealthCheck](modules.md#instanceofhealthcheck)
 - [instanceOfHttpError](modules.md#instanceofhttperror)
 - [instanceOfInputs](modules.md#instanceofinputs)
@@ -262,7 +243,6 @@
 - [instanceOfLLMResponse](modules.md#instanceofllmresponse)
 - [instanceOfMetaData](modules.md#instanceofmetadata)
 - [instanceOfOutputs](modules.md#instanceofoutputs)
-- [instanceOfOutputsException](modules.md#instanceofoutputsexception)
 - [instanceOfOutputsParsedOutput](modules.md#instanceofoutputsparsedoutput)
 - [instanceOfOutputsValidationResponse](modules.md#instanceofoutputsvalidationresponse)
 - [instanceOfPassResult](modules.md#instanceofpassresult)
@@ -451,9 +431,9 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:38
+src/models/ValidationResult.ts:44
 
-src/models/ValidationResult.ts:42
+src/models/ValidationResult.ts:48
 
 ___
 
@@ -463,9 +443,9 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:56
+src/models/ValidatorLogValidationResult.ts:71
 
-src/models/ValidatorLogValidationResult.ts:60
+src/models/ValidatorLogValidationResult.ts:75
 
 ___
 
@@ -597,9 +577,9 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:38
+src/models/ValidationResult.ts:44
 
-src/models/ValidationResult.ts:42
+src/models/ValidationResult.ts:48
 
 ___
 
@@ -618,9 +598,9 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:56
+src/models/ValidatorLogValidationResult.ts:71
 
-src/models/ValidatorLogValidationResult.ts:60
+src/models/ValidatorLogValidationResult.ts:75
 
 ___
 
@@ -895,128 +875,6 @@ src/models/ArraysInner.ts:40
 
 ___
 
-### CallExceptionAnyOfFromJSON
-
-▸ **CallExceptionAnyOfFromJSON**(`json`): [`CallExceptionAnyOf`](interfaces/CallExceptionAnyOf.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`CallExceptionAnyOf`](interfaces/CallExceptionAnyOf.md)
-
-#### Defined in
-
-src/models/CallExceptionAnyOf.ts:37
-
-___
-
-### CallExceptionAnyOfFromJSONTyped
-
-▸ **CallExceptionAnyOfFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CallExceptionAnyOf`](interfaces/CallExceptionAnyOf.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`CallExceptionAnyOf`](interfaces/CallExceptionAnyOf.md)
-
-#### Defined in
-
-src/models/CallExceptionAnyOf.ts:41
-
-___
-
-### CallExceptionAnyOfToJSON
-
-▸ **CallExceptionAnyOfToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`CallExceptionAnyOf`](interfaces/CallExceptionAnyOf.md) |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-src/models/CallExceptionAnyOf.ts:54
-
-___
-
-### CallExceptionFromJSON
-
-▸ **CallExceptionFromJSON**(`json`): `string` \| [`CallException`](interfaces/CallException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `string` \| \{ `[key: string]`: `any`;  } |
-
-#### Returns
-
-`string` \| [`CallException`](interfaces/CallException.md)
-
-#### Defined in
-
-src/models/CallException.ts:47
-
-___
-
-### CallExceptionFromJSONTyped
-
-▸ **CallExceptionFromJSONTyped**(`json`, `ignoreDiscriminator`): `string` \| [`CallException`](interfaces/CallException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `string` \| \{ `[key: string]`: `any`;  } |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-`string` \| [`CallException`](interfaces/CallException.md)
-
-#### Defined in
-
-src/models/CallException.ts:53
-
-___
-
-### CallExceptionToJSON
-
-▸ **CallExceptionToJSON**(`value?`): `string` \| \{ `[key: string]`: `any`;  } \| ``null`` \| `undefined`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| `string` \| [`CallException`](interfaces/CallException.md) |
-
-#### Returns
-
-`string` \| \{ `[key: string]`: `any`;  } \| ``null`` \| `undefined`
-
-#### Defined in
-
-src/models/CallException.ts:72
-
-___
-
 ### CallFromJSON
 
 ▸ **CallFromJSON**(`json`): [`Call`](interfaces/Call.md)
@@ -1033,7 +891,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:62
+src/models/Call.ts:60
 
 ___
 
@@ -1054,7 +912,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:66
+src/models/Call.ts:64
 
 ___
 
@@ -1074,7 +932,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:96
+src/models/CallInputs.ts:102
 
 ___
 
@@ -1095,7 +953,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:100
+src/models/CallInputs.ts:106
 
 ___
 
@@ -1115,7 +973,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:125
+src/models/CallInputs.ts:132
 
 ___
 
@@ -1135,7 +993,7 @@ ___
 
 #### Defined in
 
-src/models/Call.ts:88
+src/models/Call.ts:83
 
 ___
 
@@ -1261,6 +1119,67 @@ src/models/Core.ts:95
 
 ___
 
+### ErrorSpanFromJSON
+
+▸ **ErrorSpanFromJSON**(`json`): [`ErrorSpan`](interfaces/ErrorSpan.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ErrorSpan`](interfaces/ErrorSpan.md)
+
+#### Defined in
+
+src/models/ErrorSpan.ts:51
+
+___
+
+### ErrorSpanFromJSONTyped
+
+▸ **ErrorSpanFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ErrorSpan`](interfaces/ErrorSpan.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ErrorSpan`](interfaces/ErrorSpan.md)
+
+#### Defined in
+
+src/models/ErrorSpan.ts:55
+
+___
+
+### ErrorSpanToJSON
+
+▸ **ErrorSpanToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | ``null`` \| [`ErrorSpan`](interfaces/ErrorSpan.md) |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/ErrorSpan.ts:69
+
+___
+
 ### FailResultFromJSON
 
 ▸ **FailResultFromJSON**(`json`): [`FailResult`](interfaces/FailResult.md)
@@ -1277,7 +1196,7 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:54
+src/models/FailResult.ts:71
 
 ___
 
@@ -1298,7 +1217,7 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:58
+src/models/FailResult.ts:75
 
 ___
 
@@ -1318,7 +1237,7 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:74
+src/models/FailResult.ts:96
 
 ___
 
@@ -1399,7 +1318,7 @@ ___
 
 #### Defined in
 
-src/models/Guard.ts:79
+src/models/Guard.ts:78
 
 ___
 
@@ -1420,129 +1339,7 @@ ___
 
 #### Defined in
 
-src/models/Guard.ts:83
-
-___
-
-### GuardHistoryAnyOfInnerFromJSON
-
-▸ **GuardHistoryAnyOfInnerFromJSON**(`json`): [`GuardHistoryAnyOfInner`](interfaces/GuardHistoryAnyOfInner.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`GuardHistoryAnyOfInner`](interfaces/GuardHistoryAnyOfInner.md)
-
-#### Defined in
-
-src/models/GuardHistoryAnyOfInner.ts:36
-
-___
-
-### GuardHistoryAnyOfInnerFromJSONTyped
-
-▸ **GuardHistoryAnyOfInnerFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuardHistoryAnyOfInner`](interfaces/GuardHistoryAnyOfInner.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`GuardHistoryAnyOfInner`](interfaces/GuardHistoryAnyOfInner.md)
-
-#### Defined in
-
-src/models/GuardHistoryAnyOfInner.ts:42
-
-___
-
-### GuardHistoryAnyOfInnerToJSON
-
-▸ **GuardHistoryAnyOfInnerToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`GuardHistoryAnyOfInner`](interfaces/GuardHistoryAnyOfInner.md) |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-src/models/GuardHistoryAnyOfInner.ts:54
-
-___
-
-### GuardHistoryFromJSON
-
-▸ **GuardHistoryFromJSON**(`json`): [`GuardHistory`](interfaces/GuardHistory.md) \| [`Call`](interfaces/Call.md)[]
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`GuardHistory`](interfaces/GuardHistory.md) \| [`Call`](interfaces/Call.md)[]
-
-#### Defined in
-
-src/models/GuardHistory.ts:39
-
-___
-
-### GuardHistoryFromJSONTyped
-
-▸ **GuardHistoryFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuardHistory`](interfaces/GuardHistory.md) \| [`Call`](interfaces/Call.md)[]
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`GuardHistory`](interfaces/GuardHistory.md) \| [`Call`](interfaces/Call.md)[]
-
-#### Defined in
-
-src/models/GuardHistory.ts:43
-
-___
-
-### GuardHistoryToJSON
-
-▸ **GuardHistoryToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`GuardHistory`](interfaces/GuardHistory.md) \| [`Call`](interfaces/Call.md)[] |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-src/models/GuardHistory.ts:57
+src/models/Guard.ts:82
 
 ___
 
@@ -1562,7 +1359,7 @@ ___
 
 #### Defined in
 
-src/models/Guard.ts:109
+src/models/Guard.ts:108
 
 ___
 
@@ -1704,7 +1501,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:84
+src/models/Inputs.ts:90
 
 ___
 
@@ -1725,7 +1522,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:88
+src/models/Inputs.ts:94
 
 ___
 
@@ -1745,7 +1542,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:111
+src/models/Inputs.ts:118
 
 ___
 
@@ -1887,7 +1684,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResponse.ts:54
+src/models/LLMResponse.ts:61
 
 ___
 
@@ -1908,7 +1705,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResponse.ts:58
+src/models/LLMResponse.ts:65
 
 ___
 
@@ -1928,7 +1725,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResponse.ts:78
+src/models/LLMResponse.ts:87
 
 ___
 
@@ -1993,67 +1790,6 @@ src/models/MetaData.ts:94
 
 ___
 
-### OutputsExceptionFromJSON
-
-▸ **OutputsExceptionFromJSON**(`json`): [`OutputsException`](interfaces/OutputsException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`OutputsException`](interfaces/OutputsException.md)
-
-#### Defined in
-
-src/models/OutputsException.ts:37
-
-___
-
-### OutputsExceptionFromJSONTyped
-
-▸ **OutputsExceptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OutputsException`](interfaces/OutputsException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`OutputsException`](interfaces/OutputsException.md)
-
-#### Defined in
-
-src/models/OutputsException.ts:41
-
-___
-
-### OutputsExceptionToJSON
-
-▸ **OutputsExceptionToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`OutputsException`](interfaces/OutputsException.md) |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-src/models/OutputsException.ts:54
-
-___
-
 ### OutputsFromJSON
 
 ▸ **OutputsFromJSON**(`json`): [`Outputs`](interfaces/Outputs.md)
@@ -2070,7 +1806,7 @@ ___
 
 #### Defined in
 
-src/models/Outputs.ts:104
+src/models/Outputs.ts:93
 
 ___
 
@@ -2091,7 +1827,7 @@ ___
 
 #### Defined in
 
-src/models/Outputs.ts:108
+src/models/Outputs.ts:97
 
 ___
 
@@ -2172,7 +1908,7 @@ ___
 
 #### Defined in
 
-src/models/Outputs.ts:149
+src/models/Outputs.ts:134
 
 ___
 
@@ -2253,7 +1989,7 @@ ___
 
 #### Defined in
 
-src/models/PassResult.ts:48
+src/models/PassResult.ts:55
 
 ___
 
@@ -2274,7 +2010,7 @@ ___
 
 #### Defined in
 
-src/models/PassResult.ts:52
+src/models/PassResult.ts:59
 
 ___
 
@@ -2294,7 +2030,7 @@ ___
 
 #### Defined in
 
-src/models/PassResult.ts:67
+src/models/PassResult.ts:76
 
 ___
 
@@ -2375,7 +2111,7 @@ ___
 
 #### Defined in
 
-src/models/Reask.ts:45
+src/models/Reask.ts:46
 
 ___
 
@@ -2396,7 +2132,7 @@ ___
 
 #### Defined in
 
-src/models/Reask.ts:49
+src/models/Reask.ts:50
 
 ___
 
@@ -2416,7 +2152,7 @@ ___
 
 #### Defined in
 
-src/models/Reask.ts:66
+src/models/Reask.ts:68
 
 ___
 
@@ -2843,7 +2579,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:52
+src/models/ValidationResult.ts:59
 
 ___
 
@@ -2864,7 +2600,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:56
+src/models/ValidationResult.ts:63
 
 ___
 
@@ -2884,7 +2620,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:69
+src/models/ValidationResult.ts:78
 
 ___
 
@@ -2985,7 +2721,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:90
+src/models/ValidatorLog.ts:94
 
 ___
 
@@ -3006,7 +2742,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:94
+src/models/ValidatorLog.ts:98
 
 ___
 
@@ -3087,7 +2823,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:127
+src/models/ValidatorLog.ts:125
 
 ___
 
@@ -3107,7 +2843,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:70
+src/models/ValidatorLogValidationResult.ts:87
 
 ___
 
@@ -3128,7 +2864,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:76
+src/models/ValidatorLogValidationResult.ts:93
 
 ___
 
@@ -3148,7 +2884,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:94
+src/models/ValidatorLogValidationResult.ts:116
 
 ___
 
@@ -3339,51 +3075,7 @@ Check if a given object implements the Call interface.
 
 #### Defined in
 
-src/models/Call.ts:57
-
-___
-
-### instanceOfCallException
-
-▸ **instanceOfCallException**(`value`): `boolean`
-
-Check if a given object implements the CallException interface.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `string` \| \{ `[key: string]`: `any`;  } |
-
-#### Returns
-
-`boolean`
-
-#### Defined in
-
-src/models/CallException.ts:32
-
-___
-
-### instanceOfCallExceptionAnyOf
-
-▸ **instanceOfCallExceptionAnyOf**(`value`): `boolean`
-
-Check if a given object implements the CallExceptionAnyOf interface.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `object` |
-
-#### Returns
-
-`boolean`
-
-#### Defined in
-
-src/models/CallExceptionAnyOf.ts:33
+src/models/Call.ts:55
 
 ___
 
@@ -3405,7 +3097,7 @@ Check if a given object implements the CallInputs interface.
 
 #### Defined in
 
-src/models/CallInputs.ts:92
+src/models/CallInputs.ts:98
 
 ___
 
@@ -3453,6 +3145,28 @@ src/models/Core.ts:68
 
 ___
 
+### instanceOfErrorSpan
+
+▸ **instanceOfErrorSpan**(`value`): `boolean`
+
+Check if a given object implements the ErrorSpan interface.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `object` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/models/ErrorSpan.ts:44
+
+___
+
 ### instanceOfFailResult
 
 ▸ **instanceOfFailResult**(`value`): `boolean`
@@ -3471,7 +3185,7 @@ Check if a given object implements the FailResult interface.
 
 #### Defined in
 
-src/models/FailResult.ts:50
+src/models/FailResult.ts:65
 
 ___
 
@@ -3515,51 +3229,7 @@ Check if a given object implements the Guard interface.
 
 #### Defined in
 
-src/models/Guard.ts:73
-
-___
-
-### instanceOfGuardHistory
-
-▸ **instanceOfGuardHistory**(`value`): `boolean`
-
-Check if a given object implements the GuardHistory interface.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `Object` |
-
-#### Returns
-
-`boolean`
-
-#### Defined in
-
-src/models/GuardHistory.ts:35
-
-___
-
-### instanceOfGuardHistoryAnyOfInner
-
-▸ **instanceOfGuardHistoryAnyOfInner**(`value`): `boolean`
-
-Check if a given object implements the GuardHistoryAnyOfInner interface.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `object` |
-
-#### Returns
-
-`boolean`
-
-#### Defined in
-
-src/models/GuardHistoryAnyOfInner.ts:32
+src/models/Guard.ts:72
 
 ___
 
@@ -3625,7 +3295,7 @@ Check if a given object implements the Inputs interface.
 
 #### Defined in
 
-src/models/Inputs.ts:80
+src/models/Inputs.ts:86
 
 ___
 
@@ -3689,7 +3359,7 @@ Check if a given object implements the LLMResponse interface.
 
 #### Defined in
 
-src/models/LLMResponse.ts:50
+src/models/LLMResponse.ts:56
 
 ___
 
@@ -3733,29 +3403,7 @@ Check if a given object implements the Outputs interface.
 
 #### Defined in
 
-src/models/Outputs.ts:100
-
-___
-
-### instanceOfOutputsException
-
-▸ **instanceOfOutputsException**(`value`): `boolean`
-
-Check if a given object implements the OutputsException interface.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `object` |
-
-#### Returns
-
-`boolean`
-
-#### Defined in
-
-src/models/OutputsException.ts:33
+src/models/Outputs.ts:89
 
 ___
 
@@ -3821,7 +3469,7 @@ Check if a given object implements the PassResult interface.
 
 #### Defined in
 
-src/models/PassResult.ts:44
+src/models/PassResult.ts:50
 
 ___
 
@@ -3865,7 +3513,7 @@ Check if a given object implements the Reask interface.
 
 #### Defined in
 
-src/models/Reask.ts:41
+src/models/Reask.ts:42
 
 ___
 
@@ -4039,7 +3687,7 @@ Check if a given object implements the ValidationResult interface.
 
 #### Defined in
 
-src/models/ValidationResult.ts:48
+src/models/ValidationResult.ts:54
 
 ___
 
@@ -4127,7 +3775,7 @@ Check if a given object implements the ValidatorLogValidationResult interface.
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:66
+src/models/ValidatorLogValidationResult.ts:81
 
 ___
 

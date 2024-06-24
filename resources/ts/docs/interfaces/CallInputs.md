@@ -21,6 +21,7 @@ CallInputs
 - [numReasks](CallInputs.md#numreasks)
 - [prompt](CallInputs.md#prompt)
 - [promptParams](CallInputs.md#promptparams)
+- [stream](CallInputs.md#stream)
 
 ## Properties
 
@@ -34,7 +35,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:80
+src/models/CallInputs.ts:86
 
 ___
 
@@ -84,7 +85,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:86
+src/models/CallInputs.ts:92
 
 ___
 
@@ -205,3 +206,19 @@ CallInputs
 #### Defined in
 
 src/models/CallInputs.ts:56
+
+___
+
+### stream
+
+• `Optional` **stream**: `boolean`
+
+Whether to use streaming.
+
+**`Memberof`**
+
+CallInputs
+
+#### Defined in
+
+src/models/CallInputs.ts:80

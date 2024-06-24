@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** | The unique identifier for this Call.  Can be used as an identifier for a specific execution of a Guard. | 
 **iterations** | [**List[Iteration]**](Iteration.md) |  | [optional] [default to []]
 **inputs** | [**CallInputs**](CallInputs.md) |  | [optional] 
-**exception** | [**CallException**](CallException.md) |  | [optional] 
+**exception** | **str** |  | [optional] 
 
 ## Example
 
