@@ -5,11 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**outcome** | **str** |  | [optional] 
+**outcome** | **str** |  | 
 **value_override** | [**object**](AnyType.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
-**error_message** | **object** |  | [optional] 
+**validated_chunk** | [**object**](AnyType.md) |  | [optional] 
+**error_message** | **object** |  | 
 **fix_value** | [**object**](AnyType.md) |  | [optional] 
+**error_spans** | [**List[ErrorSpan]**](ErrorSpan.md) |  | [optional] 
 
 ## Example
 

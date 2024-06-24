@@ -5,10 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**outcome** | **object** |  | [optional] 
-**error_message** | **object** |  | [optional] 
+**outcome** | **object** |  | 
+**error_message** | **object** |  | 
 **fix_value** | [**object**](AnyType.md) |  | [optional] 
+**error_spans** | [**List[ErrorSpan]**](ErrorSpan.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
+**validated_chunk** | [**object**](AnyType.md) |  | [optional] 
 
 ## Example
 

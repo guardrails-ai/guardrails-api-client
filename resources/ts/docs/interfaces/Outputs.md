@@ -11,7 +11,6 @@ Outputs
 ### Properties
 
 - [error](Outputs.md#error)
-- [exception](Outputs.md#exception)
 - [guardedOutput](Outputs.md#guardedoutput)
 - [llmResponseInfo](Outputs.md#llmresponseinfo)
 - [parsedOutput](Outputs.md#parsedoutput)
@@ -34,21 +33,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:88
-
-___
-
-### exception
-
-• `Optional` **exception**: [`OutputsException`](OutputsException.md)
-
-**`Memberof`**
-
-Outputs
-
-#### Defined in
-
-src/models/Outputs.ts:94
+src/models/Outputs.ts:83
 
 ___
 
@@ -62,7 +47,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:70
+src/models/Outputs.ts:65
 
 ___
 
@@ -76,7 +61,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:46
+src/models/Outputs.ts:41
 
 ___
 
@@ -90,7 +75,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:58
+src/models/Outputs.ts:53
 
 ___
 
@@ -106,7 +91,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:52
+src/models/Outputs.ts:47
 
 ___
 
@@ -120,7 +105,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:76
+src/models/Outputs.ts:71
 
 ___
 
@@ -136,7 +121,7 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:64
+src/models/Outputs.ts:59
 
 ___
 
@@ -150,4 +135,4 @@ Outputs
 
 #### Defined in
 
-src/models/Outputs.ts:82
+src/models/Outputs.ts:77
