@@ -152,6 +152,36 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HttpError"
+  /guards/{guardName}/openai/v1/chat/completions:
+    post:
+      operationId: openaiChatCompletion
+      tags:
+        - openai
+      summary: OpenAI SDK compatible endpoint for Chat Completions
+      parameters:
+        - $ref: "#/components/parameters/GuardName"
+      security:
+        - ApiKeyAuth: []
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OpenAIChatCompletionPayload"
+      responses:
+        "200":
+          description: The output of the completion
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OpenAIChatCompletion"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HttpError"
   /guards/{guardName}/validate:
     post:
       operationId: validate
@@ -252,6 +282,59 @@ components:
         type: string
         format: password
   schemas:
+    OpenAIChatCompletionPayload:
+      type: object
+      properties:
+        model:
+          type: string
+          description: The model to use for the completion
+          example: gpt-3.5-turbo
+        messages:
+          type: array
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+                description: The role of the message
+              content:
+                type: string
+                description: The content of the message
+          description: The messages to use for the completion
+        max_tokens:
+          type: integer
+          description: The maximum number of tokens to generate
+        temperature:
+          type: number
+          description: The sampling temperature
+    OpenAIChatCompletion:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id
+        created:
+          type: string
+          description: The created date
+        model_name:
+          type: string
+          description: The model name
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+                description: The role of the message
+              content:
+                type: string
+                description: The content of the message
+      required:
+        - id
+        - created
+        - model_name
+        - choices
     HttpError:
       type: object
       properties:
