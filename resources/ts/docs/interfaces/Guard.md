@@ -31,13 +31,13 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:49
+src/models/Guard.ts:48
 
 ___
 
 ### history
 
-• `Optional` **history**: [`GuardHistory`](GuardHistory.md) \| [`Call`](Call.md)[]
+• `Optional` **history**: [`Call`](Call.md)[]
 
 **`Memberof`**
 
@@ -45,7 +45,7 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:67
+src/models/Guard.ts:66
 
 ___
 
@@ -61,7 +61,7 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:37
+src/models/Guard.ts:36
 
 ___
 
@@ -77,7 +77,7 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:43
+src/models/Guard.ts:42
 
 ___
 
@@ -91,7 +91,7 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:61
+src/models/Guard.ts:60
 
 ___
 
@@ -105,4 +105,4 @@ Guard
 
 #### Defined in
 
-src/models/Guard.ts:55
+src/models/Guard.ts:54

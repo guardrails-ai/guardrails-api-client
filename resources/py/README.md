@@ -29,17 +29,14 @@ bash ./py-build.sh
  - [ArgsAndKwargs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ArgsAndKwargs.md);
  - [ArraysInner](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ArraysInner.md);
  - [Call](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Call.md);
- - [CallException](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/CallException.md);
- - [CallExceptionAnyOf](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/CallExceptionAnyOf.md);
  - [CallInputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/CallInputs.md);
  - [Content](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Content.md);
  - [Core](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Core.md);
+ - [ErrorSpan](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ErrorSpan.md);
  - [FailResult](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/FailResult.md);
  - [FormatAnnotation](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/FormatAnnotation.md);
  - [Guard](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Guard.md);
  - [GuardApi](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardApi.md);
- - [GuardHistory](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardHistory.md);
- - [GuardHistoryAnyOfInner](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/GuardHistoryAnyOfInner.md);
  - [HealthCheck](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/HealthCheck.md);
  - [HttpError](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/HttpError.md);
  - [Inputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Inputs.md);
@@ -49,7 +46,6 @@ bash ./py-build.sh
  - [MetaData](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/MetaData.md);
  - [ModelSchema](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ModelSchema.md);
  - [Outputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Outputs.md);
- - [OutputsException](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OutputsException.md);
  - [OutputsParsedOutput](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OutputsParsedOutput.md);
  - [OutputsValidationResponse](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OutputsValidationResponse.md);
  - [PassResult](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/PassResult.md);

@@ -14,6 +14,7 @@ ValidationResult
 
 - [metadata](ValidationResult.md#metadata)
 - [outcome](ValidationResult.md#outcome)
+- [validatedChunk](ValidationResult.md#validatedchunk)
 
 ## Properties
 
@@ -37,7 +38,7 @@ ___
 
 ### outcome
 
-• `Optional` **outcome**: [`ValidationResultOutcomeEnum`](../modules.md#validationresultoutcomeenum)
+• **outcome**: [`ValidationResultOutcomeEnum`](../modules.md#validationresultoutcomeenum)
 
 **`Memberof`**
 
@@ -46,3 +47,17 @@ ValidationResult
 #### Defined in
 
 src/models/ValidationResult.ts:26
+
+___
+
+### validatedChunk
+
+• `Optional` **validatedChunk**: `any`
+
+**`Memberof`**
+
+ValidationResult
+
+#### Defined in
+
+src/models/ValidationResult.ts:38

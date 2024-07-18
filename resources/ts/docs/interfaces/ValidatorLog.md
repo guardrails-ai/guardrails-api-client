@@ -52,7 +52,7 @@ ___
 
 ### propertyPath
 
-• `Optional` **propertyPath**: `string`
+• **propertyPath**: `string`
 
 The JSON path to the property which was validated that produced this log.
 
@@ -68,7 +68,7 @@ ___
 
 ### registeredName
 
-• `Optional` **registeredName**: `string`
+• **registeredName**: `string`
 
 The registry id of the validator.
 
@@ -112,7 +112,7 @@ ___
 
 ### validatorName
 
-• `Optional` **validatorName**: `string`
+• **validatorName**: `string`
 
 The class name of the validator.
 
@@ -142,7 +142,7 @@ ___
 
 ### valueBeforeValidation
 
-• `Optional` **valueBeforeValidation**: `any`
+• **valueBeforeValidation**: `any`
 
 **`Memberof`**
 
