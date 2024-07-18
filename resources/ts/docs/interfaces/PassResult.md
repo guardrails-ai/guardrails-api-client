@@ -12,6 +12,7 @@ PassResult
 
 - [metadata](PassResult.md#metadata)
 - [outcome](PassResult.md#outcome)
+- [validatedChunk](PassResult.md#validatedchunk)
 - [valueOverride](PassResult.md#valueoverride)
 
 ## Properties
@@ -36,7 +37,7 @@ ___
 
 ### outcome
 
-• `Optional` **outcome**: `any`
+• **outcome**: `any`
 
 **`Memberof`**
 
@@ -45,6 +46,20 @@ PassResult
 #### Defined in
 
 src/models/PassResult.ts:26
+
+___
+
+### validatedChunk
+
+• `Optional` **validatedChunk**: `any`
+
+**`Memberof`**
+
+PassResult
+
+#### Defined in
+
+src/models/PassResult.ts:44
 
 ___
 

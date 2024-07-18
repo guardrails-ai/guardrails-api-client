@@ -6,8 +6,9 @@ The output from a single Validator.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**outcome** | **str** |  | [optional] 
+**outcome** | **str** |  | 
 **metadata** | **Dict[str, object]** |  | [optional] 
+**validated_chunk** | [**object**](AnyType.md) |  | [optional] 
 
 ## Example
 
