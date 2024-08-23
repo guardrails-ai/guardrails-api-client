@@ -45,6 +45,10 @@ bash ./py-build.sh
  - [LLMResponse](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/LLMResponse.md);
  - [MetaData](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/MetaData.md);
  - [ModelSchema](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ModelSchema.md);
+ - [OpenAIChatCompletion](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OpenAIChatCompletion.md);
+ - [OpenAIChatCompletionPayload](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OpenAIChatCompletionPayload.md);
+ - [OpenAIChatCompletionPayloadMessagesInner](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OpenAIChatCompletionPayloadMessagesInner.md);
+ - [OpenaiApi](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OpenaiApi.md);
  - [Outputs](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/Outputs.md);
  - [OutputsParsedOutput](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OutputsParsedOutput.md);
  - [OutputsValidationResponse](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/OutputsValidationResponse.md);

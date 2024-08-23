@@ -28,3 +28,6 @@ testpaths = [
 
 [tool.pyright]
 include = ["guardrails_api_client"]
+
+[tool.ruff.lint]
+ignore = ["E721"]

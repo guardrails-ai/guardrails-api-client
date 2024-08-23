@@ -12,6 +12,7 @@
 - [FetchError](classes/FetchError.md)
 - [GuardApi](classes/GuardApi.md)
 - [JSONApiResponse](classes/JSONApiResponse.md)
+- [OpenaiApi](classes/OpenaiApi.md)
 - [RequiredError](classes/RequiredError.md)
 - [ResponseError](classes/ResponseError.md)
 - [ServiceHealthApi](classes/ServiceHealthApi.md)
@@ -50,6 +51,11 @@
 - [LLMResponse](interfaces/LLMResponse.md)
 - [MetaData](interfaces/MetaData.md)
 - [Middleware](interfaces/Middleware.md)
+- [OpenAIChatCompletion](interfaces/OpenAIChatCompletion.md)
+- [OpenAIChatCompletionPayload](interfaces/OpenAIChatCompletionPayload.md)
+- [OpenAIChatCompletionPayloadMessagesInner](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
+- [OpenaiApiInterface](interfaces/OpenaiApiInterface.md)
+- [OpenaiChatCompletionRequest](interfaces/OpenaiChatCompletionRequest.md)
 - [Outputs](interfaces/Outputs.md)
 - [OutputsParsedOutput](interfaces/OutputsParsedOutput.md)
 - [OutputsValidationResponse](interfaces/OutputsValidationResponse.md)
@@ -165,6 +171,15 @@
 - [MetaDataFromJSON](modules.md#metadatafromjson)
 - [MetaDataFromJSONTyped](modules.md#metadatafromjsontyped)
 - [MetaDataToJSON](modules.md#metadatatojson)
+- [OpenAIChatCompletionFromJSON](modules.md#openaichatcompletionfromjson)
+- [OpenAIChatCompletionFromJSONTyped](modules.md#openaichatcompletionfromjsontyped)
+- [OpenAIChatCompletionPayloadFromJSON](modules.md#openaichatcompletionpayloadfromjson)
+- [OpenAIChatCompletionPayloadFromJSONTyped](modules.md#openaichatcompletionpayloadfromjsontyped)
+- [OpenAIChatCompletionPayloadMessagesInnerFromJSON](modules.md#openaichatcompletionpayloadmessagesinnerfromjson)
+- [OpenAIChatCompletionPayloadMessagesInnerFromJSONTyped](modules.md#openaichatcompletionpayloadmessagesinnerfromjsontyped)
+- [OpenAIChatCompletionPayloadMessagesInnerToJSON](modules.md#openaichatcompletionpayloadmessagesinnertojson)
+- [OpenAIChatCompletionPayloadToJSON](modules.md#openaichatcompletionpayloadtojson)
+- [OpenAIChatCompletionToJSON](modules.md#openaichatcompletiontojson)
 - [OutputsFromJSON](modules.md#outputsfromjson)
 - [OutputsFromJSONTyped](modules.md#outputsfromjsontyped)
 - [OutputsParsedOutputFromJSON](modules.md#outputsparsedoutputfromjson)
@@ -242,6 +257,9 @@
 - [instanceOfLLMResource](modules.md#instanceofllmresource)
 - [instanceOfLLMResponse](modules.md#instanceofllmresponse)
 - [instanceOfMetaData](modules.md#instanceofmetadata)
+- [instanceOfOpenAIChatCompletion](modules.md#instanceofopenaichatcompletion)
+- [instanceOfOpenAIChatCompletionPayload](modules.md#instanceofopenaichatcompletionpayload)
+- [instanceOfOpenAIChatCompletionPayloadMessagesInner](modules.md#instanceofopenaichatcompletionpayloadmessagesinner)
 - [instanceOfOutputs](modules.md#instanceofoutputs)
 - [instanceOfOutputsParsedOutput](modules.md#instanceofoutputsparsedoutput)
 - [instanceOfOutputsValidationResponse](modules.md#instanceofoutputsvalidationresponse)
@@ -1787,6 +1805,189 @@ ___
 #### Defined in
 
 src/models/MetaData.ts:94
+
+___
+
+### OpenAIChatCompletionFromJSON
+
+▸ **OpenAIChatCompletionFromJSON**(`json`): [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletion.ts:64
+
+___
+
+### OpenAIChatCompletionFromJSONTyped
+
+▸ **OpenAIChatCompletionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletion.ts:68
+
+___
+
+### OpenAIChatCompletionPayloadFromJSON
+
+▸ **OpenAIChatCompletionPayloadFromJSON**(`json`): [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:60
+
+___
+
+### OpenAIChatCompletionPayloadFromJSONTyped
+
+▸ **OpenAIChatCompletionPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:66
+
+___
+
+### OpenAIChatCompletionPayloadMessagesInnerFromJSON
+
+▸ **OpenAIChatCompletionPayloadMessagesInnerFromJSON**(`json`): [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayloadMessagesInner.ts:44
+
+___
+
+### OpenAIChatCompletionPayloadMessagesInnerFromJSONTyped
+
+▸ **OpenAIChatCompletionPayloadMessagesInnerFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayloadMessagesInner.ts:50
+
+___
+
+### OpenAIChatCompletionPayloadMessagesInnerToJSON
+
+▸ **OpenAIChatCompletionPayloadMessagesInnerToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md) |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayloadMessagesInner.ts:63
+
+___
+
+### OpenAIChatCompletionPayloadToJSON
+
+▸ **OpenAIChatCompletionPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md) |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:86
+
+___
+
+### OpenAIChatCompletionToJSON
+
+▸ **OpenAIChatCompletionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md) |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/OpenAIChatCompletion.ts:85
 
 ___
 
@@ -3382,6 +3583,72 @@ Check if a given object implements the MetaData interface.
 #### Defined in
 
 src/models/MetaData.ts:68
+
+___
+
+### instanceOfOpenAIChatCompletion
+
+▸ **instanceOfOpenAIChatCompletion**(`value`): `boolean`
+
+Check if a given object implements the OpenAIChatCompletion interface.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `object` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/models/OpenAIChatCompletion.ts:56
+
+___
+
+### instanceOfOpenAIChatCompletionPayload
+
+▸ **instanceOfOpenAIChatCompletionPayload**(`value`): `boolean`
+
+Check if a given object implements the OpenAIChatCompletionPayload interface.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `object` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:56
+
+___
+
+### instanceOfOpenAIChatCompletionPayloadMessagesInner
+
+▸ **instanceOfOpenAIChatCompletionPayloadMessagesInner**(`value`): `boolean`
+
+Check if a given object implements the OpenAIChatCompletionPayloadMessagesInner interface.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `object` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayloadMessagesInner.ts:38
 
 ___
 

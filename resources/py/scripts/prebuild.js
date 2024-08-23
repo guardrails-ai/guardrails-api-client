@@ -41,7 +41,7 @@ ${
 }
 
 function updateDependencies () {
-  const pyProjectToml = fs.readFileSync(
+  let pyProjectToml = fs.readFileSync(
     path.resolve('./pyproject.toml.template')
   ).toString();
   const requirementsTxt = fs.readFileSync(
@@ -52,13 +52,13 @@ function updateDependencies () {
   const dependencies = `dependencies = [
 ${
   requirements
-    .map(r => `"${r.trim().split('\s').join('')}"`)
-    .join('\n')
+    .filter(r => r.length > 0)
+    .map(r => `\t"${r.trim().split('\s').join('')}"`)
+    .join(',\n')
 }
 ]`;
 
-  pyProjectToml.replace('dependencies = []', dependencies)
-
+  pyProjectToml = pyProjectToml.replace('dependencies = []', dependencies)
   
 
   fs.writeFileSync(
