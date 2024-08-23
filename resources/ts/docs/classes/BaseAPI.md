@@ -10,6 +10,8 @@ This is the base class for all generated API classes.
 
   ↳ [`GuardApi`](GuardApi.md)
 
+  ↳ [`OpenaiApi`](OpenaiApi.md)
+
   ↳ [`ServiceHealthApi`](ServiceHealthApi.md)
 
   ↳ [`ValidateApi`](ValidateApi.md)
