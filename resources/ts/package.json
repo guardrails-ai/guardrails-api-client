@@ -1,6 +1,6 @@
 {
   "name": "@guardrails-ai/api-client",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Client libaray for interacting with the guardrails-api",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -53,7 +53,7 @@ function updateDependencies () {
 ${
   requirements
     .filter(r => r.length > 0)
-    .map(r => `\t"${r.trim().split('\s').join('')}"`)
+    .map(r => `\t"${r.trim().split(' ').join('')}"`)
     .join(',\n')
 }
 ]`;
