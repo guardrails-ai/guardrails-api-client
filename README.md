@@ -4,14 +4,14 @@ OpenAPI Specifications and scripts for generating SDKs for the various Guardrail
 ## Auto Generated Libraries
 
 ### Python
-PyPI Page: https://pypi.org/project/guardrails-api-client
+**PyPI Page:** https://pypi.org/project/guardrails-api-client
 
-API Ref: https://github.com/guardrails-ai/guardrails-api-client/blob/main/resources/py/README.md#documentation-for-models
+**API Ref:** https://github.com/guardrails-ai/guardrails-api-client/blob/main/resources/py/README.md#documentation-for-models
 
 ### Typescript/Javascript
-NPM Page: https://www.npmjs.com/package/@guardrails-ai/api-client
+**NPM Page:** https://www.npmjs.com/package/@guardrails-ai/api-client
 
-API Ref: https://github.com/guardrails-ai/guardrails-api-client/blob/HEAD/resources/ts/docs/modules.md
+**API Ref:** https://github.com/guardrails-ai/guardrails-api-client/blob/HEAD/resources/ts/docs/modules.md
 
 ## Local Development
 
