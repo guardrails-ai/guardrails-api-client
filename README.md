@@ -1,6 +1,16 @@
 # guardrails-api-client
 OpenAPI Specifications and scripts for generating SDKs for the various Guardrails services.
 
+## Auto Generated Libraries
+
+### Python
+PyPI Page: https://pypi.org/project/guardrails-api-client
+API Ref: https://github.com/guardrails-ai/guardrails-api-client/blob/main/resources/py/README.md#documentation-for-models
+
+### Typescript/Javascript
+NPM Page: https://www.npmjs.com/package/@guardrails-ai/api-client
+API Ref: https://github.com/guardrails-ai/guardrails-api-client/blob/HEAD/resources/ts/docs/modules.md
+
 ## Local Development
 
 ### Repository Structure & Code Generation Process
