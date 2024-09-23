@@ -64,6 +64,7 @@ bash ./py-build.sh
  - [ValidationOutcome](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidationOutcome.md);
  - [ValidationOutcomeValidatedOutput](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidationOutcomeValidatedOutput.md);
  - [ValidationResult](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidationResult.md);
+ - [ValidationSummary](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidationSummary.md);
  - [ValidationType](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidationType.md);
  - [ValidatorLog](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidatorLog.md);
  - [ValidatorLogInstanceId](https://github.com/guardrails-ai/guardrails-api-client/tree/main/resources/py/docs/ValidatorLogInstanceId.md);

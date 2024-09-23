@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **call_id** | **str** | Foreign key to the most recent Call this resulted from. | 
 **raw_llm_output** | **str** | The raw, unchanged string content from the LLM call. | [optional] 
+**validation_summaries** | [**List[ValidationSummary]**](ValidationSummary.md) |  | [optional] 
 **validated_output** | [**ValidationOutcomeValidatedOutput**](ValidationOutcomeValidatedOutput.md) |  | [optional] 
 **reask** | [**Reask**](Reask.md) | If validation continuously fails and all allocated reasks are used, this field will contain the final reask that would have been sent to the LLM if additional reasks were available. | [optional] 
 **validation_passed** | **bool** | A boolean to indicate whether or not the LLM output passed validation.  If this is False, the validated_output may be invalid. | [optional] 
