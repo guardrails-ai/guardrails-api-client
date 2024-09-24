@@ -77,6 +77,7 @@
 - [ValidationOutcome](interfaces/ValidationOutcome.md)
 - [ValidationOutcomeValidatedOutput](interfaces/ValidationOutcomeValidatedOutput.md)
 - [ValidationResult](interfaces/ValidationResult.md)
+- [ValidationSummary](interfaces/ValidationSummary.md)
 - [ValidationType](interfaces/ValidationType.md)
 - [ValidatorLog](interfaces/ValidatorLog.md)
 - [ValidatorLogInstanceId](interfaces/ValidatorLogInstanceId.md)
@@ -98,6 +99,7 @@
 - [OnType](modules.md#ontype)
 - [SimpleTypes](modules.md#simpletypes)
 - [ValidationResultOutcomeEnum](modules.md#validationresultoutcomeenum)
+- [ValidationSummaryValidatorStatusEnum](modules.md#validationsummaryvalidatorstatusenum)
 - [ValidatorLogValidationResultOutcomeEnum](modules.md#validatorlogvalidationresultoutcomeenum)
 - [ValidatorReferenceOnFailEnum](modules.md#validatorreferenceonfailenum)
 
@@ -109,6 +111,7 @@
 - [LLMResource](modules.md#llmresource-1)
 - [SimpleTypes](modules.md#simpletypes-1)
 - [ValidationResultOutcomeEnum](modules.md#validationresultoutcomeenum-1)
+- [ValidationSummaryValidatorStatusEnum](modules.md#validationsummaryvalidatorstatusenum-1)
 - [ValidatorLogValidationResultOutcomeEnum](modules.md#validatorlogvalidationresultoutcomeenum-1)
 - [ValidatorReferenceOnFailEnum](modules.md#validatorreferenceonfailenum-1)
 
@@ -221,6 +224,9 @@
 - [ValidationResultFromJSON](modules.md#validationresultfromjson)
 - [ValidationResultFromJSONTyped](modules.md#validationresultfromjsontyped)
 - [ValidationResultToJSON](modules.md#validationresulttojson)
+- [ValidationSummaryFromJSON](modules.md#validationsummaryfromjson)
+- [ValidationSummaryFromJSONTyped](modules.md#validationsummaryfromjsontyped)
+- [ValidationSummaryToJSON](modules.md#validationsummarytojson)
 - [ValidationToJSON](modules.md#validationtojson)
 - [ValidationTypeFromJSON](modules.md#validationtypefromjson)
 - [ValidationTypeFromJSONTyped](modules.md#validationtypefromjsontyped)
@@ -274,6 +280,7 @@
 - [instanceOfValidationOutcome](modules.md#instanceofvalidationoutcome)
 - [instanceOfValidationOutcomeValidatedOutput](modules.md#instanceofvalidationoutcomevalidatedoutput)
 - [instanceOfValidationResult](modules.md#instanceofvalidationresult)
+- [instanceOfValidationSummary](modules.md#instanceofvalidationsummary)
 - [instanceOfValidationType](modules.md#instanceofvalidationtype)
 - [instanceOfValidatorLog](modules.md#instanceofvalidatorlog)
 - [instanceOfValidatorLogInstanceId](modules.md#instanceofvalidatorloginstanceid)
@@ -455,6 +462,18 @@ src/models/ValidationResult.ts:48
 
 ___
 
+### ValidationSummaryValidatorStatusEnum
+
+Ƭ **ValidationSummaryValidatorStatusEnum**: typeof [`ValidationSummaryValidatorStatusEnum`](modules.md#validationsummaryvalidatorstatusenum-1)[keyof typeof [`ValidationSummaryValidatorStatusEnum`](modules.md#validationsummaryvalidatorstatusenum-1)]
+
+#### Defined in
+
+src/models/ValidationSummary.ts:59
+
+src/models/ValidationSummary.ts:63
+
+___
+
 ### ValidatorLogValidationResultOutcomeEnum
 
 Ƭ **ValidatorLogValidationResultOutcomeEnum**: typeof [`ValidatorLogValidationResultOutcomeEnum`](modules.md#validatorlogvalidationresultoutcomeenum-1)[keyof typeof [`ValidatorLogValidationResultOutcomeEnum`](modules.md#validatorlogvalidationresultoutcomeenum-1)]
@@ -598,6 +617,27 @@ ___
 src/models/ValidationResult.ts:44
 
 src/models/ValidationResult.ts:48
+
+___
+
+### ValidationSummaryValidatorStatusEnum
+
+• `Const` **ValidationSummaryValidatorStatusEnum**: `Object`
+
+**`Export`**
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `Fail` | ``"fail"`` |
+| `Pass` | ``"pass"`` |
+
+#### Defined in
+
+src/models/ValidationSummary.ts:59
+
+src/models/ValidationSummary.ts:63
 
 ___
 
@@ -2658,7 +2698,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:74
+src/models/ValidationOutcome.ts:85
 
 ___
 
@@ -2679,7 +2719,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:78
+src/models/ValidationOutcome.ts:89
 
 ___
 
@@ -2699,7 +2739,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:100
+src/models/ValidationOutcome.ts:117
 
 ___
 
@@ -2822,6 +2862,67 @@ ___
 #### Defined in
 
 src/models/ValidationResult.ts:78
+
+___
+
+### ValidationSummaryFromJSON
+
+▸ **ValidationSummaryFromJSON**(`json`): [`ValidationSummary`](interfaces/ValidationSummary.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationSummary`](interfaces/ValidationSummary.md)
+
+#### Defined in
+
+src/models/ValidationSummary.ts:75
+
+___
+
+### ValidationSummaryFromJSONTyped
+
+▸ **ValidationSummaryFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidationSummary`](interfaces/ValidationSummary.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ValidationSummary`](interfaces/ValidationSummary.md)
+
+#### Defined in
+
+src/models/ValidationSummary.ts:79
+
+___
+
+### ValidationSummaryToJSON
+
+▸ **ValidationSummaryToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | ``null`` \| [`ValidationSummary`](interfaces/ValidationSummary.md) |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/ValidationSummary.ts:100
 
 ___
 
@@ -3910,7 +4011,7 @@ Check if a given object implements the ValidationOutcome interface.
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:69
+src/models/ValidationOutcome.ts:80
 
 ___
 
@@ -3955,6 +4056,28 @@ Check if a given object implements the ValidationResult interface.
 #### Defined in
 
 src/models/ValidationResult.ts:54
+
+___
+
+### instanceOfValidationSummary
+
+▸ **instanceOfValidationSummary**(`value`): `boolean`
+
+Check if a given object implements the ValidationSummary interface.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `object` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/models/ValidationSummary.ts:69
 
 ___
 

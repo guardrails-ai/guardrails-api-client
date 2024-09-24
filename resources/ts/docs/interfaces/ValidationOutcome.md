@@ -18,6 +18,7 @@ ValidationOutcome
 - [reask](ValidationOutcome.md#reask)
 - [validatedOutput](ValidationOutcome.md#validatedoutput)
 - [validationPassed](ValidationOutcome.md#validationpassed)
+- [validationSummaries](ValidationOutcome.md#validationsummaries)
 
 ## Properties
 
@@ -33,7 +34,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:33
+src/models/ValidationOutcome.ts:38
 
 ___
 
@@ -49,7 +50,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:63
+src/models/ValidationOutcome.ts:74
 
 ___
 
@@ -65,7 +66,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:39
+src/models/ValidationOutcome.ts:44
 
 ___
 
@@ -81,7 +82,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:51
+src/models/ValidationOutcome.ts:62
 
 ___
 
@@ -95,7 +96,7 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:45
+src/models/ValidationOutcome.ts:56
 
 ___
 
@@ -111,4 +112,18 @@ ValidationOutcome
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:57
+src/models/ValidationOutcome.ts:68
+
+___
+
+### validationSummaries
+
+• `Optional` **validationSummaries**: [`ValidationSummary`](ValidationSummary.md)[]
+
+**`Memberof`**
+
+ValidationOutcome
+
+#### Defined in
+
+src/models/ValidationOutcome.ts:50
