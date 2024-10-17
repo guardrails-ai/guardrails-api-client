@@ -70,7 +70,7 @@ ___
 
 • `Optional` **on**: `string`
 
-A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as "prompt" or "output"
+A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as "messages" or "output"
 
 **`Memberof`**
 

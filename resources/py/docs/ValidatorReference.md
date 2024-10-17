@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **object** | The unique identifier for this Validator.  Often the hub id; e.g. guardrails/regex_match | 
-**on** | [**AnyOfAnyTypeAnyType**](AnyOfAnyTypeAnyType.md) | A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as \&quot;prompt\&quot; or \&quot;output\&quot; | [optional] 
+**on** | [**AnyOfAnyTypeAnyType**](AnyOfAnyTypeAnyType.md) | A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as \&quot;messages\&quot; or \&quot;output\&quot; | [optional] 
 **on_fail** | **object** |  | [optional] 
 **args** | [**List[object]**](AnyType.md) |  | [optional] 
 **kwargs** | **Dict[str, object]** |  | [optional] 

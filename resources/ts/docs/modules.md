@@ -990,7 +990,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:102
+src/models/CallInputs.ts:90
 
 ___
 
@@ -1011,7 +1011,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:106
+src/models/CallInputs.ts:94
 
 ___
 
@@ -1031,7 +1031,7 @@ ___
 
 #### Defined in
 
-src/models/CallInputs.ts:132
+src/models/CallInputs.ts:117
 
 ___
 
@@ -1559,7 +1559,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:90
+src/models/Inputs.ts:78
 
 ___
 
@@ -1580,7 +1580,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:94
+src/models/Inputs.ts:82
 
 ___
 
@@ -1600,7 +1600,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:118
+src/models/Inputs.ts:103
 
 ___
 
@@ -3399,7 +3399,7 @@ Check if a given object implements the CallInputs interface.
 
 #### Defined in
 
-src/models/CallInputs.ts:98
+src/models/CallInputs.ts:86
 
 ___
 
@@ -3597,7 +3597,7 @@ Check if a given object implements the Inputs interface.
 
 #### Defined in
 
-src/models/Inputs.ts:86
+src/models/Inputs.ts:74
 
 ___
 

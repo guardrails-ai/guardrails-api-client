@@ -11,13 +11,11 @@ Inputs
 ### Properties
 
 - [fullSchemaReask](Inputs.md#fullschemareask)
-- [instructions](Inputs.md#instructions)
 - [llmApi](Inputs.md#llmapi)
 - [llmOutput](Inputs.md#llmoutput)
+- [messages](Inputs.md#messages)
 - [metadata](Inputs.md#metadata)
-- [msgHistory](Inputs.md#msghistory)
 - [numReasks](Inputs.md#numreasks)
-- [prompt](Inputs.md#prompt)
 - [promptParams](Inputs.md#promptparams)
 - [stream](Inputs.md#stream)
 
@@ -35,23 +33,7 @@ Inputs
 
 #### Defined in
 
-src/models/Inputs.ts:74
-
-___
-
-### instructions
-
-• `Optional` **instructions**: `string`
-
-The instructions for chat models.
-
-**`Memberof`**
-
-Inputs
-
-#### Defined in
-
-src/models/Inputs.ts:38
+src/models/Inputs.ts:62
 
 ___
 
@@ -87,6 +69,22 @@ src/models/Inputs.ts:32
 
 ___
 
+### messages
+
+• `Optional` **messages**: \{ `[key: string]`: `any`;  }[]
+
+The messages for chat models.
+
+**`Memberof`**
+
+Inputs
+
+#### Defined in
+
+src/models/Inputs.ts:38
+
+___
+
 ### metadata
 
 • `Optional` **metadata**: `Object`
@@ -103,23 +101,7 @@ Inputs
 
 #### Defined in
 
-src/models/Inputs.ts:68
-
-___
-
-### msgHistory
-
-• `Optional` **msgHistory**: \{ `[key: string]`: `any`;  }[]
-
-The message history for chat models.
-
-**`Memberof`**
-
-Inputs
-
-#### Defined in
-
-src/models/Inputs.ts:50
+src/models/Inputs.ts:56
 
 ___
 
@@ -135,23 +117,7 @@ Inputs
 
 #### Defined in
 
-src/models/Inputs.ts:62
-
-___
-
-### prompt
-
-• `Optional` **prompt**: `string`
-
-The prompt for the LLM.
-
-**`Memberof`**
-
-Inputs
-
-#### Defined in
-
-src/models/Inputs.ts:44
+src/models/Inputs.ts:50
 
 ___
 
@@ -159,7 +125,7 @@ ___
 
 • `Optional` **promptParams**: `Object`
 
-Parameters to be formatted into the prompt.
+Parameters to be formatted into the messages.
 
 **`Memberof`**
 
@@ -171,7 +137,7 @@ Inputs
 
 #### Defined in
 
-src/models/Inputs.ts:56
+src/models/Inputs.ts:44
 
 ___
 
@@ -187,4 +153,4 @@ Inputs
 
 #### Defined in
 
-src/models/Inputs.ts:80
+src/models/Inputs.ts:68
