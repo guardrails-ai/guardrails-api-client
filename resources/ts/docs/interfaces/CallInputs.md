@@ -12,14 +12,12 @@ CallInputs
 
 - [args](CallInputs.md#args)
 - [fullSchemaReask](CallInputs.md#fullschemareask)
-- [instructions](CallInputs.md#instructions)
 - [kwargs](CallInputs.md#kwargs)
 - [llmApi](CallInputs.md#llmapi)
 - [llmOutput](CallInputs.md#llmoutput)
+- [messages](CallInputs.md#messages)
 - [metadata](CallInputs.md#metadata)
-- [msgHistory](CallInputs.md#msghistory)
 - [numReasks](CallInputs.md#numreasks)
-- [prompt](CallInputs.md#prompt)
 - [promptParams](CallInputs.md#promptparams)
 - [stream](CallInputs.md#stream)
 
@@ -35,7 +33,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:86
+src/models/CallInputs.ts:74
 
 ___
 
@@ -51,23 +49,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:74
-
-___
-
-### instructions
-
-• `Optional` **instructions**: `string`
-
-The instructions for chat models.
-
-**`Memberof`**
-
-CallInputs
-
-#### Defined in
-
-src/models/CallInputs.ts:38
+src/models/CallInputs.ts:62
 
 ___
 
@@ -85,7 +67,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:92
+src/models/CallInputs.ts:80
 
 ___
 
@@ -121,6 +103,22 @@ src/models/CallInputs.ts:32
 
 ___
 
+### messages
+
+• `Optional` **messages**: \{ `[key: string]`: `any`;  }[]
+
+The messages for chat models.
+
+**`Memberof`**
+
+CallInputs
+
+#### Defined in
+
+src/models/CallInputs.ts:38
+
+___
+
 ### metadata
 
 • `Optional` **metadata**: `Object`
@@ -137,23 +135,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:68
-
-___
-
-### msgHistory
-
-• `Optional` **msgHistory**: \{ `[key: string]`: `any`;  }[]
-
-The message history for chat models.
-
-**`Memberof`**
-
-CallInputs
-
-#### Defined in
-
-src/models/CallInputs.ts:50
+src/models/CallInputs.ts:56
 
 ___
 
@@ -169,23 +151,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:62
-
-___
-
-### prompt
-
-• `Optional` **prompt**: `string`
-
-The prompt for the LLM.
-
-**`Memberof`**
-
-CallInputs
-
-#### Defined in
-
-src/models/CallInputs.ts:44
+src/models/CallInputs.ts:50
 
 ___
 
@@ -193,7 +159,7 @@ ___
 
 • `Optional` **promptParams**: `Object`
 
-Parameters to be formatted into the prompt.
+Parameters to be formatted into the messages.
 
 **`Memberof`**
 
@@ -205,7 +171,7 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:56
+src/models/CallInputs.ts:44
 
 ___
 
@@ -221,4 +187,4 @@ CallInputs
 
 #### Defined in
 
-src/models/CallInputs.ts:80
+src/models/CallInputs.ts:68
