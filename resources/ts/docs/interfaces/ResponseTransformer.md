@@ -26,4 +26,4 @@
 
 #### Defined in
 
-src/runtime.ts:488
+src/runtime.ts:494

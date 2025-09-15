@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**llm_output** | **object** | The LLM output as a string or the input prompts for the LLM | [optional] 
-**num_reasks** | **object** | An override for the number of re-asks to perform | [optional] 
+**llm_output** | **str** | The LLM output as a string or the input prompts for the LLM | [optional] 
+**num_reasks** | **int** | An override for the number of re-asks to perform | [optional] 
 **prompt_params** | **Dict[str, object]** | additional params for llm prompts | [optional] 
 **llm_api** | [**LLMResource**](LLMResource.md) |  | [optional] 
 

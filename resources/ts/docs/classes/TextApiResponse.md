@@ -34,7 +34,7 @@
 
 #### Defined in
 
-src/runtime.ts:519
+src/runtime.ts:525
 
 ## Properties
 
@@ -44,7 +44,7 @@ src/runtime.ts:519
 
 #### Defined in
 
-src/runtime.ts:519
+src/runtime.ts:525
 
 ## Methods
 
@@ -58,4 +58,4 @@ src/runtime.ts:519
 
 #### Defined in
 
-src/runtime.ts:521
+src/runtime.ts:527

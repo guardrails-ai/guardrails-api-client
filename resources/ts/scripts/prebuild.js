@@ -58,45 +58,6 @@ function fixValidatorReference () {
   fs.writeFileSync(validatorReferenceFilePath, validatorReference)
 }
 
-function fixCall () {
-  const callException = fs.readFileSync(
-    path.resolve('./templates/CallException.ts')
-  ).toString();
-  fs.writeFileSync(path.resolve('./src/models/CallException.ts'), callException)
-
-  const callFilePath = path.resolve('./src/models/Call.ts');
-  const callFile = fs.readFileSync(callFilePath).toString();
-  const call = callFile
-    .replace('exception?: CallException;', 'exception?: string | CallException;')
-    .replace('@type {CallException}', '@type {string | CallException}');
-
-  if (callFile === call) {
-    console.warn("Fixes in fixCall may no longer be necessary!")
-  }
-
-  fs.writeFileSync(callFilePath, call);
-}
-
-function fixGuard () {
-  const guardHistory = fs.readFileSync(
-    path.resolve('./templates/GuardHistory.ts')
-  ).toString();
-  fs.writeFileSync(path.resolve('./src/models/GuardHistory.ts'), guardHistory)
-
-  const guardFilePath = path.resolve('./src/models/Guard.ts');
-  const guardFile = fs.readFileSync(guardFilePath).toString();
-  const guard = guardFile
-    .replace('import type { GuardHistory } from \'./GuardHistory\';', 'import type { Call } from "./Call";\nimport type { GuardHistory } from "./GuardHistory";')
-    .replace('history?: GuardHistory;', 'history?: Call[] | GuardHistory;')
-    .replace('@type {GuardHistory}', '@type {Call[] | GuardHistory}');
-    
-  if (guardFile === guard) {
-    console.warn("Fixes in fixGuard may no longer be necessary!")
-  }
-
-  fs.writeFileSync(guardFilePath, guard);
-}
-
 function fixOutputs () {
   const outputsValidationResponse = fs.readFileSync(
     path.resolve('./templates/OutputsValidationResponse.ts')
@@ -158,8 +119,6 @@ function fixValidatorLog () {
 function hotFixes () {
   fixSchema();
   fixValidatorReference();
-  fixCall();
-  fixGuard();
   fixOutputs();
   fixValidationOutcome();
   fixValidatorLog();

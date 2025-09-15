@@ -37,7 +37,7 @@ ___
 
 ### llmOutput
 
-• `Optional` **llmOutput**: `any`
+• `Optional` **llmOutput**: `string`
 
 The LLM output as a string or the input prompts for the LLM
 
@@ -53,7 +53,7 @@ ___
 
 ### numReasks
 
-• `Optional` **numReasks**: `any`
+• `Optional` **numReasks**: `number`
 
 An override for the number of re-asks to perform
 

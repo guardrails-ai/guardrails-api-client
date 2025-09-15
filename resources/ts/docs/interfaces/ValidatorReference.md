@@ -34,7 +34,7 @@ ___
 
 ### id
 
-• **id**: `any`
+• **id**: `string`
 
 The unique identifier for this Validator.  Often the hub id; e.g. guardrails/regex_match
 
@@ -68,7 +68,7 @@ ___
 
 ### on
 
-• `Optional` **on**: `string`
+• `Optional` **on**: ``null`` \| `string`
 
 A reference to the property this validator should be applied against.  Can be a valid JSON path or a meta-property such as "messages" or "output"
 

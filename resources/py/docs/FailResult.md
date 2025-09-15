@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **outcome** | **object** |  | 
-**error_message** | **object** |  | 
+**error_message** | **str** |  | 
 **fix_value** | [**object**](AnyType.md) |  | [optional] 
 **error_spans** | [**List[ErrorSpan]**](ErrorSpan.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 

@@ -168,7 +168,7 @@ Schema
 
 #### Index signature
 
-▪ [key: `string`]: `any`
+▪ [key: `string`]: `boolean`
 
 #### Defined in
 
@@ -790,7 +790,7 @@ ___
 
 ### required
 
-• `Optional` **required**: `Set`\<`any`\>
+• `Optional` **required**: `Set`\<`string`\>
 
 **`Memberof`**
 

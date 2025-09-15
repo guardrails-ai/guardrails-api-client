@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **value_override** | [**object**](AnyType.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
 **validated_chunk** | [**object**](AnyType.md) |  | [optional] 
-**error_message** | **object** |  | 
+**error_message** | **str** |  | 
 **fix_value** | [**object**](AnyType.md) |  | [optional] 
 **error_spans** | [**List[ErrorSpan]**](ErrorSpan.md) |  | [optional] 
 

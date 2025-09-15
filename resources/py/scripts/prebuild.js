@@ -157,9 +157,9 @@ function fixFailResult() {
 }
 
 function fixValidationResults() {
-  fixValidationResult();
-  fixPassResult();
-  fixFailResult();
+  // fixValidationResult();
+  // fixPassResult();
+  // fixFailResult();
 }
 
 function fixValidatorLogValidationResult () {
@@ -275,38 +275,6 @@ function fixValidatorReferenceTypes () {
   fs.writeFileSync(validatorReferenceFilePath, validatorReference)
 }
 
-function fixInputs() {
-  const inputsFilePath = path.resolve('./guardrails_api_client/models/inputs.py');
-  const inputsFile = fs.readFileSync(inputsFilePath).toString();
-  const inputs = inputsFile
-  .replace(
-    '_obj = cls.model_validate({',
-    '_obj = cls.model_validate({\n\t\t\t"promptParams": obj.get("promptParams"),\n\t\t\t"metadata": obj.get("metadata"),'
-  )
-
-  if (inputsFile === inputs) {
-    console.warn("Fixes in fixInputs may no longer be necessary!")
-  }
-
-  fs.writeFileSync(inputsFilePath, inputs)
-}
-
-function fixCallInputs() {
-  const callInputsFilePath = path.resolve('./guardrails_api_client/models/call_inputs.py');
-  const callInputsFile = fs.readFileSync(callInputsFilePath).toString();
-  const callInputs = callInputsFile
-  .replace(
-    '_obj = cls.model_validate({',
-    '_obj = cls.model_validate({\n\t\t\t"promptParams": obj.get("promptParams"),\n\t\t\t"metadata": obj.get("metadata"),\n\t\t\t"kwargs": obj.get("kwargs"),'
-  )
-
-  if (callInputsFile === callInputs) {
-    console.warn("Fixes in fixInputs may no longer be necessary!")
-  }
-
-  fs.writeFileSync(callInputsFilePath, callInputs)
-}
-
 function exportAll (filePath) {
   const initFilePath = path.resolve(filePath);
   const initFile = fs.readFileSync(initFilePath).toString();
@@ -332,7 +300,6 @@ function exportAll (filePath) {
 
 
 function fixInits () {
-  exportAll('./guardrails_api_client/__init__.py');
   exportAll('./guardrails_api_client/models/__init__.py');
   exportAll('./guardrails_api_client/api/__init__.py');
 }
@@ -343,8 +310,6 @@ function hotFixes () {
   fixModelSchemaDefaults();
   fixCallException();
   fixValidatorReferenceTypes();
-  fixInputs();
-  fixCallInputs();
   fixInits();
 }
 
@@ -463,6 +428,7 @@ function main () {
   globalReplacements();
   hotFixes();
   buildReadme();
+  // updateUrlLib3();
   updateDependencies();
   buildSetupPy();
 }
