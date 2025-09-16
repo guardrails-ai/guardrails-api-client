@@ -128,7 +128,7 @@ function fixPassResult() {
       '_obj = cls.model_validate({',
       // The python formatter suddenly decided it didn't like tab characters
       // even though they're fine later on in the string...
-      '\n        if obj.get("outcome") != "pass":\n            raise ValueError("PassResult must have an outcome value of \\"pass\\"!")\n        _obj = cls.model_validate({\n\t\t\t"metadata": obj.get("metadata"),\n\t\t\t"value_override": obj.get("valueOverride"),'
+      '\n        if obj.get("outcome") != "pass":\n            raise ValueError("PassResult must have an outcome value of \\"pass\\"!")\n        _obj = cls.model_validate({\n\t\t\t"value_override": obj.get("valueOverride"),'
     )
     
   if (passResultFile === passResult) {
@@ -146,7 +146,7 @@ function fixFailResult() {
     '_obj = cls.model_validate({',
     // The python formatter suddenly decided it didn't like tab characters
     // even though they're fine later on in the string...
-    '\n        if obj.get("outcome") != "fail":\n            raise ValueError("FailResult must have an outcome value of \\"fail\\"!")\n        _obj = cls.model_validate({\n\t\t\t"error_message": obj.get("errorMessage"),\n\t\t\t"fix_value": obj.get("fixValue"),\n\t\t\t"error_spans": [ErrorSpan.from_dict(es) for es in obj.get("errorSpans", [])],\n\t\t\t"metadata": obj.get("metadata"),'
+    '\n        if obj.get("outcome") != "fail":\n            raise ValueError("FailResult must have an outcome value of \\"fail\\"!")\n        _obj = cls.model_validate({\n\t\t\t"error_message": obj.get("errorMessage"),\n\t\t\t"fix_value": obj.get("fixValue"),\n\t\t\t"error_spans": [ErrorSpan.from_dict(es) for es in obj.get("errorSpans", [])],'
   )
 
   if (failResultFile === failResult) {
@@ -158,8 +158,8 @@ function fixFailResult() {
 
 function fixValidationResults() {
   // fixValidationResult();
-  // fixPassResult();
-  // fixFailResult();
+  fixPassResult();
+  fixFailResult();
 }
 
 function fixValidatorLogValidationResult () {
@@ -428,7 +428,6 @@ function main () {
   globalReplacements();
   hotFixes();
   buildReadme();
-  // updateUrlLib3();
   updateDependencies();
   buildSetupPy();
 }
