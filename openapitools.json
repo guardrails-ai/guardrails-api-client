@@ -13,7 +13,7 @@
           "supportsES6": true,
           "withInterfaces": true,
           "npmName": "@guardrails-ai/api-client",
-          "npmVersion": "0.4.0-alpha3"
+          "npmVersion": "0.4.0"
         }
       },
       "py": {
@@ -23,7 +23,7 @@
         "skipValidateSpec": true,
         "additionalProperties": {
           "packageName": "guardrails_api_client",
-          "packageVersion": "0.4.0-alpha3",
+          "packageVersion": "0.4.0",
           "projectName": "guardrails-api-client"
         }
       }
