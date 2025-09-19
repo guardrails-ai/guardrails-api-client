@@ -128,7 +128,7 @@ OpenAI SDK compatible endpoint for Chat Completions
 
 #### Defined in
 
-src/apis/OpenaiApi.ts:128
+src/apis/OpenaiApi.ts:132
 
 ___
 

@@ -120,60 +120,79 @@
 - [AnyTypeFromJSON](modules.md#anytypefromjson)
 - [AnyTypeFromJSONTyped](modules.md#anytypefromjsontyped)
 - [AnyTypeToJSON](modules.md#anytypetojson)
+- [AnyTypeToJSONTyped](modules.md#anytypetojsontyped)
 - [ApplicatorFromJSON](modules.md#applicatorfromjson)
 - [ApplicatorFromJSONTyped](modules.md#applicatorfromjsontyped)
 - [ApplicatorToJSON](modules.md#applicatortojson)
+- [ApplicatorToJSONTyped](modules.md#applicatortojsontyped)
 - [ArgsAndKwargsFromJSON](modules.md#argsandkwargsfromjson)
 - [ArgsAndKwargsFromJSONTyped](modules.md#argsandkwargsfromjsontyped)
 - [ArgsAndKwargsToJSON](modules.md#argsandkwargstojson)
+- [ArgsAndKwargsToJSONTyped](modules.md#argsandkwargstojsontyped)
 - [ArraysInnerFromJSON](modules.md#arraysinnerfromjson)
 - [ArraysInnerFromJSONTyped](modules.md#arraysinnerfromjsontyped)
 - [ArraysInnerToJSON](modules.md#arraysinnertojson)
+- [ArraysInnerToJSONTyped](modules.md#arraysinnertojsontyped)
 - [CallFromJSON](modules.md#callfromjson)
 - [CallFromJSONTyped](modules.md#callfromjsontyped)
 - [CallInputsFromJSON](modules.md#callinputsfromjson)
 - [CallInputsFromJSONTyped](modules.md#callinputsfromjsontyped)
 - [CallInputsToJSON](modules.md#callinputstojson)
+- [CallInputsToJSONTyped](modules.md#callinputstojsontyped)
 - [CallToJSON](modules.md#calltojson)
+- [CallToJSONTyped](modules.md#calltojsontyped)
 - [ContentFromJSON](modules.md#contentfromjson)
 - [ContentFromJSONTyped](modules.md#contentfromjsontyped)
 - [ContentToJSON](modules.md#contenttojson)
+- [ContentToJSONTyped](modules.md#contenttojsontyped)
 - [CoreFromJSON](modules.md#corefromjson)
 - [CoreFromJSONTyped](modules.md#corefromjsontyped)
 - [CoreToJSON](modules.md#coretojson)
+- [CoreToJSONTyped](modules.md#coretojsontyped)
 - [ErrorSpanFromJSON](modules.md#errorspanfromjson)
 - [ErrorSpanFromJSONTyped](modules.md#errorspanfromjsontyped)
 - [ErrorSpanToJSON](modules.md#errorspantojson)
+- [ErrorSpanToJSONTyped](modules.md#errorspantojsontyped)
 - [FailResultFromJSON](modules.md#failresultfromjson)
 - [FailResultFromJSONTyped](modules.md#failresultfromjsontyped)
 - [FailResultToJSON](modules.md#failresulttojson)
+- [FailResultToJSONTyped](modules.md#failresulttojsontyped)
 - [FormatAnnotationFromJSON](modules.md#formatannotationfromjson)
 - [FormatAnnotationFromJSONTyped](modules.md#formatannotationfromjsontyped)
 - [FormatAnnotationToJSON](modules.md#formatannotationtojson)
+- [FormatAnnotationToJSONTyped](modules.md#formatannotationtojsontyped)
 - [GuardFromJSON](modules.md#guardfromjson)
 - [GuardFromJSONTyped](modules.md#guardfromjsontyped)
 - [GuardToJSON](modules.md#guardtojson)
+- [GuardToJSONTyped](modules.md#guardtojsontyped)
 - [HealthCheckFromJSON](modules.md#healthcheckfromjson)
 - [HealthCheckFromJSONTyped](modules.md#healthcheckfromjsontyped)
 - [HealthCheckToJSON](modules.md#healthchecktojson)
+- [HealthCheckToJSONTyped](modules.md#healthchecktojsontyped)
 - [HttpErrorFromJSON](modules.md#httperrorfromjson)
 - [HttpErrorFromJSONTyped](modules.md#httperrorfromjsontyped)
 - [HttpErrorToJSON](modules.md#httperrortojson)
+- [HttpErrorToJSONTyped](modules.md#httperrortojsontyped)
 - [InputsFromJSON](modules.md#inputsfromjson)
 - [InputsFromJSONTyped](modules.md#inputsfromjsontyped)
 - [InputsToJSON](modules.md#inputstojson)
+- [InputsToJSONTyped](modules.md#inputstojsontyped)
 - [IterationFromJSON](modules.md#iterationfromjson)
 - [IterationFromJSONTyped](modules.md#iterationfromjsontyped)
 - [IterationToJSON](modules.md#iterationtojson)
+- [IterationToJSONTyped](modules.md#iterationtojsontyped)
 - [LLMResourceFromJSON](modules.md#llmresourcefromjson)
 - [LLMResourceFromJSONTyped](modules.md#llmresourcefromjsontyped)
 - [LLMResourceToJSON](modules.md#llmresourcetojson)
+- [LLMResourceToJSONTyped](modules.md#llmresourcetojsontyped)
 - [LLMResponseFromJSON](modules.md#llmresponsefromjson)
 - [LLMResponseFromJSONTyped](modules.md#llmresponsefromjsontyped)
 - [LLMResponseToJSON](modules.md#llmresponsetojson)
+- [LLMResponseToJSONTyped](modules.md#llmresponsetojsontyped)
 - [MetaDataFromJSON](modules.md#metadatafromjson)
 - [MetaDataFromJSONTyped](modules.md#metadatafromjsontyped)
 - [MetaDataToJSON](modules.md#metadatatojson)
+- [MetaDataToJSONTyped](modules.md#metadatatojsontyped)
 - [OpenAIChatCompletionFromJSON](modules.md#openaichatcompletionfromjson)
 - [OpenAIChatCompletionFromJSONTyped](modules.md#openaichatcompletionfromjsontyped)
 - [OpenAIChatCompletionPayloadFromJSON](modules.md#openaichatcompletionpayloadfromjson)
@@ -181,69 +200,92 @@
 - [OpenAIChatCompletionPayloadMessagesInnerFromJSON](modules.md#openaichatcompletionpayloadmessagesinnerfromjson)
 - [OpenAIChatCompletionPayloadMessagesInnerFromJSONTyped](modules.md#openaichatcompletionpayloadmessagesinnerfromjsontyped)
 - [OpenAIChatCompletionPayloadMessagesInnerToJSON](modules.md#openaichatcompletionpayloadmessagesinnertojson)
+- [OpenAIChatCompletionPayloadMessagesInnerToJSONTyped](modules.md#openaichatcompletionpayloadmessagesinnertojsontyped)
 - [OpenAIChatCompletionPayloadToJSON](modules.md#openaichatcompletionpayloadtojson)
+- [OpenAIChatCompletionPayloadToJSONTyped](modules.md#openaichatcompletionpayloadtojsontyped)
 - [OpenAIChatCompletionToJSON](modules.md#openaichatcompletiontojson)
+- [OpenAIChatCompletionToJSONTyped](modules.md#openaichatcompletiontojsontyped)
 - [OutputsFromJSON](modules.md#outputsfromjson)
 - [OutputsFromJSONTyped](modules.md#outputsfromjsontyped)
 - [OutputsParsedOutputFromJSON](modules.md#outputsparsedoutputfromjson)
 - [OutputsParsedOutputFromJSONTyped](modules.md#outputsparsedoutputfromjsontyped)
 - [OutputsParsedOutputToJSON](modules.md#outputsparsedoutputtojson)
+- [OutputsParsedOutputToJSONTyped](modules.md#outputsparsedoutputtojsontyped)
 - [OutputsToJSON](modules.md#outputstojson)
+- [OutputsToJSONTyped](modules.md#outputstojsontyped)
 - [OutputsValidationResponseFromJSON](modules.md#outputsvalidationresponsefromjson)
 - [OutputsValidationResponseFromJSONTyped](modules.md#outputsvalidationresponsefromjsontyped)
 - [OutputsValidationResponseToJSON](modules.md#outputsvalidationresponsetojson)
 - [PassResultFromJSON](modules.md#passresultfromjson)
 - [PassResultFromJSONTyped](modules.md#passresultfromjsontyped)
 - [PassResultToJSON](modules.md#passresulttojson)
+- [PassResultToJSONTyped](modules.md#passresulttojsontyped)
 - [PrimitivesFromJSON](modules.md#primitivesfromjson)
 - [PrimitivesFromJSONTyped](modules.md#primitivesfromjsontyped)
 - [PrimitivesToJSON](modules.md#primitivestojson)
+- [PrimitivesToJSONTyped](modules.md#primitivestojsontyped)
 - [ReaskFromJSON](modules.md#reaskfromjson)
 - [ReaskFromJSONTyped](modules.md#reaskfromjsontyped)
 - [ReaskToJSON](modules.md#reasktojson)
+- [ReaskToJSONTyped](modules.md#reasktojsontyped)
 - [SchemaFromJSON](modules.md#schemafromjson)
 - [SchemaFromJSONTyped](modules.md#schemafromjsontyped)
 - [SchemaToJSON](modules.md#schematojson)
+- [SchemaToJSONTyped](modules.md#schematojsontyped)
 - [SimpleTypesFromJSON](modules.md#simpletypesfromjson)
 - [SimpleTypesFromJSONTyped](modules.md#simpletypesfromjsontyped)
 - [SimpleTypesToJSON](modules.md#simpletypestojson)
+- [SimpleTypesToJSONTyped](modules.md#simpletypestojsontyped)
 - [UnevaluatedFromJSON](modules.md#unevaluatedfromjson)
 - [UnevaluatedFromJSONTyped](modules.md#unevaluatedfromjsontyped)
 - [UnevaluatedToJSON](modules.md#unevaluatedtojson)
+- [UnevaluatedToJSONTyped](modules.md#unevaluatedtojsontyped)
 - [ValidatePayloadFromJSON](modules.md#validatepayloadfromjson)
 - [ValidatePayloadFromJSONTyped](modules.md#validatepayloadfromjsontyped)
 - [ValidatePayloadToJSON](modules.md#validatepayloadtojson)
+- [ValidatePayloadToJSONTyped](modules.md#validatepayloadtojsontyped)
 - [ValidationFromJSON](modules.md#validationfromjson)
 - [ValidationFromJSONTyped](modules.md#validationfromjsontyped)
 - [ValidationOutcomeFromJSON](modules.md#validationoutcomefromjson)
 - [ValidationOutcomeFromJSONTyped](modules.md#validationoutcomefromjsontyped)
 - [ValidationOutcomeToJSON](modules.md#validationoutcometojson)
+- [ValidationOutcomeToJSONTyped](modules.md#validationoutcometojsontyped)
 - [ValidationOutcomeValidatedOutputFromJSON](modules.md#validationoutcomevalidatedoutputfromjson)
 - [ValidationOutcomeValidatedOutputFromJSONTyped](modules.md#validationoutcomevalidatedoutputfromjsontyped)
 - [ValidationOutcomeValidatedOutputToJSON](modules.md#validationoutcomevalidatedoutputtojson)
+- [ValidationOutcomeValidatedOutputToJSONTyped](modules.md#validationoutcomevalidatedoutputtojsontyped)
 - [ValidationResultFromJSON](modules.md#validationresultfromjson)
 - [ValidationResultFromJSONTyped](modules.md#validationresultfromjsontyped)
 - [ValidationResultToJSON](modules.md#validationresulttojson)
+- [ValidationResultToJSONTyped](modules.md#validationresulttojsontyped)
 - [ValidationSummaryFromJSON](modules.md#validationsummaryfromjson)
 - [ValidationSummaryFromJSONTyped](modules.md#validationsummaryfromjsontyped)
 - [ValidationSummaryToJSON](modules.md#validationsummarytojson)
+- [ValidationSummaryToJSONTyped](modules.md#validationsummarytojsontyped)
 - [ValidationToJSON](modules.md#validationtojson)
+- [ValidationToJSONTyped](modules.md#validationtojsontyped)
 - [ValidationTypeFromJSON](modules.md#validationtypefromjson)
 - [ValidationTypeFromJSONTyped](modules.md#validationtypefromjsontyped)
 - [ValidationTypeToJSON](modules.md#validationtypetojson)
+- [ValidationTypeToJSONTyped](modules.md#validationtypetojsontyped)
 - [ValidatorLogFromJSON](modules.md#validatorlogfromjson)
 - [ValidatorLogFromJSONTyped](modules.md#validatorlogfromjsontyped)
 - [ValidatorLogInstanceIdFromJSON](modules.md#validatorloginstanceidfromjson)
 - [ValidatorLogInstanceIdFromJSONTyped](modules.md#validatorloginstanceidfromjsontyped)
 - [ValidatorLogInstanceIdToJSON](modules.md#validatorloginstanceidtojson)
+- [ValidatorLogInstanceIdToJSONTyped](modules.md#validatorloginstanceidtojsontyped)
 - [ValidatorLogToJSON](modules.md#validatorlogtojson)
+- [ValidatorLogToJSONTyped](modules.md#validatorlogtojsontyped)
 - [ValidatorLogValidationResultFromJSON](modules.md#validatorlogvalidationresultfromjson)
 - [ValidatorLogValidationResultFromJSONTyped](modules.md#validatorlogvalidationresultfromjsontyped)
 - [ValidatorLogValidationResultToJSON](modules.md#validatorlogvalidationresulttojson)
+- [ValidatorLogValidationResultToJSONTyped](modules.md#validatorlogvalidationresulttojsontyped)
 - [ValidatorReferenceFromJSON](modules.md#validatorreferencefromjson)
 - [ValidatorReferenceFromJSONTyped](modules.md#validatorreferencefromjsontyped)
 - [ValidatorReferenceToJSON](modules.md#validatorreferencetojson)
+- [ValidatorReferenceToJSONTyped](modules.md#validatorreferencetojsontyped)
 - [canConsumeForm](modules.md#canconsumeform)
+- [exists](modules.md#exists)
 - [instanceOfAnyType](modules.md#instanceofanytype)
 - [instanceOfApplicator](modules.md#instanceofapplicator)
 - [instanceOfArgsAndKwargs](modules.md#instanceofargsandkwargs)
@@ -434,7 +476,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorReference.ts:115
+src/models/ValidatorReference.ts:123
 
 ___
 
@@ -732,13 +774,34 @@ ___
 
 ### AnyTypeToJSON
 
-▸ **AnyTypeToJSON**(`value?`): `any`
+▸ **AnyTypeToJSON**(`json`): [`AnyType`](interfaces/AnyType.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`AnyType`](interfaces/AnyType.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`AnyType`](interfaces/AnyType.md)
+
+#### Defined in
+
+src/models/AnyType.ts:40
+
+___
+
+### AnyTypeToJSONTyped
+
+▸ **AnyTypeToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`AnyType`](interfaces/AnyType.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -746,7 +809,7 @@ ___
 
 #### Defined in
 
-src/models/AnyType.ts:40
+src/models/AnyType.ts:44
 
 ___
 
@@ -793,13 +856,34 @@ ___
 
 ### ApplicatorToJSON
 
-▸ **ApplicatorToJSON**(`value?`): `any`
+▸ **ApplicatorToJSON**(`json`): [`Applicator`](interfaces/Applicator.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Applicator`](interfaces/Applicator.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Applicator`](interfaces/Applicator.md)
+
+#### Defined in
+
+src/models/Applicator.ts:156
+
+___
+
+### ApplicatorToJSONTyped
+
+▸ **ApplicatorToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Applicator`](interfaces/Applicator.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -807,7 +891,7 @@ ___
 
 #### Defined in
 
-src/models/Applicator.ts:156
+src/models/Applicator.ts:160
 
 ___
 
@@ -854,13 +938,34 @@ ___
 
 ### ArgsAndKwargsToJSON
 
-▸ **ArgsAndKwargsToJSON**(`value?`): `any`
+▸ **ArgsAndKwargsToJSON**(`json`): [`ArgsAndKwargs`](interfaces/ArgsAndKwargs.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ArgsAndKwargs`](interfaces/ArgsAndKwargs.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ArgsAndKwargs`](interfaces/ArgsAndKwargs.md)
+
+#### Defined in
+
+src/models/ArgsAndKwargs.ts:59
+
+___
+
+### ArgsAndKwargsToJSONTyped
+
+▸ **ArgsAndKwargsToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ArgsAndKwargs`](interfaces/ArgsAndKwargs.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -868,7 +973,7 @@ ___
 
 #### Defined in
 
-src/models/ArgsAndKwargs.ts:59
+src/models/ArgsAndKwargs.ts:63
 
 ___
 
@@ -915,13 +1020,34 @@ ___
 
 ### ArraysInnerToJSON
 
-▸ **ArraysInnerToJSON**(`value?`): `any`
+▸ **ArraysInnerToJSON**(`json`): [`ArraysInner`](interfaces/ArraysInner.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ArraysInner`](interfaces/ArraysInner.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ArraysInner`](interfaces/ArraysInner.md)
+
+#### Defined in
+
+src/models/ArraysInner.ts:40
+
+___
+
+### ArraysInnerToJSONTyped
+
+▸ **ArraysInnerToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ArraysInner`](interfaces/ArraysInner.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -929,7 +1055,7 @@ ___
 
 #### Defined in
 
-src/models/ArraysInner.ts:40
+src/models/ArraysInner.ts:44
 
 ___
 
@@ -1017,17 +1143,17 @@ ___
 
 ### CallInputsToJSON
 
-▸ **CallInputsToJSON**(`value?`): `any`
+▸ **CallInputsToJSON**(`json`): [`CallInputs`](interfaces/CallInputs.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`CallInputs`](interfaces/CallInputs.md) |
+| `json` | `any` |
 
 #### Returns
 
-`any`
+[`CallInputs`](interfaces/CallInputs.md)
 
 #### Defined in
 
@@ -1035,15 +1161,16 @@ src/models/CallInputs.ts:117
 
 ___
 
-### CallToJSON
+### CallInputsToJSONTyped
 
-▸ **CallToJSON**(`value?`): `any`
+▸ **CallInputsToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`Call`](interfaces/Call.md) |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`CallInputs`](interfaces/CallInputs.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1051,7 +1178,48 @@ ___
 
 #### Defined in
 
+src/models/CallInputs.ts:121
+
+___
+
+### CallToJSON
+
+▸ **CallToJSON**(`json`): [`Call`](interfaces/Call.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`Call`](interfaces/Call.md)
+
+#### Defined in
+
 src/models/Call.ts:83
+
+___
+
+### CallToJSONTyped
+
+▸ **CallToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Call`](interfaces/Call.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/Call.ts:87
 
 ___
 
@@ -1098,13 +1266,34 @@ ___
 
 ### ContentToJSON
 
-▸ **ContentToJSON**(`value?`): `any`
+▸ **ContentToJSON**(`json`): [`Content`](interfaces/Content.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Content`](interfaces/Content.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Content`](interfaces/Content.md)
+
+#### Defined in
+
+src/models/Content.ts:69
+
+___
+
+### ContentToJSONTyped
+
+▸ **ContentToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Content`](interfaces/Content.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1112,7 +1301,7 @@ ___
 
 #### Defined in
 
-src/models/Content.ts:69
+src/models/Content.ts:73
 
 ___
 
@@ -1159,13 +1348,34 @@ ___
 
 ### CoreToJSON
 
-▸ **CoreToJSON**(`value?`): `any`
+▸ **CoreToJSON**(`json`): [`Core`](interfaces/Core.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Core`](interfaces/Core.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Core`](interfaces/Core.md)
+
+#### Defined in
+
+src/models/Core.ts:95
+
+___
+
+### CoreToJSONTyped
+
+▸ **CoreToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Core`](interfaces/Core.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1173,7 +1383,7 @@ ___
 
 #### Defined in
 
-src/models/Core.ts:95
+src/models/Core.ts:99
 
 ___
 
@@ -1220,13 +1430,34 @@ ___
 
 ### ErrorSpanToJSON
 
-▸ **ErrorSpanToJSON**(`value?`): `any`
+▸ **ErrorSpanToJSON**(`json`): [`ErrorSpan`](interfaces/ErrorSpan.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ErrorSpan`](interfaces/ErrorSpan.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ErrorSpan`](interfaces/ErrorSpan.md)
+
+#### Defined in
+
+src/models/ErrorSpan.ts:69
+
+___
+
+### ErrorSpanToJSONTyped
+
+▸ **ErrorSpanToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ErrorSpan`](interfaces/ErrorSpan.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1234,7 +1465,7 @@ ___
 
 #### Defined in
 
-src/models/ErrorSpan.ts:69
+src/models/ErrorSpan.ts:73
 
 ___
 
@@ -1254,7 +1485,7 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:71
+src/models/FailResult.ts:72
 
 ___
 
@@ -1275,19 +1506,40 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:75
+src/models/FailResult.ts:76
 
 ___
 
 ### FailResultToJSON
 
-▸ **FailResultToJSON**(`value?`): `any`
+▸ **FailResultToJSON**(`json`): [`FailResult`](interfaces/FailResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`FailResult`](interfaces/FailResult.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`FailResult`](interfaces/FailResult.md)
+
+#### Defined in
+
+src/models/FailResult.ts:97
+
+___
+
+### FailResultToJSONTyped
+
+▸ **FailResultToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`FailResult`](interfaces/FailResult.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1295,7 +1547,7 @@ ___
 
 #### Defined in
 
-src/models/FailResult.ts:96
+src/models/FailResult.ts:101
 
 ___
 
@@ -1315,7 +1567,7 @@ ___
 
 #### Defined in
 
-src/models/FormatAnnotation.ts:36
+src/models/FormatAnnotation.ts:38
 
 ___
 
@@ -1336,19 +1588,40 @@ ___
 
 #### Defined in
 
-src/models/FormatAnnotation.ts:40
+src/models/FormatAnnotation.ts:42
 
 ___
 
 ### FormatAnnotationToJSON
 
-▸ **FormatAnnotationToJSON**(`value?`): `any`
+▸ **FormatAnnotationToJSON**(`json`): [`FormatAnnotation`](interfaces/FormatAnnotation.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`FormatAnnotation`](interfaces/FormatAnnotation.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`FormatAnnotation`](interfaces/FormatAnnotation.md)
+
+#### Defined in
+
+src/models/FormatAnnotation.ts:54
+
+___
+
+### FormatAnnotationToJSONTyped
+
+▸ **FormatAnnotationToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`FormatAnnotation`](interfaces/FormatAnnotation.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1356,7 +1629,7 @@ ___
 
 #### Defined in
 
-src/models/FormatAnnotation.ts:52
+src/models/FormatAnnotation.ts:58
 
 ___
 
@@ -1403,13 +1676,34 @@ ___
 
 ### GuardToJSON
 
-▸ **GuardToJSON**(`value?`): `any`
+▸ **GuardToJSON**(`json`): [`Guard`](interfaces/Guard.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Guard`](interfaces/Guard.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Guard`](interfaces/Guard.md)
+
+#### Defined in
+
+src/models/Guard.ts:108
+
+___
+
+### GuardToJSONTyped
+
+▸ **GuardToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Guard`](interfaces/Guard.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1417,7 +1711,7 @@ ___
 
 #### Defined in
 
-src/models/Guard.ts:108
+src/models/Guard.ts:112
 
 ___
 
@@ -1464,13 +1758,34 @@ ___
 
 ### HealthCheckToJSON
 
-▸ **HealthCheckToJSON**(`value?`): `any`
+▸ **HealthCheckToJSON**(`json`): [`HealthCheck`](interfaces/HealthCheck.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`HealthCheck`](interfaces/HealthCheck.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`HealthCheck`](interfaces/HealthCheck.md)
+
+#### Defined in
+
+src/models/HealthCheck.ts:61
+
+___
+
+### HealthCheckToJSONTyped
+
+▸ **HealthCheckToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`HealthCheck`](interfaces/HealthCheck.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1478,7 +1793,7 @@ ___
 
 #### Defined in
 
-src/models/HealthCheck.ts:61
+src/models/HealthCheck.ts:65
 
 ___
 
@@ -1525,13 +1840,34 @@ ___
 
 ### HttpErrorToJSON
 
-▸ **HttpErrorToJSON**(`value?`): `any`
+▸ **HttpErrorToJSON**(`json`): [`HttpError`](interfaces/HttpError.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`HttpError`](interfaces/HttpError.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`HttpError`](interfaces/HttpError.md)
+
+#### Defined in
+
+src/models/HttpError.ts:82
+
+___
+
+### HttpErrorToJSONTyped
+
+▸ **HttpErrorToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`HttpError`](interfaces/HttpError.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1539,7 +1875,7 @@ ___
 
 #### Defined in
 
-src/models/HttpError.ts:82
+src/models/HttpError.ts:86
 
 ___
 
@@ -1586,13 +1922,34 @@ ___
 
 ### InputsToJSON
 
-▸ **InputsToJSON**(`value?`): `any`
+▸ **InputsToJSON**(`json`): [`Inputs`](interfaces/Inputs.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Inputs`](interfaces/Inputs.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Inputs`](interfaces/Inputs.md)
+
+#### Defined in
+
+src/models/Inputs.ts:103
+
+___
+
+### InputsToJSONTyped
+
+▸ **InputsToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Inputs`](interfaces/Inputs.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1600,7 +1957,7 @@ ___
 
 #### Defined in
 
-src/models/Inputs.ts:103
+src/models/Inputs.ts:107
 
 ___
 
@@ -1647,13 +2004,34 @@ ___
 
 ### IterationToJSON
 
-▸ **IterationToJSON**(`value?`): `any`
+▸ **IterationToJSON**(`json`): [`Iteration`](interfaces/Iteration.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Iteration`](interfaces/Iteration.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Iteration`](interfaces/Iteration.md)
+
+#### Defined in
+
+src/models/Iteration.ts:89
+
+___
+
+### IterationToJSONTyped
+
+▸ **IterationToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Iteration`](interfaces/Iteration.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1661,7 +2039,7 @@ ___
 
 #### Defined in
 
-src/models/Iteration.ts:89
+src/models/Iteration.ts:93
 
 ___
 
@@ -1681,7 +2059,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResource.ts:35
+src/models/LLMResource.ts:42
 
 ___
 
@@ -1702,7 +2080,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResource.ts:39
+src/models/LLMResource.ts:46
 
 ___
 
@@ -1722,7 +2100,28 @@ ___
 
 #### Defined in
 
-src/models/LLMResource.ts:46
+src/models/LLMResource.ts:53
+
+___
+
+### LLMResourceToJSONTyped
+
+▸ **LLMResourceToJSONTyped**(`value`, `ignoreDiscriminator`): [`LLMResource`](modules.md#llmresource)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`LLMResource`](modules.md#llmresource)
+
+#### Defined in
+
+src/models/LLMResource.ts:57
 
 ___
 
@@ -1769,13 +2168,34 @@ ___
 
 ### LLMResponseToJSON
 
-▸ **LLMResponseToJSON**(`value?`): `any`
+▸ **LLMResponseToJSON**(`json`): [`LLMResponse`](interfaces/LLMResponse.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`LLMResponse`](interfaces/LLMResponse.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`LLMResponse`](interfaces/LLMResponse.md)
+
+#### Defined in
+
+src/models/LLMResponse.ts:87
+
+___
+
+### LLMResponseToJSONTyped
+
+▸ **LLMResponseToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`LLMResponse`](interfaces/LLMResponse.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1783,7 +2203,7 @@ ___
 
 #### Defined in
 
-src/models/LLMResponse.ts:87
+src/models/LLMResponse.ts:91
 
 ___
 
@@ -1830,13 +2250,34 @@ ___
 
 ### MetaDataToJSON
 
-▸ **MetaDataToJSON**(`value?`): `any`
+▸ **MetaDataToJSON**(`json`): [`MetaData`](interfaces/MetaData.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`MetaData`](interfaces/MetaData.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`MetaData`](interfaces/MetaData.md)
+
+#### Defined in
+
+src/models/MetaData.ts:94
+
+___
+
+### MetaDataToJSONTyped
+
+▸ **MetaDataToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`MetaData`](interfaces/MetaData.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -1844,7 +2285,7 @@ ___
 
 #### Defined in
 
-src/models/MetaData.ts:94
+src/models/MetaData.ts:98
 
 ___
 
@@ -1864,7 +2305,7 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletion.ts:64
+src/models/OpenAIChatCompletion.ts:66
 
 ___
 
@@ -1885,7 +2326,7 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletion.ts:68
+src/models/OpenAIChatCompletion.ts:70
 
 ___
 
@@ -1905,7 +2346,7 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletionPayload.ts:60
+src/models/OpenAIChatCompletionPayload.ts:62
 
 ___
 
@@ -1926,7 +2367,7 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletionPayload.ts:66
+src/models/OpenAIChatCompletionPayload.ts:68
 
 ___
 
@@ -1973,17 +2414,17 @@ ___
 
 ### OpenAIChatCompletionPayloadMessagesInnerToJSON
 
-▸ **OpenAIChatCompletionPayloadMessagesInnerToJSON**(`value?`): `any`
+▸ **OpenAIChatCompletionPayloadMessagesInnerToJSON**(`json`): [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md) |
+| `json` | `any` |
 
 #### Returns
 
-`any`
+[`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md)
 
 #### Defined in
 
@@ -1991,15 +2432,16 @@ src/models/OpenAIChatCompletionPayloadMessagesInner.ts:63
 
 ___
 
-### OpenAIChatCompletionPayloadToJSON
+### OpenAIChatCompletionPayloadMessagesInnerToJSONTyped
 
-▸ **OpenAIChatCompletionPayloadToJSON**(`value?`): `any`
+▸ **OpenAIChatCompletionPayloadMessagesInnerToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value?` | ``null`` \| [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md) |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletionPayloadMessagesInner`](interfaces/OpenAIChatCompletionPayloadMessagesInner.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2007,19 +2449,81 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletionPayload.ts:86
+src/models/OpenAIChatCompletionPayloadMessagesInner.ts:69
+
+___
+
+### OpenAIChatCompletionPayloadToJSON
+
+▸ **OpenAIChatCompletionPayloadToJSON**(`json`): [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:88
+
+___
+
+### OpenAIChatCompletionPayloadToJSONTyped
+
+▸ **OpenAIChatCompletionPayloadToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletionPayload`](interfaces/OpenAIChatCompletionPayload.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+src/models/OpenAIChatCompletionPayload.ts:94
 
 ___
 
 ### OpenAIChatCompletionToJSON
 
-▸ **OpenAIChatCompletionToJSON**(`value?`): `any`
+▸ **OpenAIChatCompletionToJSON**(`json`): [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md)
+
+#### Defined in
+
+src/models/OpenAIChatCompletion.ts:87
+
+___
+
+### OpenAIChatCompletionToJSONTyped
+
+▸ **OpenAIChatCompletionToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`OpenAIChatCompletion`](interfaces/OpenAIChatCompletion.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2027,7 +2531,7 @@ ___
 
 #### Defined in
 
-src/models/OpenAIChatCompletion.ts:85
+src/models/OpenAIChatCompletion.ts:91
 
 ___
 
@@ -2088,7 +2592,7 @@ ___
 
 #### Defined in
 
-src/models/OutputsParsedOutput.ts:29
+src/models/OutputsParsedOutput.ts:31
 
 ___
 
@@ -2109,19 +2613,40 @@ ___
 
 #### Defined in
 
-src/models/OutputsParsedOutput.ts:33
+src/models/OutputsParsedOutput.ts:35
 
 ___
 
 ### OutputsParsedOutputToJSON
 
-▸ **OutputsParsedOutputToJSON**(`value?`): `any`
+▸ **OutputsParsedOutputToJSON**(`json`): [`OutputsParsedOutput`](interfaces/OutputsParsedOutput.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`OutputsParsedOutput`](interfaces/OutputsParsedOutput.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`OutputsParsedOutput`](interfaces/OutputsParsedOutput.md)
+
+#### Defined in
+
+src/models/OutputsParsedOutput.ts:42
+
+___
+
+### OutputsParsedOutputToJSONTyped
+
+▸ **OutputsParsedOutputToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`OutputsParsedOutput`](interfaces/OutputsParsedOutput.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2129,19 +2654,40 @@ ___
 
 #### Defined in
 
-src/models/OutputsParsedOutput.ts:40
+src/models/OutputsParsedOutput.ts:46
 
 ___
 
 ### OutputsToJSON
 
-▸ **OutputsToJSON**(`value?`): `any`
+▸ **OutputsToJSON**(`json`): [`Outputs`](interfaces/Outputs.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Outputs`](interfaces/Outputs.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Outputs`](interfaces/Outputs.md)
+
+#### Defined in
+
+src/models/Outputs.ts:134
+
+___
+
+### OutputsToJSONTyped
+
+▸ **OutputsToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Outputs`](interfaces/Outputs.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2149,7 +2695,7 @@ ___
 
 #### Defined in
 
-src/models/Outputs.ts:134
+src/models/Outputs.ts:138
 
 ___
 
@@ -2257,13 +2803,34 @@ ___
 
 ### PassResultToJSON
 
-▸ **PassResultToJSON**(`value?`): `any`
+▸ **PassResultToJSON**(`json`): [`PassResult`](interfaces/PassResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`PassResult`](interfaces/PassResult.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`PassResult`](interfaces/PassResult.md)
+
+#### Defined in
+
+src/models/PassResult.ts:76
+
+___
+
+### PassResultToJSONTyped
+
+▸ **PassResultToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`PassResult`](interfaces/PassResult.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2271,7 +2838,7 @@ ___
 
 #### Defined in
 
-src/models/PassResult.ts:76
+src/models/PassResult.ts:80
 
 ___
 
@@ -2318,13 +2885,34 @@ ___
 
 ### PrimitivesToJSON
 
-▸ **PrimitivesToJSON**(`value?`): `any`
+▸ **PrimitivesToJSON**(`json`): [`Primitives`](interfaces/Primitives.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Primitives`](interfaces/Primitives.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Primitives`](interfaces/Primitives.md)
+
+#### Defined in
+
+src/models/Primitives.ts:40
+
+___
+
+### PrimitivesToJSONTyped
+
+▸ **PrimitivesToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Primitives`](interfaces/Primitives.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2332,7 +2920,7 @@ ___
 
 #### Defined in
 
-src/models/Primitives.ts:40
+src/models/Primitives.ts:44
 
 ___
 
@@ -2379,13 +2967,34 @@ ___
 
 ### ReaskToJSON
 
-▸ **ReaskToJSON**(`value?`): `any`
+▸ **ReaskToJSON**(`json`): [`Reask`](interfaces/Reask.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Reask`](interfaces/Reask.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Reask`](interfaces/Reask.md)
+
+#### Defined in
+
+src/models/Reask.ts:68
+
+___
+
+### ReaskToJSONTyped
+
+▸ **ReaskToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Reask`](interfaces/Reask.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2393,7 +3002,7 @@ ___
 
 #### Defined in
 
-src/models/Reask.ts:68
+src/models/Reask.ts:72
 
 ___
 
@@ -2440,13 +3049,34 @@ ___
 
 ### SchemaToJSON
 
-▸ **SchemaToJSON**(`value?`): `any`
+▸ **SchemaToJSON**(`json`): [`Schema`](interfaces/Schema.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Schema`](interfaces/Schema.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Schema`](interfaces/Schema.md)
+
+#### Defined in
+
+src/models/Schema.ts:468
+
+___
+
+### SchemaToJSONTyped
+
+▸ **SchemaToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Schema`](interfaces/Schema.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2454,7 +3084,7 @@ ___
 
 #### Defined in
 
-src/models/Schema.ts:468
+src/models/Schema.ts:472
 
 ___
 
@@ -2474,7 +3104,7 @@ ___
 
 #### Defined in
 
-src/models/SimpleTypes.ts:34
+src/models/SimpleTypes.ts:41
 
 ___
 
@@ -2495,7 +3125,7 @@ ___
 
 #### Defined in
 
-src/models/SimpleTypes.ts:38
+src/models/SimpleTypes.ts:45
 
 ___
 
@@ -2515,7 +3145,28 @@ ___
 
 #### Defined in
 
-src/models/SimpleTypes.ts:45
+src/models/SimpleTypes.ts:52
+
+___
+
+### SimpleTypesToJSONTyped
+
+▸ **SimpleTypesToJSONTyped**(`value`, `ignoreDiscriminator`): [`SimpleTypes`](modules.md#simpletypes)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SimpleTypes`](modules.md#simpletypes)
+
+#### Defined in
+
+src/models/SimpleTypes.ts:56
 
 ___
 
@@ -2562,13 +3213,34 @@ ___
 
 ### UnevaluatedToJSON
 
-▸ **UnevaluatedToJSON**(`value?`): `any`
+▸ **UnevaluatedToJSON**(`json`): [`Unevaluated`](interfaces/Unevaluated.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Unevaluated`](interfaces/Unevaluated.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Unevaluated`](interfaces/Unevaluated.md)
+
+#### Defined in
+
+src/models/Unevaluated.ts:63
+
+___
+
+### UnevaluatedToJSONTyped
+
+▸ **UnevaluatedToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Unevaluated`](interfaces/Unevaluated.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2576,7 +3248,7 @@ ___
 
 #### Defined in
 
-src/models/Unevaluated.ts:63
+src/models/Unevaluated.ts:67
 
 ___
 
@@ -2596,7 +3268,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatePayload.ts:58
+src/models/ValidatePayload.ts:60
 
 ___
 
@@ -2617,19 +3289,40 @@ ___
 
 #### Defined in
 
-src/models/ValidatePayload.ts:62
+src/models/ValidatePayload.ts:64
 
 ___
 
 ### ValidatePayloadToJSON
 
-▸ **ValidatePayloadToJSON**(`value?`): `any`
+▸ **ValidatePayloadToJSON**(`json`): [`ValidatePayload`](interfaces/ValidatePayload.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidatePayload`](interfaces/ValidatePayload.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatePayload`](interfaces/ValidatePayload.md)
+
+#### Defined in
+
+src/models/ValidatePayload.ts:82
+
+___
+
+### ValidatePayloadToJSONTyped
+
+▸ **ValidatePayloadToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidatePayload`](interfaces/ValidatePayload.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2637,7 +3330,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatePayload.ts:80
+src/models/ValidatePayload.ts:86
 
 ___
 
@@ -2698,7 +3391,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:85
+src/models/ValidationOutcome.ts:87
 
 ___
 
@@ -2719,19 +3412,40 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:89
+src/models/ValidationOutcome.ts:91
 
 ___
 
 ### ValidationOutcomeToJSON
 
-▸ **ValidationOutcomeToJSON**(`value?`): `any`
+▸ **ValidationOutcomeToJSON**(`json`): [`ValidationOutcome`](interfaces/ValidationOutcome.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidationOutcome`](interfaces/ValidationOutcome.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationOutcome`](interfaces/ValidationOutcome.md)
+
+#### Defined in
+
+src/models/ValidationOutcome.ts:119
+
+___
+
+### ValidationOutcomeToJSONTyped
+
+▸ **ValidationOutcomeToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidationOutcome`](interfaces/ValidationOutcome.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2739,7 +3453,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcome.ts:117
+src/models/ValidationOutcome.ts:123
 
 ___
 
@@ -2786,13 +3500,34 @@ ___
 
 ### ValidationOutcomeValidatedOutputToJSON
 
-▸ **ValidationOutcomeValidatedOutputToJSON**(`value?`): `any`
+▸ **ValidationOutcomeValidatedOutputToJSON**(`json`): [`ValidationOutcomeValidatedOutput`](interfaces/ValidationOutcomeValidatedOutput.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidationOutcomeValidatedOutput`](interfaces/ValidationOutcomeValidatedOutput.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationOutcomeValidatedOutput`](interfaces/ValidationOutcomeValidatedOutput.md)
+
+#### Defined in
+
+src/models/ValidationOutcomeValidatedOutput.ts:44
+
+___
+
+### ValidationOutcomeValidatedOutputToJSONTyped
+
+▸ **ValidationOutcomeValidatedOutputToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidationOutcomeValidatedOutput`](interfaces/ValidationOutcomeValidatedOutput.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2800,7 +3535,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationOutcomeValidatedOutput.ts:44
+src/models/ValidationOutcomeValidatedOutput.ts:50
 
 ___
 
@@ -2820,7 +3555,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:59
+src/models/ValidationResult.ts:61
 
 ___
 
@@ -2841,19 +3576,40 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:63
+src/models/ValidationResult.ts:65
 
 ___
 
 ### ValidationResultToJSON
 
-▸ **ValidationResultToJSON**(`value?`): `any`
+▸ **ValidationResultToJSON**(`json`): [`ValidationResult`](interfaces/ValidationResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidationResult`](interfaces/ValidationResult.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationResult`](interfaces/ValidationResult.md)
+
+#### Defined in
+
+src/models/ValidationResult.ts:80
+
+___
+
+### ValidationResultToJSONTyped
+
+▸ **ValidationResultToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidationResult`](interfaces/ValidationResult.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2861,7 +3617,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationResult.ts:78
+src/models/ValidationResult.ts:84
 
 ___
 
@@ -2881,7 +3637,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationSummary.ts:75
+src/models/ValidationSummary.ts:79
 
 ___
 
@@ -2902,19 +3658,40 @@ ___
 
 #### Defined in
 
-src/models/ValidationSummary.ts:79
+src/models/ValidationSummary.ts:83
 
 ___
 
 ### ValidationSummaryToJSON
 
-▸ **ValidationSummaryToJSON**(`value?`): `any`
+▸ **ValidationSummaryToJSON**(`json`): [`ValidationSummary`](interfaces/ValidationSummary.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidationSummary`](interfaces/ValidationSummary.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationSummary`](interfaces/ValidationSummary.md)
+
+#### Defined in
+
+src/models/ValidationSummary.ts:104
+
+___
+
+### ValidationSummaryToJSONTyped
+
+▸ **ValidationSummaryToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidationSummary`](interfaces/ValidationSummary.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2922,19 +3699,40 @@ ___
 
 #### Defined in
 
-src/models/ValidationSummary.ts:100
+src/models/ValidationSummary.ts:108
 
 ___
 
 ### ValidationToJSON
 
-▸ **ValidationToJSON**(`value?`): `any`
+▸ **ValidationToJSON**(`json`): [`Validation`](interfaces/Validation.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`Validation`](interfaces/Validation.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`Validation`](interfaces/Validation.md)
+
+#### Defined in
+
+src/models/Validation.ts:194
+
+___
+
+### ValidationToJSONTyped
+
+▸ **ValidationToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`Validation`](interfaces/Validation.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -2942,7 +3740,7 @@ ___
 
 #### Defined in
 
-src/models/Validation.ts:194
+src/models/Validation.ts:198
 
 ___
 
@@ -2962,7 +3760,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationType.ts:29
+src/models/ValidationType.ts:31
 
 ___
 
@@ -2983,19 +3781,40 @@ ___
 
 #### Defined in
 
-src/models/ValidationType.ts:33
+src/models/ValidationType.ts:35
 
 ___
 
 ### ValidationTypeToJSON
 
-▸ **ValidationTypeToJSON**(`value?`): `any`
+▸ **ValidationTypeToJSON**(`json`): [`ValidationType`](interfaces/ValidationType.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidationType`](interfaces/ValidationType.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidationType`](interfaces/ValidationType.md)
+
+#### Defined in
+
+src/models/ValidationType.ts:42
+
+___
+
+### ValidationTypeToJSONTyped
+
+▸ **ValidationTypeToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidationType`](interfaces/ValidationType.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -3003,7 +3822,7 @@ ___
 
 #### Defined in
 
-src/models/ValidationType.ts:40
+src/models/ValidationType.ts:46
 
 ___
 
@@ -3023,7 +3842,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:94
+src/models/ValidatorLog.ts:101
 
 ___
 
@@ -3044,7 +3863,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:98
+src/models/ValidatorLog.ts:105
 
 ___
 
@@ -3064,7 +3883,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogInstanceId.ts:29
+src/models/ValidatorLogInstanceId.ts:31
 
 ___
 
@@ -3085,19 +3904,40 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogInstanceId.ts:35
+src/models/ValidatorLogInstanceId.ts:37
 
 ___
 
 ### ValidatorLogInstanceIdToJSON
 
-▸ **ValidatorLogInstanceIdToJSON**(`value?`): `any`
+▸ **ValidatorLogInstanceIdToJSON**(`json`): [`ValidatorLogInstanceId`](interfaces/ValidatorLogInstanceId.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidatorLogInstanceId`](interfaces/ValidatorLogInstanceId.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatorLogInstanceId`](interfaces/ValidatorLogInstanceId.md)
+
+#### Defined in
+
+src/models/ValidatorLogInstanceId.ts:44
+
+___
+
+### ValidatorLogInstanceIdToJSONTyped
+
+▸ **ValidatorLogInstanceIdToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidatorLogInstanceId`](interfaces/ValidatorLogInstanceId.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -3105,19 +3945,40 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogInstanceId.ts:42
+src/models/ValidatorLogInstanceId.ts:50
 
 ___
 
 ### ValidatorLogToJSON
 
-▸ **ValidatorLogToJSON**(`value?`): `any`
+▸ **ValidatorLogToJSON**(`json`): [`ValidatorLog`](interfaces/ValidatorLog.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidatorLog`](interfaces/ValidatorLog.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatorLog`](interfaces/ValidatorLog.md)
+
+#### Defined in
+
+src/models/ValidatorLog.ts:132
+
+___
+
+### ValidatorLogToJSONTyped
+
+▸ **ValidatorLogToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidatorLog`](interfaces/ValidatorLog.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -3125,7 +3986,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLog.ts:125
+src/models/ValidatorLog.ts:136
 
 ___
 
@@ -3145,7 +4006,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:87
+src/models/ValidatorLogValidationResult.ts:90
 
 ___
 
@@ -3166,19 +4027,40 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:93
+src/models/ValidatorLogValidationResult.ts:96
 
 ___
 
 ### ValidatorLogValidationResultToJSON
 
-▸ **ValidatorLogValidationResultToJSON**(`value?`): `any`
+▸ **ValidatorLogValidationResultToJSON**(`json`): [`ValidatorLogValidationResult`](interfaces/ValidatorLogValidationResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidatorLogValidationResult`](interfaces/ValidatorLogValidationResult.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatorLogValidationResult`](interfaces/ValidatorLogValidationResult.md)
+
+#### Defined in
+
+src/models/ValidatorLogValidationResult.ts:119
+
+___
+
+### ValidatorLogValidationResultToJSONTyped
+
+▸ **ValidatorLogValidationResultToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidatorLogValidationResult`](interfaces/ValidatorLogValidationResult.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -3186,7 +4068,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorLogValidationResult.ts:116
+src/models/ValidatorLogValidationResult.ts:125
 
 ___
 
@@ -3206,7 +4088,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorReference.ts:77
+src/models/ValidatorReference.ts:79
 
 ___
 
@@ -3227,19 +4109,40 @@ ___
 
 #### Defined in
 
-src/models/ValidatorReference.ts:81
+src/models/ValidatorReference.ts:83
 
 ___
 
 ### ValidatorReferenceToJSON
 
-▸ **ValidatorReferenceToJSON**(`value?`): `any`
+▸ **ValidatorReferenceToJSON**(`json`): [`ValidatorReference`](interfaces/ValidatorReference.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | ``null`` \| [`ValidatorReference`](interfaces/ValidatorReference.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatorReference`](interfaces/ValidatorReference.md)
+
+#### Defined in
+
+src/models/ValidatorReference.ts:99
+
+___
+
+### ValidatorReferenceToJSONTyped
+
+▸ **ValidatorReferenceToJSONTyped**(`value?`, `ignoreDiscriminator?`): `any`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value?` | ``null`` \| [`ValidatorReference`](interfaces/ValidatorReference.md) | `undefined` |
+| `ignoreDiscriminator` | `boolean` | `false` |
 
 #### Returns
 
@@ -3247,7 +4150,7 @@ ___
 
 #### Defined in
 
-src/models/ValidatorReference.ts:97
+src/models/ValidatorReference.ts:103
 
 ___
 
@@ -3267,13 +4170,34 @@ ___
 
 #### Defined in
 
-src/runtime.ts:442
+src/runtime.ts:448
+
+___
+
+### exists
+
+▸ **exists**(`json`, `key`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `key` | `string` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+src/runtime.ts:435
 
 ___
 
 ### instanceOfAnyType
 
-▸ **instanceOfAnyType**(`value`): `boolean`
+▸ **instanceOfAnyType**(`value`): value is AnyType
 
 Check if a given object implements the AnyType interface.
 
@@ -3285,7 +4209,7 @@ Check if a given object implements the AnyType interface.
 
 #### Returns
 
-`boolean`
+value is AnyType
 
 #### Defined in
 
@@ -3295,7 +4219,7 @@ ___
 
 ### instanceOfApplicator
 
-▸ **instanceOfApplicator**(`value`): `boolean`
+▸ **instanceOfApplicator**(`value`): value is Applicator
 
 Check if a given object implements the Applicator interface.
 
@@ -3307,7 +4231,7 @@ Check if a given object implements the Applicator interface.
 
 #### Returns
 
-`boolean`
+value is Applicator
 
 #### Defined in
 
@@ -3317,7 +4241,7 @@ ___
 
 ### instanceOfArgsAndKwargs
 
-▸ **instanceOfArgsAndKwargs**(`value`): `boolean`
+▸ **instanceOfArgsAndKwargs**(`value`): value is ArgsAndKwargs
 
 Check if a given object implements the ArgsAndKwargs interface.
 
@@ -3329,7 +4253,7 @@ Check if a given object implements the ArgsAndKwargs interface.
 
 #### Returns
 
-`boolean`
+value is ArgsAndKwargs
 
 #### Defined in
 
@@ -3339,7 +4263,7 @@ ___
 
 ### instanceOfArraysInner
 
-▸ **instanceOfArraysInner**(`value`): `boolean`
+▸ **instanceOfArraysInner**(`value`): value is ArraysInner
 
 Check if a given object implements the ArraysInner interface.
 
@@ -3351,7 +4275,7 @@ Check if a given object implements the ArraysInner interface.
 
 #### Returns
 
-`boolean`
+value is ArraysInner
 
 #### Defined in
 
@@ -3361,7 +4285,7 @@ ___
 
 ### instanceOfCall
 
-▸ **instanceOfCall**(`value`): `boolean`
+▸ **instanceOfCall**(`value`): value is Call
 
 Check if a given object implements the Call interface.
 
@@ -3373,7 +4297,7 @@ Check if a given object implements the Call interface.
 
 #### Returns
 
-`boolean`
+value is Call
 
 #### Defined in
 
@@ -3383,7 +4307,7 @@ ___
 
 ### instanceOfCallInputs
 
-▸ **instanceOfCallInputs**(`value`): `boolean`
+▸ **instanceOfCallInputs**(`value`): value is CallInputs
 
 Check if a given object implements the CallInputs interface.
 
@@ -3395,7 +4319,7 @@ Check if a given object implements the CallInputs interface.
 
 #### Returns
 
-`boolean`
+value is CallInputs
 
 #### Defined in
 
@@ -3405,7 +4329,7 @@ ___
 
 ### instanceOfContent
 
-▸ **instanceOfContent**(`value`): `boolean`
+▸ **instanceOfContent**(`value`): value is Content
 
 Check if a given object implements the Content interface.
 
@@ -3417,7 +4341,7 @@ Check if a given object implements the Content interface.
 
 #### Returns
 
-`boolean`
+value is Content
 
 #### Defined in
 
@@ -3427,7 +4351,7 @@ ___
 
 ### instanceOfCore
 
-▸ **instanceOfCore**(`value`): `boolean`
+▸ **instanceOfCore**(`value`): value is Core
 
 Check if a given object implements the Core interface.
 
@@ -3439,7 +4363,7 @@ Check if a given object implements the Core interface.
 
 #### Returns
 
-`boolean`
+value is Core
 
 #### Defined in
 
@@ -3449,7 +4373,7 @@ ___
 
 ### instanceOfErrorSpan
 
-▸ **instanceOfErrorSpan**(`value`): `boolean`
+▸ **instanceOfErrorSpan**(`value`): value is ErrorSpan
 
 Check if a given object implements the ErrorSpan interface.
 
@@ -3461,7 +4385,7 @@ Check if a given object implements the ErrorSpan interface.
 
 #### Returns
 
-`boolean`
+value is ErrorSpan
 
 #### Defined in
 
@@ -3471,7 +4395,7 @@ ___
 
 ### instanceOfFailResult
 
-▸ **instanceOfFailResult**(`value`): `boolean`
+▸ **instanceOfFailResult**(`value`): value is FailResult
 
 Check if a given object implements the FailResult interface.
 
@@ -3483,7 +4407,7 @@ Check if a given object implements the FailResult interface.
 
 #### Returns
 
-`boolean`
+value is FailResult
 
 #### Defined in
 
@@ -3493,7 +4417,7 @@ ___
 
 ### instanceOfFormatAnnotation
 
-▸ **instanceOfFormatAnnotation**(`value`): `boolean`
+▸ **instanceOfFormatAnnotation**(`value`): value is FormatAnnotation
 
 Check if a given object implements the FormatAnnotation interface.
 
@@ -3505,7 +4429,7 @@ Check if a given object implements the FormatAnnotation interface.
 
 #### Returns
 
-`boolean`
+value is FormatAnnotation
 
 #### Defined in
 
@@ -3515,7 +4439,7 @@ ___
 
 ### instanceOfGuard
 
-▸ **instanceOfGuard**(`value`): `boolean`
+▸ **instanceOfGuard**(`value`): value is Guard
 
 Check if a given object implements the Guard interface.
 
@@ -3527,7 +4451,7 @@ Check if a given object implements the Guard interface.
 
 #### Returns
 
-`boolean`
+value is Guard
 
 #### Defined in
 
@@ -3537,7 +4461,7 @@ ___
 
 ### instanceOfHealthCheck
 
-▸ **instanceOfHealthCheck**(`value`): `boolean`
+▸ **instanceOfHealthCheck**(`value`): value is HealthCheck
 
 Check if a given object implements the HealthCheck interface.
 
@@ -3549,7 +4473,7 @@ Check if a given object implements the HealthCheck interface.
 
 #### Returns
 
-`boolean`
+value is HealthCheck
 
 #### Defined in
 
@@ -3559,7 +4483,7 @@ ___
 
 ### instanceOfHttpError
 
-▸ **instanceOfHttpError**(`value`): `boolean`
+▸ **instanceOfHttpError**(`value`): value is HttpError
 
 Check if a given object implements the HttpError interface.
 
@@ -3571,7 +4495,7 @@ Check if a given object implements the HttpError interface.
 
 #### Returns
 
-`boolean`
+value is HttpError
 
 #### Defined in
 
@@ -3581,7 +4505,7 @@ ___
 
 ### instanceOfInputs
 
-▸ **instanceOfInputs**(`value`): `boolean`
+▸ **instanceOfInputs**(`value`): value is Inputs
 
 Check if a given object implements the Inputs interface.
 
@@ -3593,7 +4517,7 @@ Check if a given object implements the Inputs interface.
 
 #### Returns
 
-`boolean`
+value is Inputs
 
 #### Defined in
 
@@ -3603,7 +4527,7 @@ ___
 
 ### instanceOfIteration
 
-▸ **instanceOfIteration**(`value`): `boolean`
+▸ **instanceOfIteration**(`value`): value is Iteration
 
 Check if a given object implements the Iteration interface.
 
@@ -3615,7 +4539,7 @@ Check if a given object implements the Iteration interface.
 
 #### Returns
 
-`boolean`
+value is Iteration
 
 #### Defined in
 
@@ -3645,7 +4569,7 @@ ___
 
 ### instanceOfLLMResponse
 
-▸ **instanceOfLLMResponse**(`value`): `boolean`
+▸ **instanceOfLLMResponse**(`value`): value is LLMResponse
 
 Check if a given object implements the LLMResponse interface.
 
@@ -3657,7 +4581,7 @@ Check if a given object implements the LLMResponse interface.
 
 #### Returns
 
-`boolean`
+value is LLMResponse
 
 #### Defined in
 
@@ -3667,7 +4591,7 @@ ___
 
 ### instanceOfMetaData
 
-▸ **instanceOfMetaData**(`value`): `boolean`
+▸ **instanceOfMetaData**(`value`): value is MetaData
 
 Check if a given object implements the MetaData interface.
 
@@ -3679,7 +4603,7 @@ Check if a given object implements the MetaData interface.
 
 #### Returns
 
-`boolean`
+value is MetaData
 
 #### Defined in
 
@@ -3689,7 +4613,7 @@ ___
 
 ### instanceOfOpenAIChatCompletion
 
-▸ **instanceOfOpenAIChatCompletion**(`value`): `boolean`
+▸ **instanceOfOpenAIChatCompletion**(`value`): value is OpenAIChatCompletion
 
 Check if a given object implements the OpenAIChatCompletion interface.
 
@@ -3701,7 +4625,7 @@ Check if a given object implements the OpenAIChatCompletion interface.
 
 #### Returns
 
-`boolean`
+value is OpenAIChatCompletion
 
 #### Defined in
 
@@ -3711,7 +4635,7 @@ ___
 
 ### instanceOfOpenAIChatCompletionPayload
 
-▸ **instanceOfOpenAIChatCompletionPayload**(`value`): `boolean`
+▸ **instanceOfOpenAIChatCompletionPayload**(`value`): value is OpenAIChatCompletionPayload
 
 Check if a given object implements the OpenAIChatCompletionPayload interface.
 
@@ -3723,7 +4647,7 @@ Check if a given object implements the OpenAIChatCompletionPayload interface.
 
 #### Returns
 
-`boolean`
+value is OpenAIChatCompletionPayload
 
 #### Defined in
 
@@ -3733,7 +4657,7 @@ ___
 
 ### instanceOfOpenAIChatCompletionPayloadMessagesInner
 
-▸ **instanceOfOpenAIChatCompletionPayloadMessagesInner**(`value`): `boolean`
+▸ **instanceOfOpenAIChatCompletionPayloadMessagesInner**(`value`): value is OpenAIChatCompletionPayloadMessagesInner
 
 Check if a given object implements the OpenAIChatCompletionPayloadMessagesInner interface.
 
@@ -3745,7 +4669,7 @@ Check if a given object implements the OpenAIChatCompletionPayloadMessagesInner 
 
 #### Returns
 
-`boolean`
+value is OpenAIChatCompletionPayloadMessagesInner
 
 #### Defined in
 
@@ -3755,7 +4679,7 @@ ___
 
 ### instanceOfOutputs
 
-▸ **instanceOfOutputs**(`value`): `boolean`
+▸ **instanceOfOutputs**(`value`): value is Outputs
 
 Check if a given object implements the Outputs interface.
 
@@ -3767,7 +4691,7 @@ Check if a given object implements the Outputs interface.
 
 #### Returns
 
-`boolean`
+value is Outputs
 
 #### Defined in
 
@@ -3777,7 +4701,7 @@ ___
 
 ### instanceOfOutputsParsedOutput
 
-▸ **instanceOfOutputsParsedOutput**(`value`): `boolean`
+▸ **instanceOfOutputsParsedOutput**(`value`): value is OutputsParsedOutput
 
 Check if a given object implements the OutputsParsedOutput interface.
 
@@ -3789,7 +4713,7 @@ Check if a given object implements the OutputsParsedOutput interface.
 
 #### Returns
 
-`boolean`
+value is OutputsParsedOutput
 
 #### Defined in
 
@@ -3821,7 +4745,7 @@ ___
 
 ### instanceOfPassResult
 
-▸ **instanceOfPassResult**(`value`): `boolean`
+▸ **instanceOfPassResult**(`value`): value is PassResult
 
 Check if a given object implements the PassResult interface.
 
@@ -3833,7 +4757,7 @@ Check if a given object implements the PassResult interface.
 
 #### Returns
 
-`boolean`
+value is PassResult
 
 #### Defined in
 
@@ -3843,7 +4767,7 @@ ___
 
 ### instanceOfPrimitives
 
-▸ **instanceOfPrimitives**(`value`): `boolean`
+▸ **instanceOfPrimitives**(`value`): value is Primitives
 
 Check if a given object implements the Primitives interface.
 
@@ -3855,7 +4779,7 @@ Check if a given object implements the Primitives interface.
 
 #### Returns
 
-`boolean`
+value is Primitives
 
 #### Defined in
 
@@ -3865,7 +4789,7 @@ ___
 
 ### instanceOfReask
 
-▸ **instanceOfReask**(`value`): `boolean`
+▸ **instanceOfReask**(`value`): value is Reask
 
 Check if a given object implements the Reask interface.
 
@@ -3877,7 +4801,7 @@ Check if a given object implements the Reask interface.
 
 #### Returns
 
-`boolean`
+value is Reask
 
 #### Defined in
 
@@ -3887,7 +4811,7 @@ ___
 
 ### instanceOfSchema
 
-▸ **instanceOfSchema**(`value`): `boolean`
+▸ **instanceOfSchema**(`value`): value is Schema
 
 Check if a given object implements the Schema interface.
 
@@ -3899,7 +4823,7 @@ Check if a given object implements the Schema interface.
 
 #### Returns
 
-`boolean`
+value is Schema
 
 #### Defined in
 
@@ -3929,7 +4853,7 @@ ___
 
 ### instanceOfUnevaluated
 
-▸ **instanceOfUnevaluated**(`value`): `boolean`
+▸ **instanceOfUnevaluated**(`value`): value is Unevaluated
 
 Check if a given object implements the Unevaluated interface.
 
@@ -3941,7 +4865,7 @@ Check if a given object implements the Unevaluated interface.
 
 #### Returns
 
-`boolean`
+value is Unevaluated
 
 #### Defined in
 
@@ -3951,7 +4875,7 @@ ___
 
 ### instanceOfValidatePayload
 
-▸ **instanceOfValidatePayload**(`value`): `boolean`
+▸ **instanceOfValidatePayload**(`value`): value is ValidatePayload
 
 Check if a given object implements the ValidatePayload interface.
 
@@ -3963,7 +4887,7 @@ Check if a given object implements the ValidatePayload interface.
 
 #### Returns
 
-`boolean`
+value is ValidatePayload
 
 #### Defined in
 
@@ -3973,7 +4897,7 @@ ___
 
 ### instanceOfValidation
 
-▸ **instanceOfValidation**(`value`): `boolean`
+▸ **instanceOfValidation**(`value`): value is Validation
 
 Check if a given object implements the Validation interface.
 
@@ -3985,7 +4909,7 @@ Check if a given object implements the Validation interface.
 
 #### Returns
 
-`boolean`
+value is Validation
 
 #### Defined in
 
@@ -3995,7 +4919,7 @@ ___
 
 ### instanceOfValidationOutcome
 
-▸ **instanceOfValidationOutcome**(`value`): `boolean`
+▸ **instanceOfValidationOutcome**(`value`): value is ValidationOutcome
 
 Check if a given object implements the ValidationOutcome interface.
 
@@ -4007,7 +4931,7 @@ Check if a given object implements the ValidationOutcome interface.
 
 #### Returns
 
-`boolean`
+value is ValidationOutcome
 
 #### Defined in
 
@@ -4017,7 +4941,7 @@ ___
 
 ### instanceOfValidationOutcomeValidatedOutput
 
-▸ **instanceOfValidationOutcomeValidatedOutput**(`value`): `boolean`
+▸ **instanceOfValidationOutcomeValidatedOutput**(`value`): value is ValidationOutcomeValidatedOutput
 
 Check if a given object implements the ValidationOutcomeValidatedOutput interface.
 
@@ -4029,7 +4953,7 @@ Check if a given object implements the ValidationOutcomeValidatedOutput interfac
 
 #### Returns
 
-`boolean`
+value is ValidationOutcomeValidatedOutput
 
 #### Defined in
 
@@ -4039,7 +4963,7 @@ ___
 
 ### instanceOfValidationResult
 
-▸ **instanceOfValidationResult**(`value`): `boolean`
+▸ **instanceOfValidationResult**(`value`): value is ValidationResult
 
 Check if a given object implements the ValidationResult interface.
 
@@ -4051,7 +4975,7 @@ Check if a given object implements the ValidationResult interface.
 
 #### Returns
 
-`boolean`
+value is ValidationResult
 
 #### Defined in
 
@@ -4061,7 +4985,7 @@ ___
 
 ### instanceOfValidationSummary
 
-▸ **instanceOfValidationSummary**(`value`): `boolean`
+▸ **instanceOfValidationSummary**(`value`): value is ValidationSummary
 
 Check if a given object implements the ValidationSummary interface.
 
@@ -4073,7 +4997,7 @@ Check if a given object implements the ValidationSummary interface.
 
 #### Returns
 
-`boolean`
+value is ValidationSummary
 
 #### Defined in
 
@@ -4083,7 +5007,7 @@ ___
 
 ### instanceOfValidationType
 
-▸ **instanceOfValidationType**(`value`): `boolean`
+▸ **instanceOfValidationType**(`value`): value is ValidationType
 
 Check if a given object implements the ValidationType interface.
 
@@ -4095,7 +5019,7 @@ Check if a given object implements the ValidationType interface.
 
 #### Returns
 
-`boolean`
+value is ValidationType
 
 #### Defined in
 
@@ -4105,7 +5029,7 @@ ___
 
 ### instanceOfValidatorLog
 
-▸ **instanceOfValidatorLog**(`value`): `boolean`
+▸ **instanceOfValidatorLog**(`value`): value is ValidatorLog
 
 Check if a given object implements the ValidatorLog interface.
 
@@ -4117,7 +5041,7 @@ Check if a given object implements the ValidatorLog interface.
 
 #### Returns
 
-`boolean`
+value is ValidatorLog
 
 #### Defined in
 
@@ -4127,7 +5051,7 @@ ___
 
 ### instanceOfValidatorLogInstanceId
 
-▸ **instanceOfValidatorLogInstanceId**(`value`): `boolean`
+▸ **instanceOfValidatorLogInstanceId**(`value`): value is ValidatorLogInstanceId
 
 Check if a given object implements the ValidatorLogInstanceId interface.
 
@@ -4139,7 +5063,7 @@ Check if a given object implements the ValidatorLogInstanceId interface.
 
 #### Returns
 
-`boolean`
+value is ValidatorLogInstanceId
 
 #### Defined in
 
@@ -4149,7 +5073,7 @@ ___
 
 ### instanceOfValidatorLogValidationResult
 
-▸ **instanceOfValidatorLogValidationResult**(`value`): `boolean`
+▸ **instanceOfValidatorLogValidationResult**(`value`): value is ValidatorLogValidationResult
 
 Check if a given object implements the ValidatorLogValidationResult interface.
 
@@ -4161,7 +5085,7 @@ Check if a given object implements the ValidatorLogValidationResult interface.
 
 #### Returns
 
-`boolean`
+value is ValidatorLogValidationResult
 
 #### Defined in
 
@@ -4171,7 +5095,7 @@ ___
 
 ### instanceOfValidatorReference
 
-▸ **instanceOfValidatorReference**(`value`): `boolean`
+▸ **instanceOfValidatorReference**(`value`): value is ValidatorReference
 
 Check if a given object implements the ValidatorReference interface.
 
@@ -4183,7 +5107,7 @@ Check if a given object implements the ValidatorReference interface.
 
 #### Returns
 
-`boolean`
+value is ValidatorReference
 
 #### Defined in
 
@@ -4208,7 +5132,7 @@ ___
 
 #### Defined in
 
-src/runtime.ts:435
+src/runtime.ts:440
 
 ___
 

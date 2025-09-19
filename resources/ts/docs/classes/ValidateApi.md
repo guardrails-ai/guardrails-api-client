@@ -153,7 +153,7 @@ Runs the validations specified in a Guard
 
 #### Defined in
 
-src/apis/ValidateApi.ts:134
+src/apis/ValidateApi.ts:138
 
 ___
 

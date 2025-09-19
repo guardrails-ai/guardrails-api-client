@@ -105,7 +105,7 @@ Creates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:232
+src/apis/GuardApi.ts:235
 
 ___
 
@@ -159,7 +159,7 @@ Deletes a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:295
+src/apis/GuardApi.ts:302
 
 ___
 
@@ -186,7 +186,7 @@ Deletes a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:246
+src/apis/GuardApi.ts:249
 
 ___
 
@@ -213,7 +213,7 @@ Fetches a specific Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:364
+src/apis/GuardApi.ts:375
 
 ___
 
@@ -240,7 +240,7 @@ Fetches the history for a specific Guard execution by using the id for the most 
 
 #### Defined in
 
-src/apis/GuardApi.ts:436
+src/apis/GuardApi.ts:450
 
 ___
 
@@ -267,7 +267,7 @@ Fetches the history for a specific Guard execution by using the id for the most 
 
 #### Defined in
 
-src/apis/GuardApi.ts:375
+src/apis/GuardApi.ts:386
 
 ___
 
@@ -294,7 +294,7 @@ Fetches a specific Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:309
+src/apis/GuardApi.ts:316
 
 ___
 
@@ -320,7 +320,7 @@ Fetches the configuration for all Guards the user has access to.
 
 #### Defined in
 
-src/apis/GuardApi.ts:488
+src/apis/GuardApi.ts:505
 
 ___
 
@@ -346,7 +346,7 @@ Fetches the configuration for all Guards the user has access to.
 
 #### Defined in
 
-src/apis/GuardApi.ts:450
+src/apis/GuardApi.ts:464
 
 ___
 
@@ -431,7 +431,7 @@ Updates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:557
+src/apis/GuardApi.ts:578
 
 ___
 
@@ -458,7 +458,7 @@ Updates a Guard
 
 #### Defined in
 
-src/apis/GuardApi.ts:498
+src/apis/GuardApi.ts:515
 
 ___
 

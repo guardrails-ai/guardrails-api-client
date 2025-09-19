@@ -92,7 +92,7 @@ src/runtime.ts:110
 
 #### Defined in
 
-src/apis/ServiceHealthApi.ts:89
+src/apis/ServiceHealthApi.ts:92
 
 ___
 

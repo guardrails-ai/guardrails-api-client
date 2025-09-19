@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **health_check_get**
 > HealthCheck health_check_get()
 
-
-
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):

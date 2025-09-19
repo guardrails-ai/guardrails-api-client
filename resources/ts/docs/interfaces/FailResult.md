@@ -21,7 +21,7 @@ FailResult
 
 ### errorMessage
 
-• **errorMessage**: `any`
+• **errorMessage**: `string`
 
 **`Memberof`**
 

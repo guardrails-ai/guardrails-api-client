@@ -26,7 +26,7 @@
 
 #### Defined in
 
-src/runtime.ts:483
+src/runtime.ts:489
 
 ## Methods
 
@@ -40,4 +40,4 @@ src/runtime.ts:483
 
 #### Defined in
 
-src/runtime.ts:484
+src/runtime.ts:490

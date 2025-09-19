@@ -22,7 +22,7 @@ ValidatorLogValidationResult
 
 ### errorMessage
 
-• **errorMessage**: `any`
+• **errorMessage**: `string`
 
 **`Memberof`**
 
